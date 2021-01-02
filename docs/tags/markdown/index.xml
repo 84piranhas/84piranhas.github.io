@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>markdown on 84piranhas</title>
+    <link>http://localhost:1313/tags/markdown/</link>
+    <description>Recent content in markdown on 84piranhas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Markdown syntax</title>
+      <link>http://localhost:1313/home/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/home/</guid>
+      <description>A resume of the Markdown syntax we use. It is not an exhaustive list as we skip some alternatives, here are the preferred ones.
+reference: https://www.markdownguide.org/basic-syntax/
+HEADERS Heading level 1 markdown: # Heading level 1 html: &amp;lt;h1 id=&amp;#34;heading-level-1&amp;#34;&amp;gt;Heading level 1&amp;lt;a hidden=&amp;#34;&amp;#34; class=&amp;#34;anchor&amp;#34; aria-hidden=&amp;#34;true&amp;#34; href=&amp;#34;#heading-level-1&amp;#34;&amp;gt;#&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt; Heading level 2 markdown: ## Heading level 2 html: &amp;lt;h2 id=&amp;#34;heading-level-2&amp;#34;&amp;gt;Heading level 2&amp;lt;a hidden=&amp;#34;&amp;#34; class=&amp;#34;anchor&amp;#34; aria-hidden=&amp;#34;true&amp;#34; href=&amp;#34;#heading-level-2&amp;#34;&amp;gt;#&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt; Heading level 3 markdown: ### Heading level 3 html: &amp;lt;h3 id=&amp;#34;heading-level-3&amp;#34;&amp;gt;Heading level 3&amp;lt;a hidden=&amp;#34;&amp;#34; class=&amp;#34;anchor&amp;#34; aria-hidden=&amp;#34;true&amp;#34; href=&amp;#34;#heading-level-3&amp;#34;&amp;gt;#&amp;lt;/a&amp;gt;&amp;lt;/h3&amp;gt; Heading level 4 markdown: #### Heading level 4 html: &amp;lt;h4 id=&amp;#34;heading-level-4&amp;#34;&amp;gt;Heading level 4&amp;lt;a hidden=&amp;#34;&amp;#34; class=&amp;#34;anchor&amp;#34; aria-hidden=&amp;#34;true&amp;#34; href=&amp;#34;#heading-level-4&amp;#34;&amp;gt;#&amp;lt;/a&amp;gt;&amp;lt;/h4&amp;gt; Heading level 5 markdown: ##### Heading level 5 html: &amp;lt;h5 id=&amp;#34;heading-level-5&amp;#34;&amp;gt;Heading level 5&amp;lt;a hidden=&amp;#34;&amp;#34; class=&amp;#34;anchor&amp;#34; aria-hidden=&amp;#34;true&amp;#34; href=&amp;#34;#heading-level-5&amp;#34;&amp;gt;#&amp;lt;/a&amp;gt;&amp;lt;/h5&amp;gt; Heading level 6 markdown: ###### Heading level 6 html: &amp;lt;h6 id=&amp;#34;heading-level-6&amp;#34;&amp;gt;Heading level 6&amp;lt;a hidden=&amp;#34;&amp;#34; class=&amp;#34;anchor&amp;#34; aria-hidden=&amp;#34;true&amp;#34; href=&amp;#34;#heading-level-6&amp;#34;&amp;gt;#&amp;lt;/a&amp;gt;&amp;lt;/h6&amp;gt; EMPHASIS Bold</description>
+    </item>
+    
+  </channel>
+</rss>

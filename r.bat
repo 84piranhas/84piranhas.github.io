@@ -1,0 +1,1 @@
+start cmd /k set PATH=%PATH%;C:\Users\admin\Documents\hugo\bin
