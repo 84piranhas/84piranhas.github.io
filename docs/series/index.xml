@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on 84piranhas</title>
-    <link>http://localhost:1313/series/</link>
+    <link>https://84piranhas.github.io/series/</link>
     <description>Recent content in Series on 84piranhas</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://84piranhas.github.io/series/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>code</title>
-      <link>http://localhost:1313/series/code/</link>
+      <link>https://84piranhas.github.io/series/code/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/series/code/</guid>
+      <guid>https://84piranhas.github.io/series/code/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PaperMod</title>
-      <link>http://localhost:1313/series/papermod/</link>
+      <link>https://84piranhas.github.io/series/papermod/</link>
       <pubDate>Tue, 15 Sep 2020 11:30:03 +0530</pubDate>
       
-      <guid>http://localhost:1313/series/papermod/</guid>
+      <guid>https://84piranhas.github.io/series/papermod/</guid>
       <description></description>
     </item>
     
