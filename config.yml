@@ -13,30 +13,30 @@ buildExpired: false
 
 menu:
     main:
-        - name: Archive
-          url: archives
-          weight: 5
         - name: Search
           url: search/
-          weight: 10
+          weight: 1
+        # - name: Archive
+        #   url: archives
+        #   weight: 5
         - name: Tags
           url: tags/
           weight: 10
-        - name: Series
-          url: series/
-          weight: 15
-        - name: Categories
-          url: categories/
-          weight: 20
-        - name: Code ser
-          url: series/code
-          weight: 21
-        - name: Code cat
-          url: categories/code2
+        # - name: Series
+        #   url: series/
+        #   weight: 15
+        # - name: Categories
+        #   url: categories/
+        #   weight: 20
+        # - name: Code ser
+        #   url: series/code
+        #   weight: 21
+        - name: CryptoCurrency
+          url: categories/crypto
           weight: 22
-        - name: Code tag
-          url: tags/code
-          weight: 23
+        # - name: Code tag
+        #   url: tags/code
+        #   weight: 23
 
 markup:
   goldmark:
@@ -102,6 +102,8 @@ params:
     # assets:
     #   favicon: '<path / external url>'
     disableSpecial1stPost: true
+
+    custom_css: ["css/try.css"]
 
     label:
       icon: /android-chrome-512x512_grey.png

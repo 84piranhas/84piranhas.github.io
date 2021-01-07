@@ -1,0 +1,72 @@
+<script>
+  var themeBackroungColor
+    if (localStorage.getItem("pref-theme") === "dark") {
+      themeBackgroundColor='#1d1e20';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+      themeBackgroundColor='white';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      themeBackgroundColor='#1d1e20';
+    }
+
+     Highcharts.setOptions({
+    
+      /*lang: {
+        months: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
+        weekdays: ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'],
+        shortMonths: ['jan', 'fév', 'mar', 'avr', 'mai', 'juin', 'juil', 'aoû', 'sep', 'oct', 'nov', 'déc'],
+      },*/
+       colors: ['#1abc9c','#3498db','#9b59b6','#2ecc71','#E7E08B','#f1c40f','#e67e22','#e74c3c','#ecf0f1','#95a5a6'],
+       title: {
+         style: {
+           color: '#767B80'
+         },
+         text: ''
+       },
+       subtitle: {
+         style: {
+           color: '#767B80'
+         },
+         text: ''
+       },
+       legend: {
+         enabled: true,
+         itemStyle: { "color": "#767B80", "cursor": "pointer", "fontSize": "12px", "fontWeight": "bold", "textOverflow": "ellipsis" }
+       },
+       credits: {
+         enabled: false
+       },
+       exporting: { enabled: false },
+       chart: {
+         //backgroundColor: '#353B43',
+         backgroundColor: themeBackgroundColor,
+       },
+       
+       yAxis: {
+         gridLineWidth: 1,
+         gridLineColor: '#767B80',
+         labels: {
+           style: {
+             color: '#767B80' 
+             }
+           },
+         title: {
+           style: {
+             color: '#767B80'
+             },
+           text: null,
+           },
+         },
+    
+       xAxis: {
+         gridLineWidth: 0,
+         labels: {
+           style: {
+             color: '#767B80'
+             }
+           },
+         }
+     });
+    </script>
+    
+    
+    

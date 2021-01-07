@@ -8,6 +8,7 @@ aliases: ["/papermod-features"]
 tags: ["PaperMod"]
 author: "Aditya Telange"
 tocopen: true
+draft: true
 ---
 
 ### Assets (js/css)

@@ -2,7 +2,7 @@
 author: "84piranhas"
 title: "Markdown syntax"
 date: "2021-01-01"
-description: "A resume of the Markdown syntax we use, with corresponding HTML."
+summary: "A resume of the Markdown syntax we use, with corresponding HTML."
 tags: ["english", "code", "markdown", "html"]
 hideMeta: true
 weight: 1

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bitcoin on 84piranhas</title>
+    <link>https://84piranhas.github.io/tags/bitcoin/</link>
+    <description>Recent content in bitcoin on 84piranhas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 06 Jan 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://84piranhas.github.io/tags/bitcoin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bitcoin - a dollar-cost averaging as investment strategy</title>
+      <link>https://84piranhas.github.io/posts/bitcoin/btcusd-dca/</link>
+      <pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://84piranhas.github.io/posts/bitcoin/btcusd-dca/</guid>
+      <description>Basic strategy of investment in bitcoin, yearly comparison, 2015-2020</description>
+    </item>
+    
+  </channel>
+</rss>

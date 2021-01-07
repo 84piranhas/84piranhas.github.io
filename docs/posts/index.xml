@@ -5,10 +5,19 @@
     <link>https://84piranhas.github.io/posts/</link>
     <description>Recent content in Posts on 84piranhas</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://84piranhas.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bitcoin - a dollar-cost averaging as investment strategy</title>
+      <link>https://84piranhas.github.io/posts/bitcoin/btcusd-dca/</link>
+      <pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://84piranhas.github.io/posts/bitcoin/btcusd-dca/</guid>
+      <description>Basic strategy of investment in bitcoin, yearly comparison, 2015-2020</description>
+    </item>
     
     <item>
       <title>Markdown syntax</title>
@@ -16,9 +25,7 @@
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://84piranhas.github.io/home/</guid>
-      <description>A resume of the Markdown syntax we use. It is not an exhaustive list as we skip some alternatives, here are the preferred ones.
-reference: https://www.markdownguide.org/basic-syntax/
-HEADERS Heading level 1 markdown: # Heading level 1 html: &amp;lt;h1 id=&amp;#34;heading-level-1&amp;#34;&amp;gt;Heading level 1&amp;lt;a hidden=&amp;#34;&amp;#34; class=&amp;#34;anchor&amp;#34; aria-hidden=&amp;#34;true&amp;#34; href=&amp;#34;#heading-level-1&amp;#34;&amp;gt;#&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt; Heading level 2 markdown: ## Heading level 2 html: &amp;lt;h2 id=&amp;#34;heading-level-2&amp;#34;&amp;gt;Heading level 2&amp;lt;a hidden=&amp;#34;&amp;#34; class=&amp;#34;anchor&amp;#34; aria-hidden=&amp;#34;true&amp;#34; href=&amp;#34;#heading-level-2&amp;#34;&amp;gt;#&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt; Heading level 3 markdown: ### Heading level 3 html: &amp;lt;h3 id=&amp;#34;heading-level-3&amp;#34;&amp;gt;Heading level 3&amp;lt;a hidden=&amp;#34;&amp;#34; class=&amp;#34;anchor&amp;#34; aria-hidden=&amp;#34;true&amp;#34; href=&amp;#34;#heading-level-3&amp;#34;&amp;gt;#&amp;lt;/a&amp;gt;&amp;lt;/h3&amp;gt; Heading level 4 markdown: #### Heading level 4 html: &amp;lt;h4 id=&amp;#34;heading-level-4&amp;#34;&amp;gt;Heading level 4&amp;lt;a hidden=&amp;#34;&amp;#34; class=&amp;#34;anchor&amp;#34; aria-hidden=&amp;#34;true&amp;#34; href=&amp;#34;#heading-level-4&amp;#34;&amp;gt;#&amp;lt;/a&amp;gt;&amp;lt;/h4&amp;gt; Heading level 5 markdown: ##### Heading level 5 html: &amp;lt;h5 id=&amp;#34;heading-level-5&amp;#34;&amp;gt;Heading level 5&amp;lt;a hidden=&amp;#34;&amp;#34; class=&amp;#34;anchor&amp;#34; aria-hidden=&amp;#34;true&amp;#34; href=&amp;#34;#heading-level-5&amp;#34;&amp;gt;#&amp;lt;/a&amp;gt;&amp;lt;/h5&amp;gt; Heading level 6 markdown: ###### Heading level 6 html: &amp;lt;h6 id=&amp;#34;heading-level-6&amp;#34;&amp;gt;Heading level 6&amp;lt;a hidden=&amp;#34;&amp;#34; class=&amp;#34;anchor&amp;#34; aria-hidden=&amp;#34;true&amp;#34; href=&amp;#34;#heading-level-6&amp;#34;&amp;gt;#&amp;lt;/a&amp;gt;&amp;lt;/h6&amp;gt; EMPHASIS Bold</description>
+      <description>A resume of the Markdown syntax we use, with corresponding HTML.</description>
     </item>
     
   </channel>

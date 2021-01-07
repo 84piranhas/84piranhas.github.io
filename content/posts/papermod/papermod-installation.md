@@ -9,6 +9,7 @@ tags: ["PaperMod"]
 author: "Aditya Telange"
 showToc: true
 TocOpen: true
+draft: true
 ---
 
 ## Guide
