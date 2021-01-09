@@ -5,10 +5,19 @@
     <link>https://84piranhas.github.io/categories/crypto/</link>
     <description>Recent content in crypto on 84piranhas</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 06 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://84piranhas.github.io/categories/crypto/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bitcoin - a dollar-value averaging as investment strategy</title>
+      <link>https://84piranhas.github.io/posts/bitcoin/btcusd-dva/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://84piranhas.github.io/posts/bitcoin/btcusd-dva/</guid>
+      <description>Basic strategy of investment in bitcoin, yearly comparison, 2015-2020</description>
+    </item>
     
     <item>
       <title>Bitcoin - a dollar-cost averaging as investment strategy</title>

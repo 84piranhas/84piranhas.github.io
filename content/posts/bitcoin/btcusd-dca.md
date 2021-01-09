@@ -20,6 +20,7 @@ The astonishing increase of value of the <a href="https://www.kraken.com/en-us/p
 
 The purpose of this article is to propose a view on a very basic strategy of investment in a volatile asset: the **dollar-cost averaging (DCA)**, i.e. invest the same amount of dollars in bitcoin on a periodic basis regardless its price.
 
+## The method
 
 > invest the same amount of dollars in bitcoin on a **weekly** basis
 >> at the close (fictive) of the second working day, *Tuesday* (arbitrary choice)  
