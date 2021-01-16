@@ -1,0 +1,283 @@
+<div id="graph-btcusd-lump-2020" style="height: 500px; max-width:1000px; min-width: 250px;"></div>
+<div id="graph-btcusd-lump-2019" style="height: 500px; max-width:1000px; min-width: 250px;"></div>
+<div id="graph-btcusd-lump-2018" style="height: 500px; max-width:1000px; min-width: 250px;"></div>
+<div id="graph-btcusd-lump-2017" style="height: 500px; max-width:1000px; min-width: 250px;"></div>
+<div id="graph-btcusd-lump-2016" style="height: 500px; max-width:1000px; min-width: 250px;"></div>
+<div id="graph-btcusd-lump-2015" style="height: 500px; max-width:1000px; min-width: 250px;"></div>
+
+<script>
+    $.get("../../../files/btc/btcusd-lump-2020.csv", function(csv) {
+        var c = Highcharts.chart('graph-btcusd-lump-2020', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: {
+                series: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: false,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                text: "2020"
+            },
+            subtitle: {
+                text: "in USD, for 0.31848334 btc"
+            },
+            data: {
+                csv: csv,
+            },
+        });
+
+    })
+</script>
+<script>
+    $.get("../../../files/btc/btcusd-lump-2019.csv", function(csv) {
+        var c = Highcharts.chart('graph-btcusd-lump-2019', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: {
+                series: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: false,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                text: "2019"
+            },
+            subtitle: {
+                text: "in USD, for 1.32148882 btc"
+            },
+            data: {
+                csv: csv,
+            },
+        });
+
+    })
+</script>
+<script>
+    $.get("../../../files/btc/btcusd-lump-2018.csv", function(csv) {
+        var c = Highcharts.chart('graph-btcusd-lump-2018', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: {
+                series: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: false,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                text: "2018"
+            },
+            subtitle: {
+                text: "in USD, for 0.17354043 btc"
+            },
+            data: {
+                csv: csv,
+            },
+        });
+
+    })
+</script>
+<script>
+    $.get("../../../files/btc/btcusd-lump-2017.csv", function(csv) {
+        var c = Highcharts.chart('graph-btcusd-lump-2017', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: {
+                series: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: false,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                text: "2017"
+            },
+            subtitle: {
+                text: "in USD, for 2.49080327 btc"
+            },
+            data: {
+                csv: csv,
+            },
+        });
+
+    })
+</script>
+<script>
+    $.get("../../../files/btc/btcusd-lump-2016.csv", function(csv) {
+        var c = Highcharts.chart('graph-btcusd-lump-2016', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: {
+                series: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: false,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                text: "2016"
+            },
+            subtitle: {
+                text: "in USD, for 6.01907597 btc"
+            },
+            data: {
+                csv: csv,
+            },
+        });
+
+    })
+</script>
+<script>
+    $.get("../../../files/btc/btcusd-lump-2015.csv", function(csv) {
+        var c = Highcharts.chart('graph-btcusd-lump-2015', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: {
+                series: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: false,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                text: "2015, for 9.08490559 btc"
+            },
+            subtitle: {
+                text: "in USD"
+            },
+            data: {
+                csv: csv,
+            },
+        });
+
+    })
+</script>

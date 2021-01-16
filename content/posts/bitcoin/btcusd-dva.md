@@ -1,6 +1,6 @@
 ---
 author: "84piranhas"
-title: "Bitcoin - a dollar-value averaging as investment strategy"
+title: "Bitcoin - dollar-value averaging as investment strategy"
 date: "2021-01-08"
 description: "Strategy"
 summary: Basic strategy of investment in bitcoin, yearly comparison, 2015-2020
@@ -37,7 +37,7 @@ After describing the <a href="../btcusd-dca" target="_blank">DCA investment stra
 > compare with the amount put in a bank account instead (0% interest)
 
 2. Investment with withdrawals (full adjustment)
-> invest an of dollars in bitcoin on a **weekly** basis
+> invest an amount of dollars in bitcoin on a **weekly** basis
 >> at the close (fictive) of the second working day, *Tuesday* (arbitrary choice)  
 >> start at the *first week of the year*  
 >> end at the *last week of the year*  

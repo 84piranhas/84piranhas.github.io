@@ -5,7 +5,7 @@
     <link>https://84piranhas.github.io/tags/</link>
     <description>Recent content in Tags on 84piranhas</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 16 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://84piranhas.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +13,7 @@
     <item>
       <title>bitcoin</title>
       <link>https://84piranhas.github.io/tags/bitcoin/</link>
-      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://84piranhas.github.io/tags/bitcoin/</guid>
       <description></description>
@@ -22,9 +22,27 @@
     <item>
       <title>crypto</title>
       <link>https://84piranhas.github.io/tags/crypto/</link>
-      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://84piranhas.github.io/tags/crypto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>english</title>
+      <link>https://84piranhas.github.io/tags/english/</link>
+      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://84piranhas.github.io/tags/english/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lump-sum</title>
+      <link>https://84piranhas.github.io/tags/lump-sum/</link>
+      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://84piranhas.github.io/tags/lump-sum/</guid>
       <description></description>
     </item>
     
@@ -34,15 +52,6 @@
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://84piranhas.github.io/tags/dva/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>english</title>
-      <link>https://84piranhas.github.io/tags/english/</link>
-      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://84piranhas.github.io/tags/english/</guid>
       <description></description>
     </item>
     
