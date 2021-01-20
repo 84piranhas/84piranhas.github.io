@@ -1,20 +1,25 @@
 ---
 author: "84piranhas"
 title: "Moto - le plateau"
-date: "2021-01-16"
+date: "2021-01-20"
 #description: "Strategy"
 summary: Une infographie de l'examen du plateau pour le permis A2 en France
 tags: ["français", "moto"]
 hideMeta: true
 weight: 1
-showtoc: true
-tocopen: true
+showtoc: false
+tocopen: false
 #url: "home" # by default = "posts/{title}"
 aliases: ["moto-plateau"]
 #series: ["code"]
 categories: ["moto"]
 draft: false
 ---
+
+[Les 2 dispositions du plateau moto](#les-2-dispositions-du-plateau-moto)  
+[Le parcours 1](#le-parcours-1)  
+[Le parcours 2](#le-parcours-2)  
+[Quelques conseils](#quelques-conseils)
 
 L'examen du permis de conduire des catégories A1, A2 et A a été modifié [début 2020](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000041661704/).
 J'ai moi-même passé l'examen du plateau en janvier 2021, avec donc les nouvelles dispositions en vigueur.

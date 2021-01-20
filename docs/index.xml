@@ -5,10 +5,19 @@
     <link>https://84piranhas.github.io/</link>
     <description>Recent content on 84piranhas</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 16 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://84piranhas.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Moto - le plateau</title>
+      <link>https://84piranhas.github.io/posts/moto/plateau/</link>
+      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://84piranhas.github.io/posts/moto/plateau/</guid>
+      <description>Une infographie de l&amp;rsquo;examen du plateau pour le permis A2 en France</description>
+    </item>
     
     <item>
       <title>Bitcoin - lump-sum investing</title>
@@ -17,15 +26,6 @@
       
       <guid>https://84piranhas.github.io/posts/bitcoin/btcusd-lumpsum/</guid>
       <description>Basic strategy of investment in bitcoin, yearly comparison, 2015-2020</description>
-    </item>
-    
-    <item>
-      <title>Moto - le plateau</title>
-      <link>https://84piranhas.github.io/posts/moto/plateau/</link>
-      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://84piranhas.github.io/posts/moto/plateau/</guid>
-      <description>Une infographie de l&amp;rsquo;examen du plateau pour le permis A2 en France</description>
     </item>
     
     <item>
