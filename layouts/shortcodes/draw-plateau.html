@@ -1,0 +1,622 @@
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 33%;
+      padding: 10px;
+      /*height: 300px; /* Should be removed. Only for demonstration */
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+</style>
+
+<div class="row">
+    <div class="column">
+        <div id="container" style="height: 1400px; width:80px"></div>
+    </div>
+    <div class="column">
+        <div id="container2" style="height: 1400px; width:80px"></div>
+    </div>
+    <div class="column">
+        <div>jklfho</div>
+    </div>
+  </div>
+
+
+<script>
+
+    var renderer;
+    mtop = 10
+    mleft = 0
+
+
+
+    renderer = new Highcharts.Renderer(
+        document.getElementById('container'),
+        400 + mleft,
+        1300 + mtop,
+        false, false, false ,
+    );
+
+
+    // plateau
+    renderer.rect(mleft, mtop, 60, 1300, 5).attr({
+        //fill: '',
+        stroke: 'black',
+        'stroke-width': 1
+    }).add();
+
+    // moto, kawasaki z400, 1999mm 800mm
+    renderer.rect(mleft + 30 + 7, mtop + 3, 19.99, 8, 5).attr({
+        fill: 'green',
+        stroke: 'grey',
+        'stroke-width': 1
+    }).add();
+
+
+    //fin
+    renderer.circle(mleft + 30, mtop + 50, 1).attr({
+        fill: 'blue',
+        stroke: 'blue',
+        'stroke-width': 2
+    }).add();
+    renderer.circle(mleft + 30 - 12, mtop + 50, 1).attr({
+        fill: 'blue',
+        stroke: 'blue',
+        'stroke-width': 2
+    }).add();
+    renderer.circle(mleft + 30, mtop + 50 + 45, 1).attr({
+        fill: 'blue',
+        stroke: 'blue',
+        'stroke-width': 2
+    }).add();
+    renderer.circle(mleft + 30 - 12, mtop + 50 + 45, 1).attr({
+        fill: 'blue',
+        stroke: 'blue',
+        'stroke-width': 2
+    }).add();
+
+    // depart
+    renderer.circle(mleft + 30, mtop + 0, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 2
+    }).add();
+    renderer.circle(mleft + 30, mtop + 13, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 2
+    }).add();
+
+    //1ers piquets
+    renderer.circle(mleft + 0, mtop + 50, 1).attr({
+        fill: 'orange',
+        stroke: 'orange',   
+        'stroke-width': 2
+    }).add();
+    renderer.circle(mleft + 12, mtop + 50, 1).attr({
+        fill: 'orange',
+        stroke: 'orange',
+        'stroke-width': 2
+    }).add();
+
+    //2nds piquets
+    renderer.circle(mleft + 60, mtop + 50 + 45, 1).attr({
+        fill: 'orange',
+        stroke: 'orange',   
+        'stroke-width': 2
+    }).add();
+    renderer.circle(mleft + 60 - 12, mtop + 50 + 45, 1).attr({
+        fill: 'orange',
+        stroke: 'orange',
+        'stroke-width': 2
+    }).add();
+
+    //fin lent passager, depart slalom
+    renderer.circle(mleft + 60, mtop + 50 + 45 +39, 1).attr({
+        fill: 'red',
+        stroke: 'red',   
+        'stroke-width': 2
+    }).add();
+    renderer.circle(mleft + 60 - 12, mtop + 50 + 45 + 39, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 2
+    }).add();
+
+    //ligne C4, fin freinage pluie
+    // https://www.w3.org/TR/SVG/paths.html#PathDataLinetoCommands
+    renderer.path(['M', mleft + 0, mtop + 212, 'L', mleft + 60, mtop + 212])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'black',
+        opacity: 0.5,
+    })
+    .add();
+
+    //ligne C5, fin freinage sec
+    renderer.path(['M', mleft + 0, mtop + 212 + 39, 'L', mleft + 60, mtop + 212 +39])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'black',
+        opacity: 0.9,
+    })
+    .add();
+
+
+    // evitement
+    renderer.circle(mleft + 0, mtop + 251 + 60, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+    renderer.circle(mleft + 0 + 7.5, mtop + 251 + 60, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+    renderer.circle(mleft + 0 + 15, mtop + 251 + 60, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+    /*renderer.symbol('square', mleft + 0-1, mtop + 251-1 + 60, 2,2).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+    */
+
+    // couloir evitement
+    renderer.circle(mleft + 0, mtop + 251 + 60 + 55, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+    renderer.circle(mleft + 0, mtop + 251 + 60 + 55 + 15, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+    renderer.circle(mleft + 0 + 10, mtop + 251 + 60 + 55 + 7.5, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+    renderer.circle(mleft + 0 + 10, mtop + 251 + 60 + 55 + 22.5, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+
+    //ligne C6, mesure vitesse pour freinage d'urgence et evitement
+    renderer.path(['M', mleft + 0, mtop + 251 + 157.5, 'L', mleft + 60, mtop + 251 +157.5])
+    .attr({
+        'stroke-width': 1,
+        stroke: 'black',
+        opacity: 1,
+    })
+    .add();
+    renderer.circle(mleft + 0, mtop + 251 + 60 + 55 +15 + 27.5, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+
+    //arrêt stop
+    renderer.circle(mleft + 30, mtop + 466 + 175 + 20, 1).attr({
+        fill: 'blue',
+        stroke: 'blue',
+        'stroke-width': 2
+    }).add();
+    renderer.circle(mleft + 30-8, mtop + 466 + 175, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+
+    renderer.path(['M', mleft + 30, mtop + 466 + 175, 'L', mleft + 30, mtop + 466 + 175 +20])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'black',
+        opacity: 0.4,
+    }).add();
+    renderer.path(['M', mleft + 30+8, mtop + 466 + 175, 'L', mleft + 30+8, mtop + 466 + 175 +20])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'black',
+        opacity: 0.4,
+    }).add();
+
+    // slalom
+    renderer.circle(mleft + 30+8, mtop + 466, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+    //ligne C7, mesure vitesse pour slalom
+    renderer.path(['M', mleft + 0, mtop + 466 + 350, 'L', mleft + 60, mtop + 466 + 350])
+    .attr({
+        'stroke-width': 1,
+        stroke: 'black',
+        opacity: 1,
+    })
+    .add();
+    renderer.circle(mleft + 30 + 8, mtop + 466 + 350, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 2
+    }).add();
+    renderer.circle(mleft + 30-8, mtop + 466 + 350 + 175, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+
+    //dernier plot
+    renderer.circle(mleft + 30, mtop + 466 + 350 + 175 + 250, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+
+    // parcours lent
+    renderer.path(['M', mleft + 30, mtop + 5, 'q', -30, 10, -25, 50, 'q', 0, 10, 40, 20, 
+    'q', 18, 10, 10, 60])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'green',
+        opacity: 1,
+    }).add();
+    renderer.path(['M', mleft + 60-5, mtop + 50+45+39, 'q', 0, 0, -45, 220, 'q', 0, 0, -5, 30, 'q', 20, 100, 40, 130, 
+'q', 15 , 50, 10, 120, 'q', -5, 22, -20, 22 ])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'green',
+        opacity: 1,
+    }).add();
+
+    // freinage
+    renderer.path(['M', mleft + 35, mtop + 466 + 175 + 15, 'q', -40, -20, -20, -100,
+'q', 10, -30, 30, 0, 'q', 5, 20, 0, 140, 'q', 0,20,-30, 200, 'q', -10, 100, -10, 340, 'q', 5, 90, 45, 45,
+'q', 12, -50, 5, -200, 'l', 0, -800])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'blue',
+        opacity: 1,
+    }).add();
+
+    // lent avec passager
+
+    // courbes
+    renderer.path(['M', mleft + 30, mtop + 466 + 175 + 350 + 250, 'c', 10, 20, 12, 25, 15, -40, 'c', -10, -20, -12, -25, -15, +40])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'black',
+        opacity: 0.4,
+    }).add();
+
+    renderer.path(['M', mleft + 30, mtop + 466 + 175 + 350 + 250 - 100, 'q', -10, 50 , 30, -40, 'q', -20, 50 , -30, -20  ])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'black',
+        opacity: 0.4,
+    }).add();
+
+    /*
+    renderer.path(['Z'])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'black',
+        opacity: 0.4,
+    }).add();
+*/
+
+
+</script>
+
+<script>
+
+
+    var renderer2;
+    mtop = 10
+    mleft = 0
+
+
+
+    renderer2 = new Highcharts.Renderer(
+        document.getElementById('container2'),
+        400 + mleft,
+        1300 + mtop,
+        false, false, false ,
+    );
+
+
+    // plateau
+    renderer2.rect(mleft, mtop, 60, 1300, 5).attr({
+        //fill: '',
+        stroke: 'black',
+        'stroke-width': 1
+    }).add();
+
+    // moto, kawasaki z400, 1999mm 800mm
+    renderer2.rect(mleft + 30 + 7, mtop + 3, 19.99, 8, 5).attr({
+        fill: 'green',
+        stroke: 'grey',
+        'stroke-width': 1
+    }).add();
+
+
+    //fin
+    renderer2.circle(mleft + 30, mtop + 50, 1).attr({
+        fill: 'blue',
+        stroke: 'blue',
+        'stroke-width': 2
+    }).add();
+    renderer2.circle(mleft + 30 - 12, mtop + 50, 1).attr({
+        fill: 'blue',
+        stroke: 'blue',
+        'stroke-width': 2
+    }).add();
+    renderer2.circle(mleft + 30, mtop + 50 + 45, 1).attr({
+        fill: 'blue',
+        stroke: 'blue',
+        'stroke-width': 2
+    }).add();
+    renderer2.circle(mleft + 30 - 12, mtop + 50 + 45, 1).attr({
+        fill: 'blue',
+        stroke: 'blue',
+        'stroke-width': 2
+    }).add();
+
+    // depart
+    renderer2.circle(mleft + 30, mtop + 0, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 2
+    }).add();
+    renderer2.circle(mleft + 30, mtop + 13, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 2
+    }).add();
+
+    //1ers piquets
+    renderer2.circle(mleft + 0, mtop + 50, 1).attr({
+        fill: 'orange',
+        stroke: 'orange',   
+        'stroke-width': 2
+    }).add();
+    renderer2.circle(mleft + 12, mtop + 50, 1).attr({
+        fill: 'orange',
+        stroke: 'orange',
+        'stroke-width': 2
+    }).add();
+
+    //2nds piquets
+    renderer2.circle(mleft + 60, mtop + 50 + 45, 1).attr({
+        fill: 'orange',
+        stroke: 'orange',   
+        'stroke-width': 2
+    }).add();
+    renderer2.circle(mleft + 60 - 12, mtop + 50 + 45, 1).attr({
+        fill: 'orange',
+        stroke: 'orange',
+        'stroke-width': 2
+    }).add();
+
+    //fin lent passager, depart slalom
+    renderer2.circle(mleft + 60, mtop + 50 + 45 +39, 1).attr({
+        fill: 'red',
+        stroke: 'red',   
+        'stroke-width': 2
+    }).add();
+    renderer2.circle(mleft + 60 - 12, mtop + 50 + 45 + 39, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 2
+    }).add();
+
+    //ligne C4, fin freinage pluie
+    // https://www.w3.org/TR/SVG/paths.html#PathDataLinetoCommands
+    renderer2.path(['M', mleft + 0, mtop + 212, 'L', mleft + 60, mtop + 212])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'black',
+        opacity: 0.5,
+    })
+    .add();
+
+    //ligne C5, fin freinage sec
+    renderer2.path(['M', mleft + 0, mtop + 212 + 39, 'L', mleft + 60, mtop + 212 +39])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'black',
+        opacity: 0.9,
+    })
+    .add();
+
+
+    // evitement
+    renderer2.circle(mleft + 0, mtop + 251 + 60, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+    renderer2.circle(mleft + 0 + 7.5, mtop + 251 + 60, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+    renderer2.circle(mleft + 0 + 15, mtop + 251 + 60, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+    /*renderer.symbol('square', mleft + 0-1, mtop + 251-1 + 60, 2,2).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+    */
+
+    // couloir evitement
+    renderer2.circle(mleft + 0, mtop + 251 + 60 + 55, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+    renderer2.circle(mleft + 0, mtop + 251 + 60 + 55 + 15, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+    renderer2.circle(mleft + 0 + 10, mtop + 251 + 60 + 55 + 7.5, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+    renderer2.circle(mleft + 0 + 10, mtop + 251 + 60 + 55 + 22.5, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+
+    //ligne C6, mesure vitesse pour freinage d'urgence et evitement
+    renderer2.path(['M', mleft + 0, mtop + 251 + 157.5, 'L', mleft + 60, mtop + 251 +157.5])
+    .attr({
+        'stroke-width': 1,
+        stroke: 'black',
+        opacity: 1,
+    })
+    .add();
+    renderer2.circle(mleft + 0, mtop + 251 + 60 + 55 +15 + 27.5, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+
+    //arrêt stop
+    renderer2.circle(mleft + 30, mtop + 466 + 175 + 20, 1).attr({
+        fill: 'blue',
+        stroke: 'blue',
+        'stroke-width': 2
+    }).add();
+    renderer2.circle(mleft + 30-8, mtop + 466 + 175, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+
+    renderer2.path(['M', mleft + 30, mtop + 466 + 175, 'L', mleft + 30, mtop + 466 + 175 +20])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'black',
+        opacity: 0.4,
+    }).add();
+    renderer2.path(['M', mleft + 30+8, mtop + 466 + 175, 'L', mleft + 30+8, mtop + 466 + 175 +20])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'black',
+        opacity: 0.4,
+    }).add();
+
+    // slalom
+    renderer2.circle(mleft + 30+8, mtop + 466, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+    //ligne C7, mesure vitesse pour slalom
+    renderer2.path(['M', mleft + 0, mtop + 466 + 350, 'L', mleft + 60, mtop + 466 + 350])
+    .attr({
+        'stroke-width': 1,
+        stroke: 'black',
+        opacity: 1,
+    })
+    .add();
+    renderer2.circle(mleft + 30 + 8, mtop + 466 + 350, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 2
+    }).add();
+    renderer2.circle(mleft + 30-8, mtop + 466 + 350 + 175, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+
+    //dernier plot
+    renderer2.circle(mleft + 30, mtop + 466 + 350 + 175 + 250, 1).attr({
+        fill: 'red',
+        stroke: 'red',
+        'stroke-width': 1
+    }).add();
+
+    // parcours lent
+    renderer2.path(['M', mleft + 30, mtop + 5, 'q', -30, 10, -25, 50, 'q', 0, 10, 40, 20, 
+    'q', 18, 10, 10, 60])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'green',
+        opacity: 1,
+    }).add();
+    renderer2.path(['M', mleft + 60-5, mtop + 50+45+39, 'q', 0, 0, -45, 220, 'q', 0, 0, -5, 30, 'q', 20, 100, 40, 130, 
+'q', 15 , 50, 10, 120, 'q', -5, 22, -20, 22 ])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'green',
+        opacity: 1,
+    }).add();
+
+    // freinage
+    renderer2.path(['M', mleft + 35, mtop + 466 + 175 + 15, 'q', -40, -20, -20, -100,
+'q', 10, -30, 30, 0, 'q', 5, 20, 0, 140, 'q', 0,20,-30, 200, 'q', -10, 100, -10, 340, 'q', 5, 90, 45, 45,
+'q', 12, -50, 5, -200, 'l', 0, -800])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'blue',
+        opacity: 1,
+    }).add();
+
+    // lent avec passager
+
+    // courbes
+    renderer2.path(['M', mleft + 30, mtop + 466 + 175 + 350 + 250, 'c', 10, 20, 12, 25, 15, -40, 'c', -10, -20, -12, -25, -15, +40])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'black',
+        opacity: 0.4,
+    }).add();
+
+    renderer2.path(['M', mleft + 30, mtop + 466 + 175 + 350 + 250 - 100, 'q', -10, 50 , 30, -40, 'q', -20, 50 , -30, -20  ])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'black',
+        opacity: 0.4,
+    }).add();
+
+    /*
+    renderer.path(['Z'])
+    .attr({
+        'stroke-width': 2,
+        stroke: 'black',
+        opacity: 0.4,
+    }).add();
+*/
+
+
+</script>
+<!--<iframe src="https://www.desmos.com/calculator/47ogfalgmd?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>-->

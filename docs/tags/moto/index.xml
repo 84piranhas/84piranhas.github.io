@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>moto on 84piranhas</title>
+    <link>https://84piranhas.github.io/tags/moto/</link>
+    <description>Recent content in moto on 84piranhas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 16 Jan 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://84piranhas.github.io/tags/moto/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Moto - le plateau</title>
+      <link>https://84piranhas.github.io/posts/moto/plateau/</link>
+      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://84piranhas.github.io/posts/moto/plateau/</guid>
+      <description>Une infographie de l&amp;rsquo;examen du plateau pour le permis A2 en France</description>
+    </item>
+    
+  </channel>
+</rss>

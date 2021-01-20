@@ -1,0 +1,79 @@
+<div id="viewSelectWrap">
+    <h4>View Select</h4>
+    <label><input id="rdb1" type="radio" name="toggler" value="divID-1" style="cursor:pointer;" checked/>1</label>
+    <label><input id="rdb2" type="radio" name="toggler" value="divID-2" style="cursor:pointer;" />2</label>
+</div>
+
+<div id="graphwrap" style="height: 1300px;">
+    <div id="divID-1" class="toHide" style="position:relative;margin-bottom:-400px;"></div>
+    <div id="divID-2" class="toHide" style="position:relative;top:-9999em;opacity:0;"></div>
+</div>
+
+
+<script>
+
+$(function() {
+    $('[name=toggler]').click(function () {
+        $('.toHide').css({
+            top: '-9999em',
+            opacity: 0
+        });
+        var chartToShow = $(this).val();
+        $('#' + chartToShow).css({
+            top: 0,
+            opacity: 1
+        });
+    });
+
+    $('#divID-1').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Fruit Consumption'
+        },
+        xAxis: {
+            categories: ['Apples', 'Bananas', 'Oranges']
+        },
+        yAxis: {
+            title: {
+                text: 'Fruit eaten'
+            }
+        },
+        series: [{
+            name: 'Jane',
+            data: [1, 0, 4]
+        }, {
+            name: 'John',
+            data: [5, 7, 3]
+        }]
+    });
+    $('#divID-2').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Time spent on hobbies'
+        },
+        xAxis: {
+            categories: ['Skiing', 'Bicycling', 'Swimming']
+        },
+        yAxis: {
+            title: {
+                text: 'Time spent on hobbies'
+            }
+        },
+        series: [{
+            name: 'Jane',
+            data: [1, 0, 4]
+        }, {
+            name: 'John',
+            data: [5, 7, 3]
+        }]
+    });
+});
+
+
+
+
+</script>
