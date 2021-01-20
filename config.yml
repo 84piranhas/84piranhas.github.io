@@ -94,7 +94,7 @@ params:
     description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
     author: Theme PaperMod
     # author: ["Me", "You"] # multiple authors
-    ShowReadingTime: true
+    ShowReadingTime: false
     defaultTheme: auto
     ShowShareButtons: true
     displayFullLangName: true

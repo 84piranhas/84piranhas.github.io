@@ -76,7 +76,7 @@ une moto
 
 # Quelques conseils
 
-Normalement, votre formateur vous donnera les conseils relatifs à la technique bien sûr, mais également sur le déroulement de l'examen. Ils devront être bien suffisants. Certains sites web vous donneront également des conseils avisés sur la manière d'appréhender le parcours, j'aimais bien les consulter en lecture du soir.
+Normalement, votre formateur vous donnera les conseils relatifs à la technique bien sûr, mais également sur le déroulement de l'examen. Ils devront être bien suffisants. Certains sites web vous donneront également des conseils avisés sur la manière d'appréhender le parcours ([exemple pour le lent](https://moto-securite.fr/plateau-lent/)), j'aimais bien les consulter en lecture du soir.
 
 Je liste ici ci-dessous quelques petits trucs qui m'ont permis de rester serein:
 - L'examen se déroule d'un seul tenant, mais il y a 4 arrêts imposés, n'hésitez pas à prendre votre temps avant de repartir pour effectuer les manoeuvres d'après:
