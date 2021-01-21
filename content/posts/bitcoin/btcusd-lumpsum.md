@@ -2,7 +2,7 @@
 author: "84piranhas"
 title: "Bitcoin - lump-sum investing"
 date: "2021-01-16"
-description: "Strategy"
+#description: "Strategy"
 summary: Basic strategy of investment in bitcoin, yearly comparison, 2015-2020
 tags: ["english", "bitcoin", "crypto", "lump-sum"]
 hideMeta: true

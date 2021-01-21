@@ -2,7 +2,7 @@
 author: "84piranhas"
 title: "Bitcoin - dollar-cost averaging as investment strategy"
 date: "2021-01-06"
-description: "Strategy"
+#description: "Strategy"
 summary: Basic strategy of investment in bitcoin, yearly comparison, 2015-2020
 tags: ["english", "bitcoin", "crypto", "dca"]
 hideMeta: true
