@@ -44,8 +44,8 @@
   "keywords": [
     "english", "bitcoin", "crypto", "dca", "dva", "lump-sum"
   ],
-  "articleBody": "2) | Yes (2) | _switch present_ |\r| `dark` | true | No | No | force dark only |\r| | false | Yes | No | _switch present_ |\r| `light` | true | No | No | force light only |\r| | false | Yes | No | _switch present_ |\r--\r\r\r\r\r\r\r\r\r\r\r\rvar themeBackroungColor\rif (localStorage.getItem(\"pref-theme\") === \"dark\") {\rthemeBackgroundColor='#1d1e20';\r} else if (localStorage.getItem(\"pref-theme\") === \"light\") {\rthemeBackgroundColor='white';\r} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {\rthemeBackgroundColor='#1d1e20';\r}\rHighcharts.setOptions({\rcolors: ['#1abc9c','#3498db','#9b59b6','#2ecc71','#E7E08B','#f1c40f','#e67e22','#e74c3c','#ecf0f1','#95a5a6'],\rtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: ''\r},\rsubtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: ''\r},\rlegend: {\renabled: true,\ritemStyle: { \"color\": \"#767B80\", \"cursor\": \"pointer\", \"fontSize\": \"12px\", \"fontWeight\": \"bold\", \"textOverflow\": \"ellipsis\" }\r},\rcredits: {\renabled: false\r},\rexporting: { enabled: false },\rchart: {\rbackgroundColor: themeBackgroundColor,\r},\ryAxis: {\rgridLineWidth: 1,\rgridLineColor: '#767B80',\rlabels: {\rstyle: {\rcolor: '#767B80' }\r},\rtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: null,\r},\r},\rxAxis: {\rgridLineWidth: 0,\rlabels: {\rstyle: {\rcolor: '#767B80'\r}\r},\r}\r});\r\r\r\r\r\r\r\r.chart {\rheight: 500px;\rfloat: left;\rwidth: 50%;\r}\r.spacer {\rheight: 20px;\r}\r\r\r\r$.get(\"../../../files/btc/btcusd-resume-sharpe.csv\", function(csv) {\rvar c = Highcharts.chart('graph-btcusd-sharpe', {\rchart: {\rtype: 'heatmap',\rmarginTop: 130,\rmarginBottom: 50\r},\rtitle: {\rtext: 'Sharpe ratio',\rverticalAlign: 'bottom'\r},\rdata: {\rcsv: csv,\rseriesMapping: [{x: 2, y: 3, value: 4, category:1, name:0}],\r},\rplotOptions:{\rseries:{\rdataLabels: {\renabled: true,\r},\r}\r},\rcolorAxis: {\rstops: [\r[0, Highcharts.getOptions().colors[7]],\r[0.5, Highcharts.getOptions().colors[4]],\r[1, Highcharts.getOptions().colors[3]]\r],\rtickInterval: 0.5\r},\rlegend: {\ralign: 'right',\rlayout: 'vertical',\rmargin: 0,\rverticalAlign: 'top',\ry: 25,\renabled: false\r},\ryAxis: {\rcategories: [2020,2019,2018,2017,2016,2015],\rreversed: true,\rvisible:false\r},\rxAxis: {\rcategories:['dca','dva (no withdraw)','dva (crypto ptf + cash)','lump-sum','lump-sum mid-year'],\ropposite: true,\rlabels:{rotation: 270,\ralign: 'left'}\r},\rtooltip: {\rpointFormat: '{point.category} in {point.name}:{point.value}',\r},\r});\r})\r\r\r$.get(\"../../../files/btc/btcusd-resume-profit.csv\", function(csv) {\rvar c = Highcharts.chart('graph-btcusd-profit', {\rchart: {\rtype: 'heatmap',\rmarginTop: 0,\rmarginBottom: 50\r},\rtitle: {\rtext: 'Profit',\rverticalAlign: 'bottom'\r},\rdata: {\rcsv: csv,\rseriesMapping: [{x: 2, y: 3, value: 4, category:1, name:0}],\r},\rplotOptions:{\rseries:{\rdataLabels: {\renabled: true,\r},\r}\r},\rcolorAxis: {\rminColor: '#FFFFFF',\rmaxColor: Highcharts.getOptions().colors[1],\rtickInterval: 5000\r},\rlegend: {\ralign: 'right',\rlayout: 'vertical',\rmargin: 0,\rverticalAlign: 'top',\ry: 25,\renabled: false\r},\ryAxis: {\rcategories: [2020,2019,2018,2017,2016,2015],\rreversed: true,\r},\rxAxis: {\rcategories:['dca','dva (no withdraw)','dva (crypto ptf + cash)','lump-sum','lump-sum mid-year'],\rvisible: false,\r},\rtooltip: {\rpointFormat: '{point.category} in {point.name}:{point.value}',\r},\r});\r})\r\r\r$.get(\"../../../files/btc/btcusd-resume-btc.csv\", function(csv) {\rvar c = Highcharts.chart('graph-btcusd-btc', {\rchart: {\rtype: 'heatmap',\rmarginTop: 0,\rmarginBottom: 50\r},\rtitle: {\rtext: 'Accumulated bitcoins',\rverticalAlign: 'bottom'\r},\rdata: {\rcsv: csv,\rseriesMapping: [{x: 2, y: 3, value: 4, category:1, name:0}],\r},\rplotOptions:{\rseries:{\rdataLabels: {\renabled: true,\r},\r}\r},\rcolorAxis: {\rstops: [\r[0, Highcharts.getOptions().colors[4]],\r[0.2, Highcharts.getOptions().colors[1]],\r[1, Highcharts.getOptions().colors[3]]\r],\rtickInterval: 0.1\r},\rlegend: {\ralign: 'right',\rlayout: 'vertical',\rmargin: 0,\rverticalAlign: 'top',\ry: 25,\renabled: false\r},\ryAxis: {\rcategories: [2020,2019,2018,2017,2016,2015],\rreversed: true,\rvisible: false\r},\rxAxis: {\rcategories:['dca','dva (no withdraw)','dva (crypto ptf + cash)','lump-sum','lump-sum mid-year'],\rvisible: false\r},\rtooltip: {\rpointFormat: '{point.category} in {point.name}:{point.value}',\r},\r});\r})\r\r\r$.get(\"../../../files/btc/btcusd-resume-dd.csv\", function(csv) {\rvar c = Highcharts.chart('graph-btcusd-dd', {\rchart: {\rtype: 'heatmap',\rmarginTop: 130,\rmarginBottom: 50\r},\rtitle: {\rtext: 'Max drawdown',\rverticalAlign: 'bottom'\r},\rdata: {\rcsv: csv,\rseriesMapping: [{x: 2, y: 3, value: 4, category:1, name:0}],\r},\rplotOptions:{\rseries:{\rdataLabels: {\renabled: true,\r},\r}\r},\rcolorAxis: {\rstops: [\r[0, Highcharts.getOptions().colors[7]],\r[0.9, Highcharts.getOptions().colors[6]],\r[1, Highcharts.getOptions().colors[5]]\r],\rtickInterval: 500\r},\rlegend: {\ralign: 'right',\rlayout: 'vertical',\rmargin: 0,\rverticalAlign: 'top',\ry: 25,\renabled: false\r},\ryAxis: {\rcategories: [2020,2019,2018,2017,2016,2015],\rreversed: true,\r},\rxAxis: {\rcategories:['dca','dva (no withdraw)','dva (crypto ptf + cash)','lump-sum','lump-sum mid-year'],\ropposite: true,\rlabels:{rotation: 270,\ralign: 'left'}\r},\rtooltip: {\rpointFormat: '{point.category} in {point.name}:{point.value}',\r},\r});\r})\r ",
-  "wordCount" : "619",
+  "articleBody": "2) | Yes (2) | _switch present_ |\r| `dark` | true | No | No | force dark only |\r| | false | Yes | No | _switch present_ |\r| `light` | true | No | No | force light only |\r| | false | Yes | No | _switch present_ |\r--\r\r\r\r\r\r\r\r\r\r\r\rvar themeBackroungColor\rif (localStorage.getItem(\"pref-theme\") === \"dark\") {\rthemeBackgroundColor='#1d1e20';\r} else if (localStorage.getItem(\"pref-theme\") === \"light\") {\rthemeBackgroundColor='white';\r} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {\rthemeBackgroundColor='#1d1e20';\r}\rHighcharts.setOptions({\rcolors: ['#1abc9c','#3498db','#9b59b6','#2ecc71','#E7E08B','#f1c40f','#e67e22','#e74c3c','#ecf0f1','#95a5a6'],\rtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: ''\r},\rsubtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: ''\r},\rlegend: {\renabled: true,\ritemStyle: { \"color\": \"#767B80\", \"cursor\": \"pointer\", \"fontSize\": \"12px\", \"fontWeight\": \"bold\", \"textOverflow\": \"ellipsis\" }\r},\rcredits: {\renabled: false\r},\rexporting: { enabled: false },\rchart: {\rbackgroundColor: themeBackgroundColor,\r},\ryAxis: {\rgridLineWidth: 1,\rgridLineColor: '#767B80',\rlabels: {\rstyle: {\rcolor: '#767B80' }\r},\rtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: null,\r},\r},\rxAxis: {\rgridLineWidth: 0,\rlabels: {\rstyle: {\rcolor: '#767B80'\r}\r},\r}\r});\r\r\r\r\r\r\r\r.chart {\rheight: 500px;\rfloat: left;\rwidth: 50%;\r}\r.spacer {\rheight: 20px;\r}\r\r\r\rvar charts = []\rvar options = {\rseries:{\rdataLabels: {\renabled: true,\r},\rpoint: {\revents: {\rmouseOver: function(){\rsyncTooltip(this.series.chart.container, this.index);\r}\r}\r},\r}\r}\rfunction syncTooltip(container, p) {\rvar i = 0;\rconsole.log(p)\rfor (; i {point.category} in {point.name}:{point.value}',\r},\r});\r})\r\r\r$.get(\"../../../files/btc/btcusd-resume-profit.csv\", function(csv) {\rcharts[1] = Highcharts.chart('graph-btcusd-profit', {\rplotOptions: options,\rchart: {\rtype: 'heatmap',\rmarginTop: 0,\rmarginBottom: 50\r},\rtitle: {\rtext: 'Profit',\rverticalAlign: 'bottom'\r},\rdata: {\rcsv: csv,\rseriesMapping: [{x: 2, y: 3, value: 4, category:1, name:0}],\r},\rcolorAxis: {\rminColor: '#FFFFFF',\rmaxColor: Highcharts.getOptions().colors[1],\rtickInterval: 5000\r},\rlegend: {\ralign: 'right',\rlayout: 'vertical',\rmargin: 0,\rverticalAlign: 'top',\ry: 25,\renabled: false\r},\ryAxis: {\rcategories: [2020,2019,2018,2017,2016,2015],\rreversed: true,\r},\rxAxis: {\rcategories:['dca','dva (no withdraw)','dva (crypto ptf + cash)','lump-sum','lump-sum mid-year'],\rvisible: false,\r},\rtooltip: {\rpointFormat: '{point.category} in {point.name}:{point.value}',\r},\r});\r})\r\r\r$.get(\"../../../files/btc/btcusd-resume-btc.csv\", function(csv) {\rcharts[2] = Highcharts.chart('graph-btcusd-btc', {\rplotOptions: options,\rchart: {\rtype: 'heatmap',\rmarginTop: 0,\rmarginBottom: 50\r},\rtitle: {\rtext: 'Accumulated bitcoins',\rverticalAlign: 'bottom'\r},\rdata: {\rcsv: csv,\rseriesMapping: [{x: 2, y: 3, value: 4, category:1, name:0}],\r},\rcolorAxis: {\rstops: [\r[0, Highcharts.getOptions().colors[4]],\r[0.2, Highcharts.getOptions().colors[1]],\r[1, Highcharts.getOptions().colors[3]]\r],\rtickInterval: 0.1\r},\rlegend: {\ralign: 'right',\rlayout: 'vertical',\rmargin: 0,\rverticalAlign: 'top',\ry: 25,\renabled: false\r},\ryAxis: {\rcategories: [2020,2019,2018,2017,2016,2015],\rreversed: true,\rvisible: false\r},\rxAxis: {\rcategories:['dca','dva (no withdraw)','dva (crypto ptf + cash)','lump-sum','lump-sum mid-year'],\rvisible: false\r},\rtooltip: {\rpointFormat: '{point.category} in {point.name}:{point.value}',\r},\r});\r})\r\r\r$.get(\"../../../files/btc/btcusd-resume-dd.csv\", function(csv) {\rcharts[3] = Highcharts.chart('graph-btcusd-dd', {\rplotOptions: options,\rchart: {\rtype: 'heatmap',\rmarginTop: 130,\rmarginBottom: 50\r},\rtitle: {\rtext: 'Max drawdown',\rverticalAlign: 'bottom'\r},\rdata: {\rcsv: csv,\rseriesMapping: [{x: 2, y: 3, value: 4, category:1, name:0}],\r},\rcolorAxis: {\rstops: [\r[0, Highcharts.getOptions().colors[7]],\r[0.9, Highcharts.getOptions().colors[6]],\r[1, Highcharts.getOptions().colors[5]]\r],\rtickInterval: 500\r},\rlegend: {\ralign: 'right',\rlayout: 'vertical',\rmargin: 0,\rverticalAlign: 'top',\ry: 25,\renabled: false\r},\ryAxis: {\rcategories: [2020,2019,2018,2017,2016,2015],\rreversed: true,\r},\rxAxis: {\rcategories:['dca','dva (no withdraw)','dva (crypto ptf + cash)','lump-sum','lump-sum mid-year'],\ropposite: true,\rlabels:{rotation: 270,\ralign: 'left'}\r},\rtooltip: {\rpointFormat: '{point.category} in {point.name}:{point.value}',\r},\r});\r})\r ",
+  "wordCount" : "529",
   "inLanguage": "en",
   "datePublished": "2021-01-21T00:00:00Z",
   "dateModified": "2021-01-21T00:00:00Z",
@@ -277,8 +277,45 @@
 
 
 <script>
+    var charts = []
+
+var options =  {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(){
+                                syncTooltip(this.series.chart.container, this.index);
+                            }
+                        }
+                    },
+                }
+            }
+
+
+    function syncTooltip(container, p) {
+        var i = 0;
+        console.log(p)
+        for (; i < charts.length; i++) {
+            
+            
+            if (container.id != charts[i].container.id) {
+                if(charts[i].tooltip.shared) {
+                    charts[i].tooltip.refresh([charts[i].series[0].data[p]]);
+                }
+                else {
+                    charts[i].tooltip.refresh(charts[i].series[0].data[p]);
+                }
+            }
+        }
+    }
+
     $.get("../../../files/btc/btcusd-resume-sharpe.csv", function(csv) {
-        var c = Highcharts.chart('graph-btcusd-sharpe', {
+        charts[0] = Highcharts.chart('graph-btcusd-sharpe', {
+            plotOptions: options,
             chart: {
                 type: 'heatmap',
                 marginTop: 130,
@@ -299,14 +336,6 @@
                 
 
             },
-            plotOptions:{
-                series:{
-                    dataLabels: {
-                        enabled: true,
-                        
-                    },
-                }
-            },
 
             colorAxis: {
                 
@@ -322,6 +351,7 @@
                 tickInterval: 0.5
             },
             
+
             legend: {
                 align: 'right',
                 layout: 'vertical',
@@ -353,7 +383,8 @@
 
 <script>
     $.get("../../../files/btc/btcusd-resume-profit.csv", function(csv) {
-        var c = Highcharts.chart('graph-btcusd-profit', {
+        charts[1] = Highcharts.chart('graph-btcusd-profit', {
+            plotOptions: options,
             chart: {
                 type: 'heatmap',
                 marginTop: 0,
@@ -375,14 +406,6 @@
                 
                 
 
-            },
-            plotOptions:{
-                series:{
-                    dataLabels: {
-                        enabled: true,
-                        
-                    },
-                }
             },
 
             colorAxis: {
@@ -429,7 +452,8 @@
 
 <script>
     $.get("../../../files/btc/btcusd-resume-btc.csv", function(csv) {
-        var c = Highcharts.chart('graph-btcusd-btc', {
+        charts[2] = Highcharts.chart('graph-btcusd-btc', {
+            plotOptions: options,
             chart: {
                 type: 'heatmap',
                 marginTop: 0,
@@ -451,14 +475,6 @@
                 
                 
 
-            },
-            plotOptions:{
-                series:{
-                    dataLabels: {
-                        enabled: true,
-                        
-                    },
-                }
             },
 
             colorAxis: {
@@ -505,7 +521,8 @@
 
 <script>
     $.get("../../../files/btc/btcusd-resume-dd.csv", function(csv) {
-        var c = Highcharts.chart('graph-btcusd-dd', {
+        charts[3] = Highcharts.chart('graph-btcusd-dd', {
+            plotOptions: options,
             chart: {
                 type: 'heatmap',
                 marginTop: 130,
@@ -527,14 +544,6 @@
                 
                 
 
-            },
-            plotOptions:{
-                series:{
-                    dataLabels: {
-                        enabled: true,
-                        
-                    },
-                }
             },
 
             colorAxis: {

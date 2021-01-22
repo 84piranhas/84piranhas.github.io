@@ -34,8 +34,45 @@
 
 
 <script>
+    var charts = []
+
+var options =  {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(){
+                                syncTooltip(this.series.chart.container, this.index);
+                            }
+                        }
+                    },
+                }
+            }
+
+
+    function syncTooltip(container, p) {
+        var i = 0;
+        console.log(p)
+        for (; i < charts.length; i++) {
+            //console.log(i);
+            //console.log(charts[i].series[0])
+            if (container.id != charts[i].container.id) {
+                if(charts[i].tooltip.shared) {
+                    charts[i].tooltip.refresh([charts[i].series[0].data[p]]);
+                }
+                else {
+                    charts[i].tooltip.refresh(charts[i].series[0].data[p]);
+                }
+            }
+        }
+    }
+
     $.get("../../../files/btc/btcusd-resume-sharpe.csv", function(csv) {
-        var c = Highcharts.chart('graph-btcusd-sharpe', {
+        charts[0] = Highcharts.chart('graph-btcusd-sharpe', {
+            plotOptions: options,
             chart: {
                 type: 'heatmap',
                 marginTop: 130,
@@ -56,14 +93,6 @@
                 //endRow: 1,
 
             },
-            plotOptions:{
-                series:{
-                    dataLabels: {
-                        enabled: true,
-                        //color: '#000000'
-                    },
-                }
-            },
 
             colorAxis: {
                 //min: -2,
@@ -78,7 +107,8 @@
                 //tickLength: 20,
                 tickInterval: 0.5
             },
-            
+            //options,
+
             legend: {
                 align: 'right',
                 layout: 'vertical',
@@ -110,7 +140,8 @@
 
 <script>
     $.get("../../../files/btc/btcusd-resume-profit.csv", function(csv) {
-        var c = Highcharts.chart('graph-btcusd-profit', {
+        charts[1] = Highcharts.chart('graph-btcusd-profit', {
+            plotOptions: options,
             chart: {
                 type: 'heatmap',
                 marginTop: 0,
@@ -132,14 +163,6 @@
                 //startRow: 0,
                 //endRow: 1,
 
-            },
-            plotOptions:{
-                series:{
-                    dataLabels: {
-                        enabled: true,
-                        //color: '#000000'
-                    },
-                }
             },
 
             colorAxis: {
@@ -189,7 +212,8 @@
 
 <script>
     $.get("../../../files/btc/btcusd-resume-btc.csv", function(csv) {
-        var c = Highcharts.chart('graph-btcusd-btc', {
+        charts[2] = Highcharts.chart('graph-btcusd-btc', {
+            plotOptions: options,
             chart: {
                 type: 'heatmap',
                 marginTop: 0,
@@ -211,14 +235,6 @@
                 //startRow: 0,
                 //endRow: 1,
 
-            },
-            plotOptions:{
-                series:{
-                    dataLabels: {
-                        enabled: true,
-                        //color: '#000000'
-                    },
-                }
             },
 
             colorAxis: {
@@ -265,7 +281,8 @@
 
 <script>
     $.get("../../../files/btc/btcusd-resume-dd.csv", function(csv) {
-        var c = Highcharts.chart('graph-btcusd-dd', {
+        charts[3] = Highcharts.chart('graph-btcusd-dd', {
+            plotOptions: options,
             chart: {
                 type: 'heatmap',
                 marginTop: 130,
@@ -287,14 +304,6 @@
                 //startRow: 0,
                 //endRow: 1,
 
-            },
-            plotOptions:{
-                series:{
-                    dataLabels: {
-                        enabled: true,
-                        //color: '#000000'
-                    },
-                }
             },
 
             colorAxis: {
