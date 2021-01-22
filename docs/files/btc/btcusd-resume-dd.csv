@@ -17,11 +17,11 @@ drawdown;strategy;x;y;value
 2017;dva (crypto ptf + cash);2;3;-863
 2016;dva (crypto ptf + cash);2;4;-274
 2015;dva (crypto ptf + cash);2;5;-253
-2020;lump-sum;3;0;0
+2020;lump-sum;3;0;-1706
 2019;lump-sum;3;1;-4313
 2018;lump-sum;3;2;-2480
 2017;lump-sum;3;3;-16303
-2016;lump-sum;3;4;-73
+2016;lump-sum;3;4;-1317
 2015;lump-sum;3;5;-1056
 2020;lump-sum2;4;0;-597
 2019;lump-sum2;4;1;-1227
