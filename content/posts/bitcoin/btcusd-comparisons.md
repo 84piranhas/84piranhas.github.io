@@ -7,7 +7,7 @@ summary: Basic statistics of different methods of investments, yearly comparison
 tags: ["english", "bitcoin", "crypto", "dca", "dva", "lump-sum"]
 hideMeta: true
 weight: 1
-showtoc: false
+showtoc: true
 tocopen: true
 #url: "home" # by default = "posts/{title}"
 aliases: [""]
@@ -15,19 +15,16 @@ aliases: [""]
 categories: ["crypto"]
 ---
 
-<!--
-| `defaultTheme` | `disableThemeToggle` | checks local storage? | checks system theme? | Info              |
-| -------------- | -------------------- | --------------------- | -------------------- | ----------------- |
-| `auto`         | true                 | No                    | Yes                  | only system theme |
-|                | false                | Yes (if not->2)       | Yes (2)              | _switch present_  |
-| `dark`         | true                 | No                    | No                   | force dark only   |
-|                | false                | Yes                   | No                   | _switch present_  |
-| `light`        | true                 | No                    | No                   | force light only  |
-|                | false                | Yes                   | No                   | _switch present_  |
--->
 
 {{< highcharts-imports >}}
 
 {{< highcharts-settings >}}
 
+# Matrix
+
 {{< graph-btcusd-resume >}}
+
+# Details by year
+
+
+{{< graph-btcusd-resume-byyear >}}
