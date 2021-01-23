@@ -1,31 +1,31 @@
 profit;strategy;x;y;value
 2015;dca;0;5;1660
-2015;dva (crypto ptf + cash);2;5;2164
 2015;dva (no withdraw);1;5;947
+2015;dva (crypto ptf + cash);2;5;2164
 2015;lump-sum;3;5;1312
 2015;lump-sum2;4;5;1605
 2016;dca;0;4;2092
-2016;dva (crypto ptf + cash);2;4;1330
 2016;dva (no withdraw);1;4;572
+2016;dva (crypto ptf + cash);2;4;1330
 2016;lump-sum;3;4;3201
 2016;lump-sum2;4;4;1136
 2017;dca;0;3;15590
-2017;dva (crypto ptf + cash);2;3;5016
 2017;dva (no withdraw);1;3;6909
+2017;dva (crypto ptf + cash);2;3;5016
 2017;lump-sum;3;3;32661
 2017;lump-sum2;4;3;11547
 2018;dca;0;2;-1191
-2018;dva (crypto ptf + cash);2;2;962
 2018;dva (no withdraw);1;2;132
+2018;dva (crypto ptf + cash);2;2;962
 2018;lump-sum;3;2;-1950
 2018;lump-sum2;4;2;-1110
 2019;dca;0;1;375
-2019;dva (crypto ptf + cash);2;1;1912
 2019;dva (no withdraw);1;1;112
+2019;dva (crypto ptf + cash);2;1;1912
 2019;lump-sum;3;1;2266
 2019;lump-sum2;4;1;-1113
 2020;dca;0;0;4907
-2020;dva (crypto ptf + cash);2;0;2780
 2020;dva (no withdraw);1;0;2861
+2020;dva (crypto ptf + cash);2;0;2780
 2020;lump-sum;3;0;6637
 2020;lump-sum2;4;0;5550

@@ -1,3 +1,4 @@
+
 <h2 id="2020">2020<a hidden="" class="anchor" aria-hidden="true" href="#2020">#</a></h2>
 
 <div id="graph-btcusd-resume-2020" style="height: 500px; max-width:1000px; min-width: 250px;"></div>
@@ -53,7 +54,6 @@
 <div id="graph-btcusd-btc-2015" class="chart4"></div>
 
 
-
 <style>
     .chart4 {
         height: 300px;
@@ -66,46 +66,6 @@
     }
 
 </style>
-
-<script>
-    var charts = []
-
-    var options =  {
-                series:{
-                    dataLabels: {
-                        enabled: true,
-                        //color: '#000000'
-                    },
-                    point: {
-                        events: {
-                            mouseOver: function(){
-                                syncTooltip(this.series.chart.container, this.index);
-                            }
-                        }
-                    },
-                }
-            }
-
-
-    function syncTooltip(container, p) {
-        var i = 0;
-        console.log(p)
-        for (; i < charts.length; i++) {
-            //console.log(i);
-            //console.log(charts[i].series[0])
-            if (container.id != charts[i].container.id) {
-                if(charts[i].tooltip.shared) {
-                    charts[i].tooltip.refresh([charts[i].series[0].data[p]]);
-                }
-                else {
-                    charts[i].tooltip.refresh(charts[i].series[0].data[p]);
-                }
-            }
-        }
-    }
-
-
-</script>
 
 <!--2020-->
 
@@ -311,12 +271,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 25,
+                firstRowAsNames: false,
+                startRow: 26,
                 endRow: 30,
-
             },
-
+            series:[{name:'sharpe'}],
             colorAxis: {
                 //min: -2,
                 //minColor: '#FFFFFF',
@@ -397,11 +356,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 25,
+                firstRowAsNames: false,
+                startRow: 26,
                 endRow: 30,
-
             },
+            series:[{name:'drawdown'}],
 
             colorAxis: {
                 //min: -2,
@@ -483,11 +442,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 25,
+                firstRowAsNames: false,
+                startRow: 26,
                 endRow: 30,
-
             },
+            series:[{name:'profit'}],
 
             colorAxis: {
                 minColor: '#FFFFFF',
@@ -563,11 +522,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 25,
+                firstRowAsNames: false,
+                startRow: 26,
                 endRow: 30,
-
             },
+            series:[{name:'btc'}],
 
             colorAxis: {
                 //in: 0,
@@ -827,11 +786,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 20,
+                firstRowAsNames: false,
+                startRow: 21,
                 endRow: 25,
-
             },
+            series:[{name:'sharpe'}],
 
             colorAxis: {
                 //min: -2,
@@ -913,11 +872,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 20,
+                firstRowAsNames: false,
+                startRow: 21,
                 endRow: 25,
-
             },
+            series:[{name:'drawdown'}],
 
             colorAxis: {
                 //min: -2,
@@ -999,11 +958,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 20,
+                firstRowAsNames: false,
+                startRow: 21,
                 endRow: 25,
-
             },
+            series:[{name:'profit'}],
 
             colorAxis: {
                 minColor: '#FFFFFF',
@@ -1079,11 +1038,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 20,
+                firstRowAsNames: false,
+                startRow: 21,
                 endRow: 25,
-
             },
+            series:[{name:'btc'}],
 
             colorAxis: {
                 //in: 0,
@@ -1342,11 +1301,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 15,
+                firstRowAsNames: false,
+                startRow: 16,
                 endRow: 20,
-
             },
+            series:[{name:'sharpe'}],
 
             colorAxis: {
                 //min: -2,
@@ -1428,11 +1387,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 15,
+                firstRowAsNames: false,
+                startRow: 16,
                 endRow: 20,
-
             },
+            series:[{name:'drawdown'}],
 
             colorAxis: {
                 //min: -2,
@@ -1514,11 +1473,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 15,
+                firstRowAsNames: false,
+                startRow: 16,
                 endRow: 20,
-
             },
+            series:[{name:'profit'}],
 
             colorAxis: {
                 minColor: '#FFFFFF',
@@ -1594,11 +1553,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 15,
+                firstRowAsNames: false,
+                startRow: 16,
                 endRow: 20,
-
             },
+            series:[{name:'btc'}],
 
             colorAxis: {
                 //in: 0,
@@ -1858,11 +1817,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 10,
+                firstRowAsNames: false,
+                startRow: 11,
                 endRow: 15,
-
             },
+            series:[{name:'sharpe'}],
 
             colorAxis: {
                 //min: -2,
@@ -1944,11 +1903,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 10,
+                firstRowAsNames: false,
+                startRow: 11,
                 endRow: 15,
-
             },
+            series:[{name:'drawdown'}],
 
             colorAxis: {
                 //min: -2,
@@ -2030,11 +1989,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 10,
+                firstRowAsNames: false,
+                startRow: 11,
                 endRow: 15,
-
             },
+            series:[{name:'profit'}],
 
             colorAxis: {
                 minColor: '#FFFFFF',
@@ -2110,11 +2069,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 10,
+                firstRowAsNames: false,
+                startRow: 11,
                 endRow: 15,
-
             },
+            series:[{name:'btc'}],
 
             colorAxis: {
                 //in: 0,
@@ -2374,11 +2333,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 5,
+                firstRowAsNames: false,
+                startRow: 6,
                 endRow: 10,
-
             },
+            series:[{name:'sharpe'}],
 
             colorAxis: {
                 //min: -2,
@@ -2460,11 +2419,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 5,
+                firstRowAsNames: false,
+                startRow: 6,
                 endRow: 10,
-
             },
+            series:[{name:'drawdown'}],
 
             colorAxis: {
                 //min: -2,
@@ -2546,11 +2505,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 5,
+                firstRowAsNames: false,
+                startRow: 6,
                 endRow: 10,
-
             },
+            series:[{name:'profit'}],
 
             colorAxis: {
                 minColor: '#FFFFFF',
@@ -2626,11 +2585,11 @@
                 seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
                 //switchRowsAndColumns: false,
                 //firstColumnAsNames: true,
-                firstRowAsNames: true,
-                startRow: 5,
+                firstRowAsNames: false,
+                startRow: 6,
                 endRow: 10,
-
             },
+            series:[{name:'btc'}],
 
             colorAxis: {
                 //in: 0,
