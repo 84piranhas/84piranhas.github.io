@@ -124,8 +124,29 @@
                             }
                         }
                     },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-btcusd-resume-2020').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2019').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2018').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2017').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2016').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2015').highcharts().series[this.index].hide();
+                            } else {
+                            $('#graph-btcusd-resume-2020').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2019').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2018').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2017').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2016').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2015').highcharts().series[this.index].show();
+                            }
+                            return false;
+                        }
+                    },
+
                 }
-            }
+            };
 
     function syncTooltip2020(container, p) {
         var i = 0;
@@ -168,8 +189,8 @@
                 shared: true
             },
             legend: {
-                enabled: false,
-                verticalAlign: 'bottom',
+                enabled: true,
+                verticalAlign: 'top',
             },
             title: {
                 text: "2020"
@@ -620,6 +641,26 @@
                             }
                         }
                     },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-btcusd-resume-2020').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2019').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2018').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2017').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2016').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2015').highcharts().series[this.index].hide();
+                            } else {
+                            $('#graph-btcusd-resume-2020').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2019').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2018').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2017').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2016').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2015').highcharts().series[this.index].show();
+                            }
+                            return false;
+                        }
+                    },
                 }
             }
 
@@ -664,8 +705,8 @@
                 shared: true
             },
             legend: {
-                enabled: false,
-                verticalAlign: 'bottom',
+                enabled: true,
+                verticalAlign: 'top',
             },
             title: {
                 text: "2019"
@@ -1116,6 +1157,26 @@
                             }
                         }
                     },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-btcusd-resume-2020').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2019').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2018').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2017').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2016').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2015').highcharts().series[this.index].hide();
+                            } else {
+                            $('#graph-btcusd-resume-2020').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2019').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2018').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2017').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2016').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2015').highcharts().series[this.index].show();
+                            }
+                            return false;
+                        }
+                    },
                 }
             }
 
@@ -1160,8 +1221,8 @@
                 shared: true
             },
             legend: {
-                enabled: false,
-                verticalAlign: 'bottom',
+                enabled: true,
+                verticalAlign: 'top',
             },
             title: {
                 text: "2018"
@@ -1611,6 +1672,26 @@
                             }
                         }
                     },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-btcusd-resume-2020').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2019').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2018').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2017').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2016').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2015').highcharts().series[this.index].hide();
+                            } else {
+                            $('#graph-btcusd-resume-2020').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2019').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2018').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2017').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2016').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2015').highcharts().series[this.index].show();
+                            }
+                            return false;
+                        }
+                    },
                 }
             }
 
@@ -1655,8 +1736,8 @@
                 shared: true
             },
             legend: {
-                enabled: false,
-                verticalAlign: 'bottom',
+                enabled: true,
+                verticalAlign: 'top',
             },
             title: {
                 text: "2017"
@@ -2107,6 +2188,26 @@
                             }
                         }
                     },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-btcusd-resume-2020').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2019').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2018').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2017').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2016').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2015').highcharts().series[this.index].hide();
+                            } else {
+                            $('#graph-btcusd-resume-2020').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2019').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2018').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2017').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2016').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2015').highcharts().series[this.index].show();
+                            }
+                            return false;
+                        }
+                    },
                 }
             }
 
@@ -2151,8 +2252,8 @@
                 shared: true
             },
             legend: {
-                enabled: false,
-                verticalAlign: 'bottom',
+                enabled: true,
+                verticalAlign: 'top',
             },
             title: {
                 text: "2016"
@@ -2942,6 +3043,26 @@
                             }
                         }
                     },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-btcusd-resume-2020').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2019').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2018').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2017').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2016').highcharts().series[this.index].hide();
+                            $('#graph-btcusd-resume-2015').highcharts().series[this.index].hide();
+                            } else {
+                            $('#graph-btcusd-resume-2020').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2019').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2018').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2017').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2016').highcharts().series[this.index].show();
+                            $('#graph-btcusd-resume-2015').highcharts().series[this.index].show();
+                            }
+                            return false;
+                        }
+                    },
                 }
             }
 
@@ -2986,8 +3107,8 @@
                 shared: true
             },
             legend: {
-                enabled: false,
-                verticalAlign: 'bottom',
+                enabled: true,
+                verticalAlign: 'top',
             },
             title: {
                 text: "2015"
