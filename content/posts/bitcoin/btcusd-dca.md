@@ -38,9 +38,15 @@ The purpose of this article is to propose a view on a very basic strategy of inv
 
 ## DCA in terms of US Dollars
 
+> ***crypto***: value of the investment in the asset (bitcoin) in US Dollars  
+***savings***: value of the cash at 0% of interest in US dollars
+
 {{< graph-btcusd-dca >}}
 
 ## DCA in terms of Bitcoins
+
+> ***crypto***: number of accumulated bitcoins  
+***savings***: value of the cash let in a banking account in terms of bitcoins
 
 {{< graph-btcusd-dca-btc >}}
 

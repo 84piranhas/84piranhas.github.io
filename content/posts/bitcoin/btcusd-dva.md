@@ -55,6 +55,19 @@ After describing the <a href="../btcusd-dca" target="_blank">DCA investment stra
 
 ## DVA
 
+> ***dva1 crypto***: value of the investment in the asset (bitcoin) in US Dollars for the DVA method 1 (no withdraw)  
+***dva2 crypto***: value of the investment in the asset (bitcoin) in US Dollars + the value of the sales of bitcoins in US Dollars for the DVA method 2 (full adjustment)  
+***dva2 crypto***: value of the investment let in the asset (bitcoin) in US Dollars for the DVA method 2
+
+> ***dva1 expenses***: US dollars spent for the investment in the cryptocurrency with the DVA method 1  
+***dva2 expenses***: US dollars spent for the investment in the cryptocurrency with the DVA method 2
+
+> ***savings***: value of the cash at 0% of interest in US dollars
+
+> ***no withdraw (dva1)***: number of bitcoins held with the DVA method 1  
+***full adjustment(dva2)***: number of bitcoins held with the DVA method 2
+
+
 {{< graph-btcusd-dva >}}
 
 

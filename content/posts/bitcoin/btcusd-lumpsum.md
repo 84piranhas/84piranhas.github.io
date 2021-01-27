@@ -34,6 +34,13 @@ After describing both <a href="../btcusd-dca" target="_blank">DCA</a> and <a hre
 
 ## Lump-sum investing
 
+> ***lumpsum1 crypto***: value of the investment in the asset (bitcoin) in US Dollars for the investment made at the beginning of the year  
+***lumpsum2 crypto***: value of the investment in the asset (bitcoin) in US Dollars for the investment made in the middle of the year 
+
+> ***savings1***: value of the cash at 0% of interest in US dollars, started at the begining of the year  
+***savings2***: value of the cash at 0% of interest in US dollars, started in the middle of the year  
+
+
 {{< graph-btcusd-lump >}}
 
 
