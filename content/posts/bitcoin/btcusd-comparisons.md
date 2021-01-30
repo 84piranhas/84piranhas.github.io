@@ -14,102 +14,83 @@ tocopen: true
 aliases: [""]
 #series: ["code"]
 categories: ["crypto"]
-math: true
+math: false
 ---
 
 {{< highcharts-imports >}}
 
 {{< highcharts-settings >}}
 
-{{< math.inline >}}
-{{ if or .Page.Params.math .Site.Params.math }}
-<!-- KaTeX -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
-{{ end }}
-{{</ math.inline >}}
-
-{{< math.inline >}}
-<p>
-Inline math: \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)
-</p>
-{{</ math.inline >}}
-
-Block math:
-$$
- \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
-$$
-
 # Introduction
 
-We consider here the case of an individual investor in bitcoin. We ignore the composition of his portfolio, we simply believe that this investor wants to place a certain amount of cash in the crypto currency.
+We consider the case of an individual investor in bitcoin. We ignore the composition of his portfolio, we simply believe that this investor wants to place a certain amount of cash in the crypto currency.
 
 The choice of investment method may depend on the sensitivity to:
 - control the price of the investment
 - the desired frequency for the execution of orders
-- making a profit
-- maximization of the number of units in the currency
+- make a profit
+- maximize the number of units in the currency
 - volatility
 
-5 méthodes d'investissement dans le bitcoin, regroupables en 3 groupes, sont analysées.
-Pour les 5 méthodes, 2600 USD seront dépensés dans chaque.
+5 basic methods of investing, spliited in 3 groups, are analyzed.
 
-La première méthode est le <a href="../btcusd-dca" target="_blank">dollar-cost averaging</a>.
-L'investissement est réalisé de manière périodique et uniforme, déterminé à l'avance.
+The first method is the <a href="../btcusd-dca" target="_blank">dollar-cost averaging</a>.
+The investment is uniform and periodic, both amount and frequency are determined in advance.
 
-Les 2 méthodes suivantes s'inspirent du <a href="../btcusd-dva" target="_blank">dollar-value averaging</a>.
-L'investissement est réalisé de manière périodique, mais n'est pas uniforme. Les sommes apportées vont l'être en rapport à la valeur courante de l'investissement.
-Dans la première version, l'ajustement à la baisse n'est pas permis. Dans la seconde version, la vente de titres est possible dans le cas où la valeur de l'investissement dépasse les prévisions. Dans le cas où la valeur de l'investissement est plus faible, l'achat sera plus conséquent.
+The 2 following methodes are derived from the <a href="../btcusd-dva" target="_blank">dollar-value averaging</a>.
+The investment is period and it is not uniform. The amount of purchases depend on the current value of the investment compared to a predetermined target.  
+In the first version, the sales are not allowed. In the second version, the sales of bitcoins are authorized. 
 
-Enfin, la dernière méthode correspond à l'investissement en une seule fois, c'est le <a href="../btcusd-lumpsum" target="_blank">lump-sum investing</a>. Nous présentons le cas où l'investissement se fait en début d'année et le cas où il se fait en milieu d'année.
-
-
-## Définitions
-
-Les méthodes d'investissement:
-- dca = dollar-cost averaging, 50 USD invested in bitcoin every Tuesday
-
-- dva (no withdraw) = dollar-value averaging, without the possibility to sell, adjusted amount of USD invested in bitcoin every Tuesday in order to have 2600 USD at the end of the year according to the value of the bitcoin.
-
-- dva (crypto + cash) = dollar-value averaging with the possibility to go long/short, adjusted amount of USD invested in bitcoin every Tuesday in order to have 2600 USD at the end of the year according to the value of the bitcoin
-
-- lump-sum =  2600 USD invested on Tuesday of the first week of the year
-
-- lump-sum mid-year = 2600 USD invested on Tuesday of the 27<sup>th</sup> week of the year
-
-Les indicateurs
-
-- sharpe = the [Sharpe ratio](https://en.wikipedia.org/wiki/Sharpe_ratio), the annualized average of the daily returns of the difference between the value of the crypto portofolio and the cash in a banking account (0% of interest) over the standard deviation of those returns
-
-- drawdown = the [max drawdown](https://en.wikipedia.org/wiki/Drawdown_(economics)), the maximum decrease of the value of the portfolio during the year
-
-- btc = the accumulated bitcoins, the number of bitcoins still hold in the portfolio
-
-- profit = the difference between the value of the investment in bitcoin and the cash that would be held on a banking account instead
-
-# Observations
+The last method is a single payment of money, the <a href="../btcusd-lumpsum" target="_blank">lump-sum investing</a>. We present the case for which the investment is made at the beginning of the year, and the case for which the investment is made in the middle of the year.
 
 
+# Definitions
 
-# Matrix
+ ## Investment methods
+
+- **dca** = dollar-cost averaging, 50 USD invested in bitcoin every Tuesday
+
+- **dva (no withdraw)** = dollar-value averaging, without the possibility to sell, adjusted amount of USD invested in bitcoin every Tuesday in order to have an amount of bitcoins that equals 2600 USD at the end of the year
+
+- **dva (full)** = dollar-value averaging with the possibility to go long/short, adjusted amount of USD invested in bitcoin every Tuesday in order to have an amount of bitcoins that equals 2600 USD at the end of the year
+
+- **lump-sum** =  2600 USD invested on Tuesday of the first week of the year
+
+- **lump-sum mid-year** = 2600 USD invested on Tuesday of the 27<sup>th</sup> week of the year
+
+## Indicators
+
+- sharpe = the [Sharpe ratio](https://en.wikipedia.org/wiki/Sharpe_ratio), the annual return of the value of the crypto portfolio added to the realized profit if any (in case of the DVA with the full adjustment) over the annualized standard deviation of the daily returns
+
+- drawdown = the [Max drawdown](https://en.wikipedia.org/wiki/Drawdown_(economics)), the maximum decrease of the value of the portfolio during the year
+
+- btc = the **Accumulated bitcoins**, the number of bitcoins still hold in the portfolio at then end of the year
+
+- **profit** = the difference between the value of the investment in bitcoin (+ the realized profit) and the cash that would be held on a banking account instead
+
+- **expenses** =  the total amount invested in USD for the purchases of the bitcoins
+
+- **realized profit** = the cash withdrawn from the sales of the bitcoins (in case of the fulld adjustment that occurent in the DVA)
+
+
+# Matrix of statistics
 
 {{< graph-btcusd-resume >}}
 
 # Details by year
 
-The lump-sum investing is the method that presents the most profitable years, except for 2015 and 2018.
+The *lump-sum investing* is the method that presents the most profitable years, except for 2015 and 2018.
 The main drawback of this method is that it could depend on the only moment the investment is made. For example, the value of the bitcoin was particulary high in January compared to the following months. We can compare also the investment made in January vs. the investment made in July. Invest later in the year can be seen as a waste of time when the market has already went up, cf. 2016, 2017 and 2019.  
-**The sooner you got involved in bitcoin, the better you did.**
+> **The sooner you got involved in bitcoin, the better you did.**
 
-The DCA presents a very decent profile as the profit is among the best and the accumulated bitcoins, while lower that the lump-sum made at the beginning of the year, it is the most often significantly higher than the others.  
-**DCA is a good method to be exposed to the bitcoin while mitigating the risk of being wrong in the market timing.**
+The *DCA* presents a very decent profile as the profit is among the best and the number of accumulated bitcoins, while lower than the lump-sum made at the beginning of the year, is the most often significantly higher than the other methods.  
+> **DCA is a good method to be exposed to the bitcoin while mitigating the risk of being wrong in the market timing.**
 
-The first method of the DVA (no short) does not present a good profile vs. the DCA, except for the very bad year of the bitcoin in 2018, when the DVA acculumated a lot of bitcoins. Nevertheless, the DVA is fixing the 2600 USD at the year of the year, meaning that it lets a certain amount of availabe cash untouched in the case the bitcoin has risen steadily.
-
-The second method of the DVA is very good for gaining profit on USD. As the value of the bitcoin rises, the investor liquidates the positions that are over the conservative target. If you value more USD than bitcoins, it is a good method.  
-**If HODL is the mantra, DVA is to avoid.**
-
-
+*DVA* methods are subject to a wide range of papers exploring the pros and cons of them.
+The first method of the DVA (no short allowed) is slightly better than the DCA if we take a look at the statistics: Sharpe ratio and max drawdown.
+The second method of the DVA is very good for gaining profit on USD. As the value of the bitcoin rises, the investor liquidates the positions that are over the conservative target. If you value more USD than bitcoins, it is a good method.
+Both methods present a major drawback, the investor does not control the expenses made on the market. In the case of the bitcoin between 2015 and 2020, the investment has been often lower than for DCA and lump-sum methods, but when the bitcoin was challenged a bit more, the expenses can double (2018).
+The second drawback is that the accumulation of bitcoins is less pronounced.  
+> **If HODL is the mantra, DVA is to avoid.**
 
 {{< graph-btcusd-resume-byyear >}}
