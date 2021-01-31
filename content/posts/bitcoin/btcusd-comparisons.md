@@ -70,7 +70,7 @@ The last method is a single payment of money, the <a href="../btcusd-lumpsum" ta
 
 - **expenses** =  the total amount invested in USD for the purchases of the bitcoins
 
-- **realized profit** = the cash withdrawn from the sales of the bitcoins (in case of the fulld adjustment that occurent in the DVA)
+- **realized profit** = the cash withdrawn from the sales of the bitcoins (in case of the full adjustment that occurs with the DVA)
 
 
 # Matrix of statistics
