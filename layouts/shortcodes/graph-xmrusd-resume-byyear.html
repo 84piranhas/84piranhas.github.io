@@ -1,0 +1,3713 @@
+
+<h2 id="2020">2020<a hidden="" class="anchor" aria-hidden="true" href="#2020">#</a></h2>
+
+<div id="graph-xmrusd-resume-2020" style="height: 500px; max-width:1000px; min-width: 250px;"></div>
+<div id="graph-xmrusd-2020" style="height: 200px; max-width:1000px; min-width: 250px;"></div>
+<div id="graph-xmrusd-sharpe-2020" class="chart5a"></div>
+<div id="graph-xmrusd-dd-2020" class="chart5b"></div>
+<div id="graph-xmrusd-profit-2020" class="chart5b"></div>
+<div id="graph-xmrusd-xmr-2020" class="chart5b"></div>
+<div id="graph-xmrusd-expenses-2020" class="chart5b"></div>
+
+<h2 id="2019">2019<a hidden="" class="anchor" aria-hidden="true" href="#2019">#</a></h2>
+
+<div id="graph-xmrusd-resume-2019" style="height: 500px; max-width:1000px; min-width: 250px;"></div>
+<div id="graph-xmrusd-2019" style="height: 200px; max-width:1000px; min-width: 250px;"></div>
+<div id="graph-xmrusd-sharpe-2019" class="chart5a"></div>
+<div id="graph-xmrusd-dd-2019" class="chart5b"></div>
+<div id="graph-xmrusd-profit-2019" class="chart5b"></div>
+<div id="graph-xmrusd-xmr-2019" class="chart5b"></div>
+<div id="graph-xmrusd-expenses-2019" class="chart5b"></div>
+
+<h2 id="2018">2018<a hidden="" class="anchor" aria-hidden="true" href="#2018">#</a></h2>
+
+<div id="graph-xmrusd-resume-2018" style="height: 500px; max-width:1000px; min-width: 250px;"></div>
+<div id="graph-xmrusd-2018" style="height: 200px; max-width:1000px; min-width: 250px;"></div>
+<div id="graph-xmrusd-sharpe-2018" class="chart5a"></div>
+<div id="graph-xmrusd-dd-2018" class="chart5b"></div>
+<div id="graph-xmrusd-profit-2018" class="chart5b"></div>
+<div id="graph-xmrusd-xmr-2018" class="chart5b"></div>
+<div id="graph-xmrusd-expenses-2018" class="chart5b"></div>
+
+<h2 id="2017">2017<a hidden="" class="anchor" aria-hidden="true" href="#2017">#</a></h2>
+
+<div id="graph-xmrusd-resume-2017" style="height: 500px; max-width:1000px; min-width: 250px;"></div>
+<div id="graph-xmrusd-2017" style="height: 200px; max-width:1000px; min-width: 250px;"></div>
+<div id="graph-xmrusd-sharpe-2017" class="chart5a"></div>
+<div id="graph-xmrusd-dd-2017" class="chart5b"></div>
+<div id="graph-xmrusd-profit-2017" class="chart5b"></div>
+<div id="graph-xmrusd-xmr-2017" class="chart5b"></div>
+<div id="graph-xmrusd-expenses-2017" class="chart5b"></div>
+
+<h2 id="2016">2016<a hidden="" class="anchor" aria-hidden="true" href="#2016">#</a></h2>
+
+<div id="graph-xmrusd-resume-2016" style="height: 500px; max-width:1000px; min-width: 250px;"></div>
+<div id="graph-xmrusd-2016" style="height: 200px; max-width:1000px; min-width: 250px;"></div>
+<div id="graph-xmrusd-sharpe-2016" class="chart5a"></div>
+<div id="graph-xmrusd-dd-2016" class="chart5b"></div>
+<div id="graph-xmrusd-profit-2016" class="chart5b"></div>
+<div id="graph-xmrusd-xmr-2016" class="chart5b"></div>
+<div id="graph-xmrusd-expenses-2016" class="chart5b"></div>
+
+<h2 id="2015">2015<a hidden="" class="anchor" aria-hidden="true" href="#2015">#</a></h2>
+
+<div id="graph-xmrusd-resume-2015" style="height: 500px; max-width:1000px; min-width: 250px;"></div>
+<div id="graph-xmrusd-2015" style="height: 200px; max-width:1000px; min-width: 250px;"></div>
+<div id="graph-xmrusd-sharpe-2015" class="chart5a"></div>
+<div id="graph-xmrusd-dd-2015" class="chart5b"></div>
+<div id="graph-xmrusd-profit-2015" class="chart5b"></div>
+<div id="graph-xmrusd-xmr-2015" class="chart5b"></div>
+<div id="graph-xmrusd-expenses-2015" class="chart5b"></div>
+
+
+<style>
+    .chart4 {
+        height: 250px;
+        float: left;
+        width: 25%;
+    }
+    .chart5a {
+        height: 250px;
+        float: left;
+        width: 30%;
+    }
+    .chart5b {
+        height: 250px;
+        float: left;
+        width: 17.5%;
+    }
+    .spacer {
+        height: 20px;
+    }
+
+</style>
+
+<!--2020-->
+
+<script>
+    var charts2020 = []
+
+    var options2020 =  {
+                series:{
+                    marker: {
+                        enabled: false
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(){
+                                syncTooltip2020(this.series.chart.container, this.index);
+                            }
+                        }
+                    },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-xmrusd-resume-2020').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2019').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2018').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2017').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2016').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2015').highcharts().series[this.index].hide();
+                            } else {
+                            $('#graph-xmrusd-resume-2020').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2019').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2018').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2017').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2016').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2015').highcharts().series[this.index].show();
+                            }
+                            return false;
+                        }
+                    },
+
+                }
+            };
+
+    function syncTooltip2020(container, p) {
+        var i = 0;
+        //console.log(p)
+        for (; i < charts2020.length; i++) {
+            //console.log(i);
+            //console.log(charts2[i].series[0].data)
+            if (container.id != charts2020[i].container.id) {
+                if(charts2020[i].tooltip.shared) {
+                    charts2020[i].tooltip.refresh([charts2020[i].series[0].data[p]]);
+                }
+                else {
+                    charts2020[i].tooltip.refresh(charts2020[i].series[0].data[p]);
+                }
+            }
+        }
+    }
+
+    $.get("../../../files/xmr/xmrusd-resume-2020.csv", function(csv) {
+        charts2020[0] = Highcharts.chart('graph-xmrusd-resume-2020', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: options2020,
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{visible:false},
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'top',
+            },
+            title: {
+                text: "2020"
+            },
+            subtitle: {
+                text: "in USD"
+            },
+            data: {
+                csv: csv,
+                /*
+                startColumn: 0,
+                endColumn: 6,
+                parsed: function (columns) {
+                    $.each(columns, function () {
+                        console.log('do');
+                        this.splice(2,2);
+                    });
+                }*/
+            },
+
+            /*
+            yAxis: [{
+                title: {
+                    text: 'USD',
+                    }
+                },
+                {
+                    title: { 
+                    text: 'value of bitcoin in USD' //Define here
+                    },
+                }
+        ],*/
+            //series:[{yAxis:1},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0}],
+        });
+
+    })
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-2020.csv", function(csv) {
+        charts2020[1] = Highcharts.chart('graph-xmrusd-2020', {
+            chart: {
+                type: 'area',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: {
+                series: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0,// 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: false,
+                verticalAlign: 'bottom',
+            },
+            data: {
+                csv: csv,
+            },
+
+            /*
+            yAxis: [{
+                title: {
+                    text: 'USD',
+                    }
+                },
+                {
+                    title: { 
+                    text: 'value of bitcoin in USD' //Define here
+                    },
+                }
+        ],*/
+            //series:[{yAxis:1},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0}],
+        });
+
+    })
+</script>
+
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-sharpe2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-sharpe-2020', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 26,
+                endRow: 30,
+            },
+            series:[{name:'sharpe'}],
+            colorAxis: {
+                max:5,
+                //min: -2,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[1],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.4, Highcharts.getOptions().colors[4]],
+                    [1, Highcharts.getOptions().colors[3]]
+                ],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.5
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2020,2019,2018,2017,2020,2020],
+                //title: null,
+                reversed: true,
+                visible:true,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Sharpe ratio'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-dd2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-dd-2020', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 26,
+                endRow: 30,
+            },
+            series:[{name:'drawdown'}],
+
+            colorAxis: {
+                //min: -2,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[1],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.9, Highcharts.getOptions().colors[6]],
+                    [1, Highcharts.getOptions().colors[5]]
+                ],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 500
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2020,2019,2018,2017,2020,2020],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Max drawdown'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-profit2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-profit-2020', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 26,
+                endRow: 30,
+            },
+            series:[{name:'profit'}],
+
+            colorAxis: {
+                max: 20000,
+                minColor: '#FFFFFF',
+                maxColor: Highcharts.getOptions().colors[1],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 5000
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2020,2019,2018,2017,2020,2020],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Profit'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-xmr2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-xmr-2020', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 26,
+                endRow: 30,
+            },
+            series:[{name:'xmr'}],
+
+            colorAxis: {
+                //in: 0,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[0],
+                stops: [
+                    [0, Highcharts.getOptions().colors[4]],
+                    [0.2, Highcharts.getOptions().colors[1]],
+                    [1, Highcharts.getOptions().colors[3]]
+                ],
+                
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.1
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2020,2019,2018,2017,2020,2020],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Accumulated moneros'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-expenses2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-expenses-2020', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 26,
+                endRow: 30,
+            },
+            series:[{name:'xmr'}],
+
+            colorAxis: {
+                //in: 0,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[0],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.5, Highcharts.getOptions().colors[6]],
+                    [1, Highcharts.getOptions().colors[5]]
+                ],
+                
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.1
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2020,2019,2018,2017,2020,2020],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Expenses'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<!--2019-->
+
+<script>
+    var charts2019 = []
+
+    var options2019 =  {
+                series:{
+                    marker: {
+                        enabled: false
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(){
+                                syncTooltip2019(this.series.chart.container, this.index);
+                            }
+                        }
+                    },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-xmrusd-resume-2020').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2019').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2018').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2017').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2016').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2015').highcharts().series[this.index].hide();
+                            } else {
+                            $('#graph-xmrusd-resume-2020').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2019').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2018').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2017').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2016').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2015').highcharts().series[this.index].show();
+                            }
+                            return false;
+                        }
+                    },
+                }
+            }
+
+    function syncTooltip2019(container, p) {
+        var i = 0;
+        //console.log(p)
+        for (; i < charts2019.length; i++) {
+            //console.log(i);
+            //console.log(charts2[i].series[0].data)
+            if (container.id != charts2019[i].container.id) {
+                if(charts2019[i].tooltip.shared) {
+                    charts2019[i].tooltip.refresh([charts2019[i].series[0].data[p]]);
+                }
+                else {
+                    charts2019[i].tooltip.refresh(charts2019[i].series[0].data[p]);
+                }
+            }
+        }
+    }
+
+    $.get("../../../files/xmr/xmrusd-resume-2019.csv", function(csv) {
+        charts2019[0] = Highcharts.chart('graph-xmrusd-resume-2019', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: options2019,
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{visible:false},
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'top',
+            },
+            title: {
+                text: "2019"
+            },
+            subtitle: {
+                text: "in USD"
+            },
+            data: {
+                csv: csv,
+                /*
+                startColumn: 0,
+                endColumn: 6,
+                parsed: function (columns) {
+                    $.each(columns, function () {
+                        console.log('do');
+                        this.splice(2,2);
+                    });
+                }*/
+            },
+
+            /*
+            yAxis: [{
+                title: {
+                    text: 'USD',
+                    }
+                },
+                {
+                    title: { 
+                    text: 'value of bitcoin in USD' //Define here
+                    },
+                }
+        ],*/
+            //series:[{yAxis:1},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0}],
+        });
+
+    })
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-2019.csv", function(csv) {
+        charts2019[1] = Highcharts.chart('graph-xmrusd-2019', {
+            chart: {
+                type: 'area',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: {
+                series: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0,// 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: false,
+                verticalAlign: 'bottom',
+            },
+            data: {
+                csv: csv,
+            },
+
+            /*
+            yAxis: [{
+                title: {
+                    text: 'USD',
+                    }
+                },
+                {
+                    title: { 
+                    text: 'value of bitcoin in USD' //Define here
+                    },
+                }
+        ],*/
+            //series:[{yAxis:1},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0}],
+        });
+
+    })
+</script>
+
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-sharpe2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-sharpe-2019', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 21,
+                endRow: 25,
+            },
+            series:[{name:'sharpe'}],
+
+            colorAxis: {
+                max:5,
+                //min: -2,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[1],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.4, Highcharts.getOptions().colors[4]],
+                    [1, Highcharts.getOptions().colors[3]]
+                ],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.5
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2019,2019,2018,2017,2019,2019],
+                //title: null,
+                reversed: true,
+                visible:true,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Sharpe ratio'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-dd2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-dd-2019', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 21,
+                endRow: 25,
+            },
+            series:[{name:'drawdown'}],
+
+            colorAxis: {
+                //min: -2,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[1],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.9, Highcharts.getOptions().colors[6]],
+                    [1, Highcharts.getOptions().colors[5]]
+                ],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 500
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2019,2019,2018,2017,2019,2019],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Max drawdown'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-profit2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-profit-2019', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 21,
+                endRow: 25,
+            },
+            series:[{name:'profit'}],
+
+            colorAxis: {
+                max: 20000,
+                minColor: '#FFFFFF',
+                maxColor: Highcharts.getOptions().colors[1],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 5000
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2019,2019,2018,2017,2019,2019],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Profit'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-xmr2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-xmr-2019', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 21,
+                endRow: 25,
+            },
+            series:[{name:'xmr'}],
+
+            colorAxis: {
+                //in: 0,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[0],
+                stops: [
+                    [0, Highcharts.getOptions().colors[4]],
+                    [0.2, Highcharts.getOptions().colors[1]],
+                    [1, Highcharts.getOptions().colors[3]]
+                ],
+                
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.1
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2019,2019,2018,2017,2019,2019],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Accumulated moneros'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-expenses2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-expenses-2019', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 21,
+                endRow: 25,
+            },
+            series:[{name:'expenses'}],
+
+            colorAxis: {
+                //in: 0,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[0],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.5, Highcharts.getOptions().colors[6]],
+                    [1, Highcharts.getOptions().colors[5]]
+                ],
+                
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.1
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2020,2019,2018,2017,2020,2020],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Expenses'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<!--2018-->
+
+<script>
+    var charts2018 = []
+
+    var options2018 =  {
+                series:{
+                    marker: {
+                        enabled: false
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(){
+                                syncTooltip2018(this.series.chart.container, this.index);
+                            }
+                        }
+                    },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-xmrusd-resume-2020').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2019').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2018').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2017').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2016').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2015').highcharts().series[this.index].hide();
+                            } else {
+                            $('#graph-xmrusd-resume-2020').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2019').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2018').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2017').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2016').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2015').highcharts().series[this.index].show();
+                            }
+                            return false;
+                        }
+                    },
+                }
+            }
+
+    function syncTooltip2018(container, p) {
+        var i = 0;
+        //console.log(p)
+        for (; i < charts2018.length; i++) {
+            //console.log(i);
+            //console.log(charts2[i].series[0].data)
+            if (container.id != charts2018[i].container.id) {
+                if(charts2018[i].tooltip.shared) {
+                    charts2018[i].tooltip.refresh([charts2018[i].series[0].data[p]]);
+                }
+                else {
+                    charts2018[i].tooltip.refresh(charts2018[i].series[0].data[p]);
+                }
+            }
+        }
+    }
+
+    $.get("../../../files/xmr/xmrusd-resume-2018.csv", function(csv) {
+        charts2018[0] = Highcharts.chart('graph-xmrusd-resume-2018', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: options2018,
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{visible:false},
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'top',
+            },
+            title: {
+                text: "2018"
+            },
+            subtitle: {
+                text: "in USD"
+            },
+            data: {
+                csv: csv,
+                /*
+                startColumn: 0,
+                endColumn: 6,
+                parsed: function (columns) {
+                    $.each(columns, function () {
+                        console.log('do');
+                        this.splice(2,2);
+                    });
+                }*/
+            },
+
+            /*
+            yAxis: [{
+                title: {
+                    text: 'USD',
+                    }
+                },
+                {
+                    title: { 
+                    text: 'value of bitcoin in USD' //Define here
+                    },
+                }
+        ],*/
+            //series:[{yAxis:1},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0}],
+        });
+
+    })
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-2018.csv", function(csv) {
+        charts2018[1] = Highcharts.chart('graph-xmrusd-2018', {
+            chart: {
+                type: 'area',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: {
+                series: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0,// 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: false,
+                verticalAlign: 'bottom',
+            },
+            data: {
+                csv: csv,
+            },
+
+            /*
+            yAxis: [{
+                title: {
+                    text: 'USD',
+                    }
+                },
+                {
+                    title: { 
+                    text: 'value of bitcoin in USD' //Define here
+                    },
+                }
+        ],*/
+            //series:[{yAxis:1},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0}],
+        });
+
+    })
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-sharpe2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-sharpe-2018', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 16,
+                endRow: 20,
+            },
+            series:[{name:'sharpe'}],
+
+            colorAxis: {
+                max:5,
+                //min: -2,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[1],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.4, Highcharts.getOptions().colors[4]],
+                    [1, Highcharts.getOptions().colors[3]]
+                ],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.5
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2018,2018,2018,2017,2018,2018],
+                //title: null,
+                reversed: true,
+                visible:true,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Sharpe ratio'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-dd2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-dd-2018', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 16,
+                endRow: 20,
+            },
+            series:[{name:'drawdown'}],
+
+            colorAxis: {
+                //min: -2,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[1],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.9, Highcharts.getOptions().colors[6]],
+                    [1, Highcharts.getOptions().colors[5]]
+                ],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 500
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2018,2018,2018,2017,2018,2018],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Max drawdown'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-profit2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-profit-2018', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 16,
+                endRow: 20,
+            },
+            series:[{name:'profit'}],
+
+            colorAxis: {
+                max: 20000,
+                minColor: '#FFFFFF',
+                maxColor: Highcharts.getOptions().colors[1],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 5000
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2018,2018,2018,2017,2018,2018],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Profit'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-xmr2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-xmr-2018', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 16,
+                endRow: 20,
+            },
+            series:[{name:'xmr'}],
+
+            colorAxis: {
+                //in: 0,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[0],
+                stops: [
+                    [0, Highcharts.getOptions().colors[4]],
+                    [0.2, Highcharts.getOptions().colors[1]],
+                    [1, Highcharts.getOptions().colors[3]]
+                ],
+                
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.1
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2018,2018,2018,2017,2018,2018],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Accumulated moneros'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-expenses2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-expenses-2018', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 16,
+                endRow: 20,
+            },
+            series:[{name:'expenses'}],
+
+            colorAxis: {
+                //in: 0,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[0],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.5, Highcharts.getOptions().colors[6]],
+                    [1, Highcharts.getOptions().colors[5]]
+                ],
+                
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.1
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2018,2018,2018,2017,2018,2018],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Expenses'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<!--2017-->
+
+<script>
+    var charts2017 = []
+
+    var options2017 =  {
+                series:{
+                    marker: {
+                        enabled: false
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(){
+                                syncTooltip2017(this.series.chart.container, this.index);
+                            }
+                        }
+                    },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-xmrusd-resume-2020').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2019').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2018').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2017').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2016').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2015').highcharts().series[this.index].hide();
+                            } else {
+                            $('#graph-xmrusd-resume-2020').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2019').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2018').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2017').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2016').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2015').highcharts().series[this.index].show();
+                            }
+                            return false;
+                        }
+                    },
+                }
+            }
+
+    function syncTooltip2017(container, p) {
+        var i = 0;
+        //console.log(p)
+        for (; i < charts2017.length; i++) {
+            //console.log(i);
+            //console.log(charts2[i].series[0].data)
+            if (container.id != charts2017[i].container.id) {
+                if(charts2017[i].tooltip.shared) {
+                    charts2017[i].tooltip.refresh([charts2017[i].series[0].data[p]]);
+                }
+                else {
+                    charts2017[i].tooltip.refresh(charts2017[i].series[0].data[p]);
+                }
+            }
+        }
+    }
+
+    $.get("../../../files/xmr/xmrusd-resume-2017.csv", function(csv) {
+        charts2017[0] = Highcharts.chart('graph-xmrusd-resume-2017', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: options2017,
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{visible:false},
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'top',
+            },
+            title: {
+                text: "2017"
+            },
+            subtitle: {
+                text: "in USD"
+            },
+            data: {
+                csv: csv,
+                /*
+                startColumn: 0,
+                endColumn: 6,
+                parsed: function (columns) {
+                    $.each(columns, function () {
+                        console.log('do');
+                        this.splice(2,2);
+                    });
+                }*/
+            },
+
+            /*
+            yAxis: [{
+                title: {
+                    text: 'USD',
+                    }
+                },
+                {
+                    title: { 
+                    text: 'value of bitcoin in USD' //Define here
+                    },
+                }
+        ],*/
+            //series:[{yAxis:1},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0}],
+        });
+
+    })
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-2017.csv", function(csv) {
+        charts2017[1] = Highcharts.chart('graph-xmrusd-2017', {
+            chart: {
+                type: 'area',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: {
+                series: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0,// 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: false,
+                verticalAlign: 'bottom',
+            },
+            data: {
+                csv: csv,
+            },
+
+            /*
+            yAxis: [{
+                title: {
+                    text: 'USD',
+                    }
+                },
+                {
+                    title: { 
+                    text: 'value of bitcoin in USD' //Define here
+                    },
+                }
+        ],*/
+            //series:[{yAxis:1},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0}],
+        });
+
+    })
+</script>
+
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-sharpe2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-sharpe-2017', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 11,
+                endRow: 15,
+            },
+            series:[{name:'sharpe'}],
+
+            colorAxis: {
+                max:5,
+                //min: -2,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[1],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.4, Highcharts.getOptions().colors[4]],
+                    [1, Highcharts.getOptions().colors[3]]
+                ],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.5
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2017,2017,2017,2017,2017,2017],
+                //title: null,
+                reversed: true,
+                visible:true,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Sharpe ratio'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-dd2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-dd-2017', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 11,
+                endRow: 15,
+            },
+            series:[{name:'drawdown'}],
+
+            colorAxis: {
+                //min: -2,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[1],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.9, Highcharts.getOptions().colors[6]],
+                    [1, Highcharts.getOptions().colors[5]]
+                ],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 500
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2017,2017,2017,2017,2017,2017],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Max drawdown'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-profit2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-profit-2017', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 11,
+                endRow: 15,
+            },
+            series:[{name:'profit'}],
+
+            colorAxis: {
+                max: 20000,
+                minColor: '#FFFFFF',
+                maxColor: Highcharts.getOptions().colors[1],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 5000
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2017,2017,2017,2017,2017,2017],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Profit'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-xmr2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-xmr-2017', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 11,
+                endRow: 15,
+            },
+            series:[{name:'xmr'}],
+
+            colorAxis: {
+                //in: 0,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[0],
+                stops: [
+                    [0, Highcharts.getOptions().colors[4]],
+                    [0.2, Highcharts.getOptions().colors[1]],
+                    [1, Highcharts.getOptions().colors[3]]
+                ],
+                
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.1
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2017,2017,2017,2017,2017,2017],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Accumulated moneros'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-expenses2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-expenses-2017', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 11,
+                endRow: 15,
+            },
+            series:[{name:'expenses'}],
+
+            colorAxis: {
+                //in: 0,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[0],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.5, Highcharts.getOptions().colors[6]],
+                    [1, Highcharts.getOptions().colors[5]]
+                ],
+                
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.1
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2017,2017,2017,2017,2017,2017],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Expenses'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<!--2016-->
+
+<script>
+    var charts2016 = []
+
+    var options2016 =  {
+                series:{
+                    marker: {
+                        enabled: false
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(){
+                                syncTooltip2016(this.series.chart.container, this.index);
+                            }
+                        }
+                    },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-xmrusd-resume-2020').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2019').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2018').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2017').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2016').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2015').highcharts().series[this.index].hide();
+                            } else {
+                            $('#graph-xmrusd-resume-2020').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2019').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2018').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2017').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2016').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2015').highcharts().series[this.index].show();
+                            }
+                            return false;
+                        }
+                    },
+                }
+            }
+
+    function syncTooltip2016(container, p) {
+        var i = 0;
+        //console.log(p)
+        for (; i < charts2016.length; i++) {
+            //console.log(i);
+            //console.log(charts2[i].series[0].data)
+            if (container.id != charts2016[i].container.id) {
+                if(charts2016[i].tooltip.shared) {
+                    charts2016[i].tooltip.refresh([charts2016[i].series[0].data[p]]);
+                }
+                else {
+                    charts2016[i].tooltip.refresh(charts2016[i].series[0].data[p]);
+                }
+            }
+        }
+    }
+
+    $.get("../../../files/xmr/xmrusd-resume-2016.csv", function(csv) {
+        charts2016[0] = Highcharts.chart('graph-xmrusd-resume-2016', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: options2016,
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{visible:false},
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'top',
+            },
+            title: {
+                text: "2016"
+            },
+            subtitle: {
+                text: "in USD"
+            },
+            data: {
+                csv: csv,
+                /*
+                startColumn: 0,
+                endColumn: 6,
+                parsed: function (columns) {
+                    $.each(columns, function () {
+                        console.log('do');
+                        this.splice(2,2);
+                    });
+                }*/
+            },
+
+            /*
+            yAxis: [{
+                title: {
+                    text: 'USD',
+                    }
+                },
+                {
+                    title: { 
+                    text: 'value of bitcoin in USD' //Define here
+                    },
+                }
+        ],*/
+            //series:[{yAxis:1},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0}],
+        });
+
+    })
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-2016.csv", function(csv) {
+        charts2016[1] = Highcharts.chart('graph-xmrusd-2016', {
+            chart: {
+                type: 'area',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: {
+                series: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0,// 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: false,
+                verticalAlign: 'bottom',
+            },
+            data: {
+                csv: csv,
+            },
+
+            /*
+            yAxis: [{
+                title: {
+                    text: 'USD',
+                    }
+                },
+                {
+                    title: { 
+                    text: 'value of bitcoin in USD' //Define here
+                    },
+                }
+        ],*/
+            //series:[{yAxis:1},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0}],
+        });
+
+    })
+</script>
+
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-sharpe2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-sharpe-2016', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 6,
+                endRow: 10,
+            },
+            series:[{name:'sharpe'}],
+
+            colorAxis: {
+                max:5,
+                //min: -2,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[1],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.4, Highcharts.getOptions().colors[4]],
+                    [1, Highcharts.getOptions().colors[3]]
+                ],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.5
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2020,2019,2018,2017,2016,2016],
+                //title: null,
+                reversed: true,
+                visible:true,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Sharpe ratio'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-dd2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-dd-2016', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 6,
+                endRow: 10,
+            },
+            series:[{name:'drawdown'}],
+
+            colorAxis: {
+                //min: -2,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[1],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.9, Highcharts.getOptions().colors[6]],
+                    [1, Highcharts.getOptions().colors[5]]
+                ],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 500
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2020,2019,2018,2017,2016,2016],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Max drawdown'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-profit2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-profit-2016', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 6,
+                endRow: 10,
+            },
+            series:[{name:'profit'}],
+
+            colorAxis: {
+                max: 20000,
+                minColor: '#FFFFFF',
+                maxColor: Highcharts.getOptions().colors[1],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 5000
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2020,2019,2018,2017,2016,2016],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Profit'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-xmr2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-xmr-2016', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 6,
+                endRow: 10,
+            },
+            series:[{name:'xmr'}],
+
+            colorAxis: {
+                //in: 0,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[0],
+                stops: [
+                    [0, Highcharts.getOptions().colors[4]],
+                    [0.2, Highcharts.getOptions().colors[1]],
+                    [1, Highcharts.getOptions().colors[3]]
+                ],
+                
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.1
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2020,2019,2018,2017,2016,2016],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Accumulated moneros'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-expenses2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-expenses-2016', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: false,
+                startRow: 6,
+                endRow: 10,
+            },
+            series:[{name:'expenses'}],
+
+            colorAxis: {
+                //in: 0,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[0],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.5, Highcharts.getOptions().colors[6]],
+                    [1, Highcharts.getOptions().colors[5]]
+                ],
+                
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.1
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2020,2019,2018,2017,2016,2016],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Expenses'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<!--2015 -->
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-sharpe2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-sharpe-2015', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: true,
+                startRow: 0,
+                endRow: 5,
+
+            },
+
+            colorAxis: {
+                max:5,
+                //min: -2,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[1],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.4, Highcharts.getOptions().colors[4]],
+                    [1, Highcharts.getOptions().colors[3]]
+                ],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.5
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2020,2019,2018,2017,2016,2015],
+                //title: null,
+                reversed: true,
+                visible:true,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Sharpe ratio'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-dd2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-dd-2015', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: true,
+                startRow: 0,
+                endRow: 5,
+
+            },
+
+            colorAxis: {
+                //min: -2,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[1],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.9, Highcharts.getOptions().colors[6]],
+                    [1, Highcharts.getOptions().colors[5]]
+                ],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 500
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2020,2019,2018,2017,2016,2015],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Max drawdown'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-profit2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-profit-2015', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: true,
+                startRow: 0,
+                endRow: 5,
+
+            },
+
+            colorAxis: {
+                max: 20000,
+                minColor: '#FFFFFF',
+                maxColor: Highcharts.getOptions().colors[1],
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 5000
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2020,2019,2018,2017,2016,2015],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Profit'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-xmr2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-xmr-2015', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: true,
+                startRow: 0,
+                endRow: 5,
+
+            },
+
+            colorAxis: {
+                //in: 0,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[0],
+                stops: [
+                    [0, Highcharts.getOptions().colors[4]],
+                    [0.2, Highcharts.getOptions().colors[1]],
+                    [1, Highcharts.getOptions().colors[3]]
+                ],
+                
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.1
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2020,2019,2018,2017,2016,2015],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Accumulated moneros'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-resume-expenses2.csv", function(csv) {
+        var c= Highcharts.chart('graph-xmrusd-expenses-2015', {
+            plotOptions: {
+                series:{
+                    dataLabels: {
+                        enabled: true,
+                        //color: '#000000'
+                    },
+                }
+            },
+            chart: {
+                type: 'heatmap',
+                marginTop: 10,
+                marginBottom: 40
+            },
+
+            title: {
+                //text: 'Sharpe ratio',
+                verticalAlign: 'bottom'
+            },
+            data: {
+                csv: csv,
+                seriesMapping: [{x: 3, y: 2, value: 4, category:1, name:0}],
+                //switchRowsAndColumns: false,
+                //firstColumnAsNames: true,
+                firstRowAsNames: true,
+                startRow: 0,
+                endRow: 5,
+
+            },
+            series:[{name:'expenses'}],
+            
+            colorAxis: {
+                //in: 0,
+                //minColor: '#FFFFFF',
+                //maxColor: Highcharts.getOptions().colors[0],
+                stops: [
+                    [0, Highcharts.getOptions().colors[7]],
+                    [0.5, Highcharts.getOptions().colors[6]],
+                    [1, Highcharts.getOptions().colors[5]]
+                ],
+                
+                //tickWidth: 1,
+                //tickLength: 20,
+                tickInterval: 0.1
+            },
+            //options,
+
+            legend: {
+                align: 'right',
+                layout: 'vertical',
+                margin: 0,
+                verticalAlign: 'top',
+                y: 25,
+                //symbolHeight: 280
+                enabled: false
+            },
+            yAxis: {
+                categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],//categories: [2020,2019,2018,2017,2016,2015],
+                //title: null,
+                reversed: true,
+                visible:false,
+            },
+            xAxis: {
+                visible:true,
+                title:{text: 'Expenses'},
+                //categories:['dca','dva (no withdraw)','dva (full)','lump-sum','lump-sum mid-year'],
+                //opposite: true,
+                //labels:{rotation: 270,
+                //align: 'left'}
+                labels:{
+                    enabled:false,
+                    minorTickLength: 0,
+                    tickLength:0
+                },
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+            },
+            tooltip: {
+                pointFormat: '<b>{point.category} in {point.name}:</b><br/><b>{point.value}</b><br/>',
+            },
+        });
+
+    })
+
+</script>
+
+<script>
+    var charts2015 = []
+
+    var options2015 =  {
+                series:{
+                    marker: {
+                        enabled: false
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(){
+                                syncTooltip2015(this.series.chart.container, this.index);
+                            }
+                        }
+                    },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-xmrusd-resume-2020').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2019').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2018').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2017').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2016').highcharts().series[this.index].hide();
+                            $('#graph-xmrusd-resume-2015').highcharts().series[this.index].hide();
+                            } else {
+                            $('#graph-xmrusd-resume-2020').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2019').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2018').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2017').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2016').highcharts().series[this.index].show();
+                            $('#graph-xmrusd-resume-2015').highcharts().series[this.index].show();
+                            }
+                            return false;
+                        }
+                    },
+                }
+            }
+
+    function syncTooltip2015(container, p) {
+        var i = 0;
+        //console.log(p)
+        for (; i < charts2015.length; i++) {
+            //console.log(i);
+            //console.log(charts2[i].series[0].data)
+            if (container.id != charts2015[i].container.id) {
+                if(charts2015[i].tooltip.shared) {
+                    charts2015[i].tooltip.refresh([charts2015[i].series[0].data[p]]);
+                }
+                else {
+                    charts2015[i].tooltip.refresh(charts2015[i].series[0].data[p]);
+                }
+            }
+        }
+    }
+
+    $.get("../../../files/xmr/xmrusd-resume-2015.csv", function(csv) {
+        charts2015[0] = Highcharts.chart('graph-xmrusd-resume-2015', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: options2015,
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{visible:false},
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'top',
+            },
+            title: {
+                text: "2015"
+            },
+            subtitle: {
+                text: "in USD"
+            },
+            data: {
+                csv: csv,
+                /*
+                startColumn: 0,
+                endColumn: 6,
+                parsed: function (columns) {
+                    $.each(columns, function () {
+                        console.log('do');
+                        this.splice(2,2);
+                    });
+                }*/
+            },
+
+            /*
+            yAxis: [{
+                title: {
+                    text: 'USD',
+                    }
+                },
+                {
+                    title: { 
+                    text: 'value of bitcoin in USD' //Define here
+                    },
+                }
+        ],*/
+            //series:[{yAxis:1},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0}],
+        });
+
+    })
+</script>
+
+<script>
+    $.get("../../../files/xmr/xmrusd-2015.csv", function(csv) {
+        charts2015[1] = Highcharts.chart('graph-xmrusd-2015', {
+            chart: {
+                type: 'area',
+                plotBorderWidth: 0,
+                zoomType: 'x',
+                inverted: false,
+            },
+
+            plotOptions: {
+                series: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+
+            yAxis: {
+                min: 0,
+                gridLineWidth: 0,// 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} USD</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: false,
+                verticalAlign: 'bottom',
+            },
+            data: {
+                csv: csv,
+            },
+
+            /*
+            yAxis: [{
+                title: {
+                    text: 'USD',
+                    }
+                },
+                {
+                    title: { 
+                    text: 'value of bitcoin in USD' //Define here
+                    },
+                }
+        ],*/
+            //series:[{yAxis:1},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0},{yAxis:0}],
+        });
+
+    })
+</script>
+

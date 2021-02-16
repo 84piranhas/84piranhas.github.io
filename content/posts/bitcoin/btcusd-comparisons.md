@@ -32,7 +32,7 @@ The choice of investment method may depend on the sensitivity to:
 - maximize the number of units in the currency
 - volatility
 
-5 basic methods of investing, spliited in 3 groups, are analyzed.
+5 basic methods of investing, splitted in 3 groups, are analyzed.
 
 The first method is the <a href="../btcusd-dca" target="_blank">dollar-cost averaging</a>.
 The investment is uniform and periodic, both amount and frequency are determined in advance.

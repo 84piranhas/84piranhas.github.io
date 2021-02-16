@@ -5,10 +5,19 @@
     <link>https://84piranhas.github.io/tags/dca/</link>
     <description>Recent content in dca on 84piranhas</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 21 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://84piranhas.github.io/tags/dca/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Monero - comparisons between DCA, DVA and lump-sum investing</title>
+      <link>https://84piranhas.github.io/posts/bitcoin/xmrusd-comparisons/</link>
+      <pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://84piranhas.github.io/posts/bitcoin/xmrusd-comparisons/</guid>
+      <description>Basic statistics of different methods of investments, yearly comparison, 2015-2020</description>
+    </item>
     
     <item>
       <title>Bitcoin - comparisons between DCA, DVA and lump-sum investing</title>
