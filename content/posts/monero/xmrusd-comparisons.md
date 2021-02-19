@@ -11,7 +11,7 @@ weight: 1
 showtoc: true
 tocopen: true
 #url: "home" # by default = "posts/{title}"
-aliases: [""]
+aliases: ["/posts/bitcoin/xmrusd-comparisons/"]
 #series: ["code"]
 categories: ["crypto"]
 math: false
@@ -88,7 +88,7 @@ Take a look at the trend by year:
 - 2019: neutral
 - 2020: up and steady
 
-Statiscally, the *DVA* method, with no possibility to withdray any fund, is superior to others. The number of accumulated moneros is the most often higher than for other mehods while keeping the price of acquisition lower. **The drawback is that the investor does not control the expenses**.
+Statiscally, the *DVA* method, with no possibility to withdraw any fund, is superior to others. The number of accumulated moneros is the most often higher than for other mehods while keeping the price of acquisition lower. **The drawback is that the investor does not control the expenses**.
 
 The *lump-sum investing* presents decent sharpes and a very good non-realized profit. But as expected, it follows strictly the price of monero, that has not been steady over the years, as written earlier. **The investors needs to have faith in the purpose of the underlying in order to avoid a sale**.
 
