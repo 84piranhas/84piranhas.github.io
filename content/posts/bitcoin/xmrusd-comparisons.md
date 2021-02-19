@@ -90,8 +90,8 @@ Take a look at the trend by year:
 
 Statiscally, the *DVA* method, with no possibility to withdray any fund, is superior to others. The number of accumulated moneros is the most often higher than for other mehods while keeping the price of acquisition lower. **The drawback is that the investor does not control the expenses**.
 
-The *lump-sum investing* presents decent sharpes and a very good non-realized profit. But as expected, it follows stricly the price of monero, that has not been steady over the years, as written earlier. **The investors needs to have faith in the purpose of the underlying in order to avoid a sale**.
+The *lump-sum investing* presents decent sharpes and a very good non-realized profit. But as expected, it follows strictly the price of monero, that has not been steady over the years, as written earlier. **The investors needs to have faith in the purpose of the underlying in order to avoid a sale**.
 
-The ***DCA* is a very reasonable investing method for Monero**. The expenses are well controlled y definition, while the average price of acquisition does not present a missing opportunity as the volatility of the crypto currency can be significant.
+The ***DCA* is a very reasonable investing method for Monero**. The expenses are well controlled by definition, while the average price of acquisition does not present a missing opportunity as the volatility of the crypto currency can be significant.
 
 {{< graph-xmrusd-resume-byyear >}}
