@@ -1,0 +1,1380 @@
+
+<h2 id="call">Call<a hidden="" class="anchor" aria-hidden="true" href="#call"></a></h2>
+
+<h3 id="callT">Time<a hidden="" class="anchor" aria-hidden="true" href="#callT"></a></h3>
+<div id="graph-call-t10" class="chart13"></div>
+<div id="graph-call-t5" class="chart23"></div>
+<div id="graph-call-t1" class="chart33"></div>
+
+<h3 id="callVol">Volatility<a hidden="" class="anchor" aria-hidden="true" href="#callVol"></a></h3>
+<div id="graph-call-vol10" class="chart13"></div>
+<div id="graph-call-vol25" class="chart23"></div>
+<div id="graph-call-vol50" class="chart33"></div>
+
+<h3 id="callir">Interest Rate<a hidden="" class="anchor" aria-hidden="true" href="#callir"></a></h3>
+<div id="graph-call-ir1" class="chart13"></div>
+<div id="graph-call-ir5" class="chart23"></div>
+<div id="graph-call-ir10" class="chart33"></div>
+
+
+<h2 id="put">Put<a hidden="" class="anchor" aria-hidden="true" href="#put"></a></h2>
+
+<h3 id="putT">Time<a hidden="" class="anchor" aria-hidden="true" href="#putT"></a></h3>
+<div id="graph-put-t10" class="chart13"></div>
+<div id="graph-put-t5" class="chart23"></div>
+<div id="graph-put-t1" class="chart33"></div>
+
+<h3 id="putVol">Volatility<a hidden="" class="anchor" aria-hidden="true" href="#putVol"></a></h3>
+<div id="graph-put-vol10" class="chart13"></div>
+<div id="graph-put-vol25" class="chart23"></div>
+<div id="graph-put-vol50" class="chart33"></div>
+
+<h3 id="putir">Interest Rate<a hidden="" class="anchor" aria-hidden="true" href="#putir"></a></h3>
+<div id="graph-put-ir1" class="chart13"></div>
+<div id="graph-put-ir5" class="chart23"></div>
+<div id="graph-put-ir10" class="chart33"></div>
+<style>
+    .chart {
+        height: 500px;
+        float: center;
+        width: 100%;
+    }
+</style>
+
+<style>
+    .chart13 {
+        height: 400px;
+        float: left;
+        width: 33%;
+    }
+
+    .spacer {
+        height: 20px;
+    }
+
+    .chart23 {
+        height: 400px;
+        float: left;
+        width: 33%;
+    }
+
+    .spacer {
+        height: 20px;
+    }
+
+    .chart33 {
+        height: 400px;
+        float: left;
+        width: 33%;
+    }
+
+</style>
+
+
+<!--callT-->
+
+<script>
+    var chartsCallT = []
+
+    var optionsCallT =  {
+                series:{
+                    marker: {
+                        enabled: false
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(){
+                                //syncTooltipCalldelta(this.series.chart.container, this.index);
+                            }
+                        }
+                    },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-call-t10').highcharts().series[this.index].hide();
+                            $('#graph-call-t5').highcharts().series[this.index].hide();
+                            $('#graph-call-t1').highcharts().series[this.index].hide();
+
+                            } else {
+                            $('#graph-call-t10').highcharts().series[this.index].show();
+                            $('#graph-call-t5').highcharts().series[this.index].show();
+                            $('#graph-call-t1').highcharts().series[this.index].show();
+
+                            }
+                            return false;
+                        }
+                    },
+
+                }
+            };
+
+    function syncTooltipCallT(container, p) {
+        var i = 0;
+        //console.log(p)
+        for (; i < chartsCallT.length; i++) {
+            //console.log(i);
+            //console.log(charts2[i].series[0].data)
+            if (container.id != chartsCallT[i].container.id) {
+                if(chartsCallT[i].tooltip.shared) {
+                    chartsCallT[i].tooltip.refresh([chartsCallT[i].series[0].data[p]]);
+                }
+                else {
+                    chartsCallT[i].tooltip.refresh(chartsCallT[i].series[0].data[p]);
+                }
+            }
+        }
+    }
+
+    $.get("../../../files/trading/call-t10.csv", function(csv) {
+        chartsCallT[0] = Highcharts.chart('graph-call-t10', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsCallT,
+
+            yAxis: {
+                min: -0.1,
+                max:1,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "T=1"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+    $.get("../../../files/trading/call-t5.csv", function(csv) {
+        chartsCallT[1] = Highcharts.chart('graph-call-t5', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsCallT,
+
+            yAxis: {
+                labels:{enabled:false},
+                min: -0.1,
+                max:1,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "T=0.5"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+    $.get("../../../files/trading/call-t1.csv", function(csv) {
+        chartsCallT[2] = Highcharts.chart('graph-call-t1', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsCallT,
+
+            yAxis: {
+                labels:{enabled:false},
+                min: -0.1,
+                max:1,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "T=0.1"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+
+</script>
+
+<!--callVol-->
+
+<script>
+    var chartsCallVol = []
+
+    var optionsCallVol =  {
+                series:{
+                    marker: {
+                        enabled: false
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(){
+                                //syncTooltipCalldelta(this.series.chart.container, this.index);
+                            }
+                        }
+                    },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-call-vol10').highcharts().series[this.index].hide();
+                            $('#graph-call-vol25').highcharts().series[this.index].hide();
+                            $('#graph-call-vol50').highcharts().series[this.index].hide();
+
+                            } else {
+                            $('#graph-call-vol10').highcharts().series[this.index].show();
+                            $('#graph-call-vol25').highcharts().series[this.index].show();
+                            $('#graph-call-vol50').highcharts().series[this.index].show();
+
+                            }
+                            return false;
+                        }
+                    },
+
+                }
+            };
+
+    function syncTooltipCallVol(container, p) {
+        var i = 0;
+        //console.log(p)
+        for (; i < chartsCallVol.length; i++) {
+            //console.log(i);
+            //console.log(charts2[i].series[0].data)
+            if (container.id != chartsCallVol[i].container.id) {
+                if(chartsCallVol[i].tooltip.shared) {
+                    chartsCallVol[i].tooltip.refresh([chartsCallVol[i].series[0].data[p]]);
+                }
+                else {
+                    chartsCallVol[i].tooltip.refresh(chartsCallVol[i].series[0].data[p]);
+                }
+            }
+        }
+    }
+
+    $.get("../../../files/trading/call-vol10.csv", function(csv) {
+        chartsCallVol[0] = Highcharts.chart('graph-call-vol10', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsCallVol,
+
+            yAxis: {
+                min: -0.1,
+                max:1,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "vol=10%"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+    $.get("../../../files/trading/call-vol25.csv", function(csv) {
+        chartsCallVol[1] = Highcharts.chart('graph-call-vol25', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsCallVol,
+
+            yAxis: {
+                labels:{enabled:false},
+                min: -0.1,
+                max:1,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "vol=25%"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+    $.get("../../../files/trading/call-vol50.csv", function(csv) {
+        chartsCallVol[2] = Highcharts.chart('graph-call-vol50', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsCallVol,
+
+            yAxis: {
+                labels:{enabled:false},
+                min: -0.1,
+                max:1,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "vol=50%"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+
+</script>
+
+<!--callir-->
+
+<script>
+    var chartsCallir = []
+
+    var optionsCallir =  {
+                series:{
+                    marker: {
+                        enabled: false
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(){
+                                //syncTooltipCalldelta(this.series.chart.container, this.index);
+                            }
+                        }
+                    },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-call-ir1').highcharts().series[this.index].hide();
+                            $('#graph-call-ir5').highcharts().series[this.index].hide();
+                            $('#graph-call-ir10').highcharts().series[this.index].hide();
+
+                            } else {
+                            $('#graph-call-ir1').highcharts().series[this.index].show();
+                            $('#graph-call-ir5').highcharts().series[this.index].show();
+                            $('#graph-call-ir10').highcharts().series[this.index].show();
+
+                            }
+                            return false;
+                        }
+                    },
+
+                }
+            };
+
+    function syncTooltipCallir(container, p) {
+        var i = 0;
+        //console.log(p)
+        for (; i < chartsCallir.length; i++) {
+            //console.log(i);
+            //console.log(charts2[i].series[0].data)
+            if (container.id != chartsCallir[i].container.id) {
+                if(chartsCallir[i].tooltip.shared) {
+                    chartsCallir[i].tooltip.refresh([chartsCallir[i].series[0].data[p]]);
+                }
+                else {
+                    chartsCallir[i].tooltip.refresh(chartsCallir[i].series[0].data[p]);
+                }
+            }
+        }
+    }
+
+    $.get("../../../files/trading/call-ir1.csv", function(csv) {
+        chartsCallir[0] = Highcharts.chart('graph-call-ir1', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsCallir,
+
+            yAxis: {
+                min: -0.1,
+                max:1,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "ir=1%"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+    $.get("../../../files/trading/call-ir5.csv", function(csv) {
+        chartsCallir[1] = Highcharts.chart('graph-call-ir5', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsCallir,
+
+            yAxis: {
+                labels:{enabled:false},
+                min: -0.1,
+                max:1,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "ir=5%"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+    $.get("../../../files/trading/call-ir10.csv", function(csv) {
+        chartsCallir[2] = Highcharts.chart('graph-call-ir10', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsCallir,
+
+            yAxis: {
+                labels:{enabled:false},
+                min: -0.1,
+                max:1,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "ir=10%"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+
+</script>
+
+<!--putT-->
+
+<script>
+    var chartsPutT = []
+
+    var optionsPutT =  {
+                series:{
+                    marker: {
+                        enabled: false
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(){
+                                //syncTooltipPutdelta(this.series.chart.container, this.index);
+                            }
+                        }
+                    },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-put-t10').highcharts().series[this.index].hide();
+                            $('#graph-put-t5').highcharts().series[this.index].hide();
+                            $('#graph-put-t1').highcharts().series[this.index].hide();
+
+                            } else {
+                            $('#graph-put-t10').highcharts().series[this.index].show();
+                            $('#graph-put-t5').highcharts().series[this.index].show();
+                            $('#graph-put-t1').highcharts().series[this.index].show();
+
+                            }
+                            return false;
+                        }
+                    },
+
+                }
+            };
+
+    function syncTooltipPutT(container, p) {
+        var i = 0;
+        //console.log(p)
+        for (; i < chartsPutT.length; i++) {
+            //console.log(i);
+            //console.log(charts2[i].series[0].data)
+            if (container.id != chartsPutT[i].container.id) {
+                if(chartsPutT[i].tooltip.shared) {
+                    chartsPutT[i].tooltip.refresh([chartsPutT[i].series[0].data[p]]);
+                }
+                else {
+                    chartsPutT[i].tooltip.refresh(chartsPutT[i].series[0].data[p]);
+                }
+            }
+        }
+    }
+
+    $.get("../../../files/trading/put-t10.csv", function(csv) {
+        chartsPutT[0] = Highcharts.chart('graph-put-t10', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsPutT,
+
+            yAxis: {
+                min: -1,
+                max:0.5,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "T=1"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+    $.get("../../../files/trading/put-t5.csv", function(csv) {
+        chartsPutT[1] = Highcharts.chart('graph-put-t5', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsPutT,
+
+            yAxis: {
+                labels:{enabled:false},
+                min: -1,
+                max:0.5,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "T=0.5"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+    $.get("../../../files/trading/put-t1.csv", function(csv) {
+        chartsPutT[2] = Highcharts.chart('graph-put-t1', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsPutT,
+
+            yAxis: {
+                labels:{enabled:false},
+                min: -1,
+                max:0.5,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "T=0.1"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+
+</script>
+
+<!--putVol-->
+
+<script>
+    var chartsPutVol = []
+
+    var optionsPutVol =  {
+                series:{
+                    marker: {
+                        enabled: false
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(){
+                                //syncTooltipPutdelta(this.series.chart.container, this.index);
+                            }
+                        }
+                    },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-put-vol10').highcharts().series[this.index].hide();
+                            $('#graph-put-vol25').highcharts().series[this.index].hide();
+                            $('#graph-put-vol50').highcharts().series[this.index].hide();
+
+                            } else {
+                            $('#graph-put-vol10').highcharts().series[this.index].show();
+                            $('#graph-put-vol25').highcharts().series[this.index].show();
+                            $('#graph-put-vol50').highcharts().series[this.index].show();
+
+                            }
+                            return false;
+                        }
+                    },
+
+                }
+            };
+
+    function syncTooltipPutVol(container, p) {
+        var i = 0;
+        //console.log(p)
+        for (; i < chartsPutVol.length; i++) {
+            //console.log(i);
+            //console.log(charts2[i].series[0].data)
+            if (container.id != chartsPutVol[i].container.id) {
+                if(chartsPutVol[i].tooltip.shared) {
+                    chartsPutVol[i].tooltip.refresh([chartsPutVol[i].series[0].data[p]]);
+                }
+                else {
+                    chartsPutVol[i].tooltip.refresh(chartsPutVol[i].series[0].data[p]);
+                }
+            }
+        }
+    }
+
+    $.get("../../../files/trading/put-vol10.csv", function(csv) {
+        chartsPutVol[0] = Highcharts.chart('graph-put-vol10', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsPutVol,
+
+            yAxis: {
+                min: -1,
+                max:0.5,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "vol=10%"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+    $.get("../../../files/trading/put-vol25.csv", function(csv) {
+        chartsPutVol[1] = Highcharts.chart('graph-put-vol25', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsPutVol,
+
+            yAxis: {
+                labels:{enabled:false},
+                min: -1,
+                max:0.5,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "vol=25%"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+    $.get("../../../files/trading/put-vol50.csv", function(csv) {
+        chartsPutVol[2] = Highcharts.chart('graph-put-vol50', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsPutVol,
+
+            yAxis: {
+                labels:{enabled:false},
+                min: -1,
+                max:0.5,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "vol=50%"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+
+</script>
+
+<!--putir-->
+
+<script>
+    var chartsPutir = []
+
+    var optionsPutir =  {
+                series:{
+                    marker: {
+                        enabled: false
+                    },
+                    point: {
+                        events: {
+                            mouseOver: function(){
+                                //syncTooltipPutdelta(this.series.chart.container, this.index);
+                            }
+                        }
+                    },
+                    events: {
+                        legendItemClick: function(event) {
+                            if (this.visible) {
+                            $('#graph-put-ir1').highcharts().series[this.index].hide();
+                            $('#graph-put-ir5').highcharts().series[this.index].hide();
+                            $('#graph-put-ir10').highcharts().series[this.index].hide();
+
+                            } else {
+                            $('#graph-put-ir1').highcharts().series[this.index].show();
+                            $('#graph-put-ir5').highcharts().series[this.index].show();
+                            $('#graph-put-ir10').highcharts().series[this.index].show();
+
+                            }
+                            return false;
+                        }
+                    },
+
+                }
+            };
+
+    function syncTooltipPutir(container, p) {
+        var i = 0;
+        //console.log(p)
+        for (; i < chartsPutir.length; i++) {
+            //console.log(i);
+            //console.log(charts2[i].series[0].data)
+            if (container.id != chartsPutir[i].container.id) {
+                if(chartsPutir[i].tooltip.shared) {
+                    chartsPutir[i].tooltip.refresh([chartsPutir[i].series[0].data[p]]);
+                }
+                else {
+                    chartsPutir[i].tooltip.refresh(chartsPutir[i].series[0].data[p]);
+                }
+            }
+        }
+    }
+
+    $.get("../../../files/trading/put-ir1.csv", function(csv) {
+        chartsPutir[0] = Highcharts.chart('graph-put-ir1', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsPutir,
+
+            yAxis: {
+                min: -1,
+                max:0.5,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "ir=1%"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+    $.get("../../../files/trading/put-ir5.csv", function(csv) {
+        chartsPutir[1] = Highcharts.chart('graph-put-ir5', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsPutir,
+
+            yAxis: {
+                labels:{enabled:false},
+                min: -1,
+                max:0.5,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "ir=5%"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+    $.get("../../../files/trading/put-ir10.csv", function(csv) {
+        chartsPutir[2] = Highcharts.chart('graph-put-ir10', {
+            chart: {
+                type: 'spline',
+                plotBorderWidth: 0,
+                zoomType: 'xy',
+                inverted: false,
+            },
+
+            plotOptions: optionsPutir,
+
+            yAxis: {
+                labels:{enabled:false},
+                min: -1,
+                max:0.5,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+            },
+            xAxis:{
+                visible:true,
+                gridLineWidth: 0.30,
+                gridLineColor: '#afbac4',
+                gridLineDashStyle: 'solid',
+                plotLines: [{
+                        color: 'gold',
+                        width: 2,
+                        value: 100 // Position, you'll have to translate this to the values on your x axis
+                    }],
+                },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                shared: true
+            },
+            legend: {
+                enabled: true,
+                verticalAlign: 'bottom',
+            },
+            title: {
+                //text: "Put Delta"
+            },
+            subtitle: {
+                text: "ir=10%"
+            },
+            data: {
+                csv: csv,
+            },
+
+        });
+
+    });
+
+
+
+</script>

@@ -34,6 +34,9 @@ menu:
         - name: CryptoCurrency
           url: categories/crypto
           weight: 22
+        - name: Trading Options
+          url: categories/trading
+          weight: 23
         # - name: Code tag
         #   url: tags/code
         #   weight: 23
