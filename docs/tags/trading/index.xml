@@ -5,10 +5,19 @@
     <link>https://84piranhas.github.io/tags/trading/</link>
     <description>Recent content in trading on 84piranhas</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 01 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 Apr 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://84piranhas.github.io/tags/trading/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Options - pricer</title>
+      <link>https://84piranhas.github.io/posts/trading/options-pricer/</link>
+      <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://84piranhas.github.io/posts/trading/options-pricer/</guid>
+      <description>Basic pricer of equity options</description>
+    </item>
     
     <item>
       <title>Options - the movements of the greeks</title>

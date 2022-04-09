@@ -1,0 +1,183 @@
+<style>
+    .input2 {
+        color: red;
+    }
+
+    .slider2 {
+        width: 300px;
+    }
+</style>
+
+<script>
+    var color = 
+    console.log(color)
+</script>
+
+<!--Volatility = <span id="volText" class="input2">20</span><span> %</span>-->
+<!--
+Volatility = <input  class="input2" id="volText" type="text" value="20"></input><span> %</span>
+<br>
+<input type="range" id="vol" value="20" min="0" max="100" step="0.1" 
+onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, this.id)" style="width: 500px">
+<br>
+-->
+
+<!--
+Time to Maturity = <span id="timeText">60</span><span> days</span>
+<br>
+<input type="range" id="time" value="60" min="1" max="365" step="1" 
+onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, this.id)" style="width: 500px">
+<br>
+<input id="price" value="100">
+-->
+
+<!--
+<script>
+    function updateInput2(val, id){
+        id2 = id + 'Text'
+        paramText = document.getElementById(id2)
+        //paramText.innerHTML = val
+        paramText.value = val
+    }
+</script>
+-->
+Volatility (%)
+<form>
+    <div>
+        <input id="volText" class = "input2" type="number" value="20" min="0" max="200" step="0.5" oninput="volRange.value=volText.value" />
+        <input id="volRange" class = "slider2" type="range" value="20" min="0" max="200" step="0.5" oninput="volText.value=volRange.value" />
+    </div>
+</form>
+Time to Maturity (days)
+<form>
+    <div>
+        <input id="timeText" class = "input2" type="number" value="60" min="0" max="200" step="1" oninput="timeRange.value=timeText.value" />
+        <input id="timeRange" class = "slider2" type="range" value="60" min="1" max="365" step="1" oninput="timeText.value=timeRange.value" />
+    </div>
+</form>
+Interest Rate (%)
+<form>
+    <div>
+        <input id="rateText" class = "input2" type="number" value="0" min="-10" max="20" step="0.1" oninput="rateRange.value=rateText.value" />
+        <input id="rateRange" class = "slider2" type="range" value="0" min="-10" max="20" step="0.1" oninput="rateText.value=rateRange.value" />
+    </div>
+</form>
+Strike ($)
+<form>
+    <div>
+        <input id="strikeText" class = "input2" type="number" value="100" min="0" step="0.1" />
+    </div>
+</form>
+Current Price ($)
+<form>
+    <div>
+        <input id="currentText" class = "input2" type="number" value="100" min="0" step="0.1" />
+    </div>
+</form>
+
+<button onclick="price()">
+PRICE
+</button>
+<div id="resultOption"></div>
+<table id="optionsTable">
+    <tr>
+        <th>Result</th>
+        <th>Strike</th>
+        <th>Current</th>
+        <th>Expiry</th>
+        <th>Rate</th>
+        <th>Volatility</th>
+    </tr>
+</table>
+
+<script>
+    function normalcdf(X){   //HASTINGS.  MAX ERROR = .000001
+        var T=1/(1+.2316419*Math.abs(X));
+        var D=.3989423*Math.exp(-X*X/2);
+        var Prob=D*T*(.3193815+T*(-.3565638+T*(1.781478+T*(-1.821256+T*1.330274))));
+        if (X>0) {
+            Prob=1-Prob
+        }
+        return Prob
+    }   
+
+    function getNcdf(Z, M, SD) {
+            if (SD<0) {
+                alert("The standard deviation must be nonnegative.")
+            } else if (SD==0) {
+                if (Z<M){
+                    Prob=0
+                } else {
+                    Prob=1
+                }
+            } else {
+                Prob=normalcdf((Z-M)/SD);
+                Prob=Math.round(100000*Prob)/100000;
+            }
+        result = Prob
+        return result
+    }
+
+    function dOne(underlyingPrice, exercisePrice, time, interest, volatility, dividend){
+    var result = (Math.log(underlyingPrice / exercisePrice) + (interest - dividend + 0.5 * (volatility * volatility)) * time) / (volatility * (Math.sqrt(time)))
+        return result
+    }
+
+    function NdOne(underlyingPrice, exercisePrice, time, interest, volatility, dividend){
+    var result = Math.exp(-(dOne(underlyingPrice, exercisePrice, time, interest, volatility, dividend) * dOne(underlyingPrice, exercisePrice, time, interest, volatility, dividend))/2)/Math.sqrt(2*Math.PI)
+        return result
+    }
+
+    function dTwo(underlyingPrice, exercisePrice, time, interest, volatility, dividend){
+    var result = dOne(underlyingPrice, exercisePrice, time, interest, volatility, dividend) - volatility * Math.sqrt(time)
+        return result
+    }
+
+    function NdTwo(underlyingPrice, exercisePrice, time, interest, volatility, dividend){
+    var result = getNcdf(dTwo(underlyingPrice, exercisePrice, time, interest, volatility, dividend), 0, 1) 
+        return result
+    }
+
+    function callOption(underlyingPrice, exercisePrice, time, interest, volatility, dividend){
+    var result =  Math.exp(-dividend * time) * underlyingPrice * getNcdf(dOne(underlyingPrice, exercisePrice, time, interest, volatility, dividend),0, 1) - exercisePrice * Math.exp(-interest * time) * getNcdf(dOne(underlyingPrice, exercisePrice, time, interest, volatility, dividend) - volatility * Math.sqrt(time), 0, 1) 
+        return result
+    }
+
+    function callOptionA(underlyingPrice, exercisePrice, time, interest, volatility, dividend){
+    var result =  Math.exp(-dividend * time) * underlyingPrice * getNcdf(dOne(underlyingPrice, exercisePrice, time, interest, volatility, dividend),0, 1)
+        return result
+    }
+
+    function callOptionB(underlyingPrice, exercisePrice, time, interest, volatility, dividend){
+    var result =  - exercisePrice * Math.exp(-interest * time) * getNcdf(dOne(underlyingPrice, exercisePrice, time, interest, volatility, dividend) - volatility * Math.sqrt(time), 0, 1) 
+        return result
+    }
+
+    function price(){
+        strike = parseFloat(document.getElementById('strikeText').value)
+        currentPrice = parseFloat(document.getElementById('currentText').value)
+        ttm = parseFloat(document.getElementById('timeText').value)
+        rate = parseFloat(document.getElementById('rateText').value)
+        vol = parseFloat(document.getElementById('volText').value)
+        console.log(strike, currentPrice, ttm, rate, vol)
+
+        var call = callOption(currentPrice, strike, 1/365*ttm,rate/100,vol/100,0)
+        //console.log(call)
+        
+        //document.getElementById("resultOption").innerHTML=document.getElementById("resultOption").innerHTML + call
+        var table = document.getElementById("optionsTable");
+        var row = table.insertRow(1);
+        var cell0 = row.insertCell(0);
+        var cell1 = row.insertCell(1);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(1);
+        var cell4 = row.insertCell(1);
+        var cell5 = row.insertCell(1);
+        cell0.innerHTML=call.toFixed(3)
+        cell5.innerHTML = strike;
+        cell4.innerHTML = currentPrice;
+        cell3.innerHTML = ttm;
+        cell2.innerHTML = rate;
+        cell1.innerHTML = vol;
+    }
+</script>
