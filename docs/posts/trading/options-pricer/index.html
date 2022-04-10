@@ -44,8 +44,8 @@
   "keywords": [
     "english", "trading", "options", "greeks"
   ],
-  "articleBody": "\r\r\r\r\r\r\r\r\r\r\rvar themeBackgroundColor\rif (localStorage.getItem(\"pref-theme\") === \"dark\") {\rthemeBackgroundColor='#1d1e20';\r} else if (localStorage.getItem(\"pref-theme\") === \"light\") {\rthemeBackgroundColor='white';\r} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {\rthemeBackgroundColor='#1d1e20';\r}\rHighcharts.setOptions({\rcolors: ['#1abc9c','#3498db','#9b59b6','#2ecc71','#E7E08B','#f1c40f','#e67e22','#e74c3c','#ecf0f1','#95a5a6'],\rtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: ''\r},\rsubtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: ''\r},\rlegend: {\renabled: true,\ritemStyle: { \"color\": \"#767B80\", \"cursor\": \"pointer\", \"fontSize\": \"12px\", \"fontWeight\": \"bold\", \"textOverflow\": \"ellipsis\" }\r},\rcredits: {\renabled: false\r},\rexporting: { enabled: false },\rchart: {\rbackgroundColor: themeBackgroundColor,\r},\ryAxis: {\rgridLineWidth: 1,\rgridLineColor: '#767B80',\rlabels: {\rstyle: {\rcolor: '#767B80' }\r},\rtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: null,\r},\r},\rxAxis: {\rgridLineWidth: 0,\rlabels: {\rstyle: {\rcolor: '#767B80'\r}\r},\r}\r});\r\rPricer \r.input2 {\rcolor: red;\r}\r.slider2 {\rwidth: 300px;\r}\r\r\rvar color = console.log(color)\r\rVolatility (%)\r\r\r\r\rTime to Maturity (days)\r\r\r\r\rInterest Rate (%)\r\r\r\r\rStrike ($)\r\r\r\r\rCurrent Price ($)\r\r\r\r\rPRICE\r\r\r\rResult\rStrike\rCurrent\rExpiry\rRate\rVolatility\r\r\r\rfunction normalcdf(X){ var T=1/(1+.2316419*Math.abs(X));\rvar D=.3989423*Math.exp(-X*X/2);\rvar Prob=D*T*(.3193815+T*(-.3565638+T*(1.781478+T*(-1.821256+T*1.330274))));\rif (X0) {\rProb=1-Prob\r}\rreturn Prob\r} function getNcdf(Z, M, SD) {\rif (SD",
-  "wordCount" : "178",
+  "articleBody": "\r\r\r\r\r\r\r\r\r\r\rvar themeBackgroundColor\rif (localStorage.getItem(\"pref-theme\") === \"dark\") {\rthemeBackgroundColor='#1d1e20';\r} else if (localStorage.getItem(\"pref-theme\") === \"light\") {\rthemeBackgroundColor='white';\r} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {\rthemeBackgroundColor='#1d1e20';\r}\rHighcharts.setOptions({\rcolors: ['#1abc9c','#3498db','#9b59b6','#2ecc71','#E7E08B','#f1c40f','#e67e22','#e74c3c','#ecf0f1','#95a5a6'],\rtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: ''\r},\rsubtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: ''\r},\rlegend: {\renabled: true,\ritemStyle: { \"color\": \"#767B80\", \"cursor\": \"pointer\", \"fontSize\": \"12px\", \"fontWeight\": \"bold\", \"textOverflow\": \"ellipsis\" }\r},\rcredits: {\renabled: false\r},\rexporting: { enabled: false },\rchart: {\rbackgroundColor: themeBackgroundColor,\r},\ryAxis: {\rgridLineWidth: 1,\rgridLineColor: '#767B80',\rlabels: {\rstyle: {\rcolor: '#767B80' }\r},\rtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: null,\r},\r},\rxAxis: {\rgridLineWidth: 0,\rlabels: {\rstyle: {\rcolor: '#767B80'\r}\r},\r}\r});\r\rPricer \r.input2 {\rcolor: red;\r}\r.slider2 {\rwidth: 300px;\r}\r\r\rvar color = console.log(color)\r\rVolatility (%)\r\r\r\r\rTime to Maturity (days)\r\r\r\r\rInterest Rate (%)\r\r\r\r\rStrike ($)\r\r\r\r\rCurrent Price ($)\r\r\r\r\rPRICE\r\r\r\rResult\rStrike\rCurrent\rExpiry\rRate\rVolatility\r\r\r\r\rfunction normalcdf(X){ var T=1/(1+.2316419*Math.abs(X));\rvar D=.3989423*Math.exp(-X*X/2);\rvar Prob=D*T*(.3193815+T*(-.3565638+T*(1.781478+T*(-1.821256+T*1.330274))));\rif (X0) {\rProb=1-Prob\r}\rreturn Prob\r} function getNcdf(Z, M, SD) {\rif (SD\rvar binsvgOptions = ''\rfunction price(){\rstrike = parseFloat(document.getElementById('strikeText').value)\rcurrentPrice = parseFloat(document.getElementById('currentText').value)\rttm = parseFloat(document.getElementById('timeText').value)\rrate = parseFloat(document.getElementById('rateText').value)\rvol = parseFloat(document.getElementById('volText').value)\rconsole.log(strike, currentPrice, ttm, rate, vol)\rvar call = callOption(currentPrice, strike, 1/365*ttm,rate/100,vol/100,0)\rvar table = document.getElementById(\"optionsTable\");\rvar row = table.insertRow(1);\rvar cell0 = row.insertCell(0);\rvar cell1 = row.insertCell(-1);\rvar cell2 = row.insertCell(-1);\rvar cell3 = row.insertCell(-1);\rvar cell4 = row.insertCell(-1);\rvar cell5 = row.insertCell(-1);\rvar cell6 = row.insertCell(-1);\rcell0.innerHTML=call.toFixed(3)\rcell1.innerHTML = strike;\rcell2.innerHTML = currentPrice;\rcell3.innerHTML = ttm;\rcell4.innerHTML = rate;\rcell5.innerHTML = vol;\rcell6.innerHTML = binsvgOptions\r}\rfunction deleteRowOptions(r){\rvar i = r.parentNode.parentNode.rowIndex;\rdocument.getElementById(\"optionsTable\").deleteRow(i);\r}\r ",
+  "wordCount" : "274",
   "inLanguage": "en",
   "datePublished": "2022-04-08T00:00:00Z",
   "dateModified": "2022-04-08T00:00:00Z",
@@ -318,8 +318,11 @@ PRICE
         <th>Expiry</th>
         <th>Rate</th>
         <th>Volatility</th>
+        <th></th>
+        
     </tr>
 </table>
+
 
 <script>
     function normalcdf(X){   
@@ -383,7 +386,12 @@ PRICE
     var result =  - exercisePrice * Math.exp(-interest * time) * getNcdf(dOne(underlyingPrice, exercisePrice, time, interest, volatility, dividend) - volatility * Math.sqrt(time), 0, 1) 
         return result
     }
+</script>
 
+
+<script>
+    var binsvgOptions = '<svg onclick="deleteRowOptions(this)" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#b5b5b5"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"/></svg>'
+    
     function price(){
         strike = parseFloat(document.getElementById('strikeText').value)
         currentPrice = parseFloat(document.getElementById('currentText').value)
@@ -399,17 +407,26 @@ PRICE
         var table = document.getElementById("optionsTable");
         var row = table.insertRow(1);
         var cell0 = row.insertCell(0);
-        var cell1 = row.insertCell(1);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(1);
-        var cell4 = row.insertCell(1);
-        var cell5 = row.insertCell(1);
+        var cell1 = row.insertCell(-1);
+        var cell2 = row.insertCell(-1);
+        var cell3 = row.insertCell(-1);
+        var cell4 = row.insertCell(-1);
+        var cell5 = row.insertCell(-1);
+        var cell6 = row.insertCell(-1);
+        
         cell0.innerHTML=call.toFixed(3)
-        cell5.innerHTML = strike;
-        cell4.innerHTML = currentPrice;
+        cell1.innerHTML = strike;
+        cell2.innerHTML = currentPrice;
         cell3.innerHTML = ttm;
-        cell2.innerHTML = rate;
-        cell1.innerHTML = vol;
+        cell4.innerHTML = rate;
+        cell5.innerHTML = vol;
+        cell6.innerHTML = binsvgOptions
+    }
+
+    function deleteRowOptions(r){
+        var i = r.parentNode.parentNode.rowIndex;
+        document.getElementById("optionsTable").deleteRow(i);
+
     }
 </script>
 

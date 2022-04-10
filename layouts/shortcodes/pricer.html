@@ -87,9 +87,12 @@ PRICE
         <th>Expiry</th>
         <th>Rate</th>
         <th>Volatility</th>
+        <th></th>
+        
     </tr>
 </table>
 
+<!--functions for pricing equity options-->
 <script>
     function normalcdf(X){   //HASTINGS.  MAX ERROR = .000001
         var T=1/(1+.2316419*Math.abs(X));
@@ -152,7 +155,12 @@ PRICE
     var result =  - exercisePrice * Math.exp(-interest * time) * getNcdf(dOne(underlyingPrice, exercisePrice, time, interest, volatility, dividend) - volatility * Math.sqrt(time), 0, 1) 
         return result
     }
+</script>
 
+
+<script>
+    var binsvgOptions = '<svg onclick="deleteRowOptions(this)" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#b5b5b5"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"/></svg>'
+    
     function price(){
         strike = parseFloat(document.getElementById('strikeText').value)
         currentPrice = parseFloat(document.getElementById('currentText').value)
@@ -168,16 +176,25 @@ PRICE
         var table = document.getElementById("optionsTable");
         var row = table.insertRow(1);
         var cell0 = row.insertCell(0);
-        var cell1 = row.insertCell(1);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(1);
-        var cell4 = row.insertCell(1);
-        var cell5 = row.insertCell(1);
+        var cell1 = row.insertCell(-1);
+        var cell2 = row.insertCell(-1);
+        var cell3 = row.insertCell(-1);
+        var cell4 = row.insertCell(-1);
+        var cell5 = row.insertCell(-1);
+        var cell6 = row.insertCell(-1);
+        
         cell0.innerHTML=call.toFixed(3)
-        cell5.innerHTML = strike;
-        cell4.innerHTML = currentPrice;
+        cell1.innerHTML = strike;
+        cell2.innerHTML = currentPrice;
         cell3.innerHTML = ttm;
-        cell2.innerHTML = rate;
-        cell1.innerHTML = vol;
+        cell4.innerHTML = rate;
+        cell5.innerHTML = vol;
+        cell6.innerHTML = binsvgOptions
+    }
+
+    function deleteRowOptions(r){
+        var i = r.parentNode.parentNode.rowIndex;
+        document.getElementById("optionsTable").deleteRow(i);
+
     }
 </script>
