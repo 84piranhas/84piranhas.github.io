@@ -1,10 +1,18 @@
 <style>
     .input2 {
-        color: red;
+        color: currentColor;
+        font-weight: bold;
     }
 
     .slider2 {
         width: 300px;
+    }
+    .button2 {
+        color:currentColor;
+        font-weight: bold;
+        border: 2px solid currentColor;
+        padding: 1px 15px;
+        
     }
 </style>
 
@@ -75,9 +83,8 @@ Current Price ($)
     </div>
 </form>
 
-<button onclick="price()">
-PRICE
-</button>
+<button class="button2" onclick="price('call')">PRICE CALL</button>
+<button class="button2" onclick="price('put')">PRICE PUT</button>
 <div id="resultOption"></div>
 <table id="optionsTable">
     <tr>
@@ -88,6 +95,8 @@ PRICE
         <th>Rate</th>
         <th>Volatility</th>
         <th></th>
+        <th></th>
+        
         
     </tr>
 </table>
@@ -142,7 +151,7 @@ PRICE
     }
 
     function callOption(underlyingPrice, exercisePrice, time, interest, volatility, dividend){
-    var result =  Math.exp(-dividend * time) * underlyingPrice * getNcdf(dOne(underlyingPrice, exercisePrice, time, interest, volatility, dividend),0, 1) - exercisePrice * Math.exp(-interest * time) * getNcdf(dOne(underlyingPrice, exercisePrice, time, interest, volatility, dividend) - volatility * Math.sqrt(time), 0, 1) 
+        var result =  Math.exp(-dividend * time) * underlyingPrice * getNcdf(dOne(underlyingPrice, exercisePrice, time, interest, volatility, dividend),0, 1) - exercisePrice * Math.exp(-interest * time) * getNcdf(dOne(underlyingPrice, exercisePrice, time, interest, volatility, dividend) - volatility * Math.sqrt(time), 0, 1) 
         return result
     }
 
@@ -155,13 +164,19 @@ PRICE
     var result =  - exercisePrice * Math.exp(-interest * time) * getNcdf(dOne(underlyingPrice, exercisePrice, time, interest, volatility, dividend) - volatility * Math.sqrt(time), 0, 1) 
         return result
     }
+
+    function putOption(underlyingPrice, exercisePrice, time, interest, volatility, dividend){
+        var result =  exercisePrice * Math.exp(-interest * time) * getNcdf(-dTwo(underlyingPrice, exercisePrice, time, interest, volatility, dividend), 0, 1) - Math.exp(-dividend * time) * underlyingPrice * getNcdf(-dOne(underlyingPrice, exercisePrice, time, interest, volatility, dividend),0, 1) 
+        return result
+    }
+
 </script>
 
 
 <script>
     var binsvgOptions = '<svg onclick="deleteRowOptions(this)" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#b5b5b5"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"/></svg>'
     
-    function price(){
+    function price(callORput){
         strike = parseFloat(document.getElementById('strikeText').value)
         currentPrice = parseFloat(document.getElementById('currentText').value)
         ttm = parseFloat(document.getElementById('timeText').value)
@@ -169,7 +184,12 @@ PRICE
         vol = parseFloat(document.getElementById('volText').value)
         console.log(strike, currentPrice, ttm, rate, vol)
 
-        var call = callOption(currentPrice, strike, 1/365*ttm,rate/100,vol/100,0)
+        if (callORput=='put'){
+            var option = putOption(currentPrice, strike, 1/365*ttm,rate/100,vol/100,0)
+        }
+        else{
+            var option = callOption(currentPrice, strike, 1/365*ttm,rate/100,vol/100,0)
+        }
         //console.log(call)
         
         //document.getElementById("resultOption").innerHTML=document.getElementById("resultOption").innerHTML + call
@@ -182,14 +202,16 @@ PRICE
         var cell4 = row.insertCell(-1);
         var cell5 = row.insertCell(-1);
         var cell6 = row.insertCell(-1);
+        var cell7 = row.insertCell(-1);
         
-        cell0.innerHTML=call.toFixed(3)
+        cell0.innerHTML= option.toFixed(3)
         cell1.innerHTML = strike;
         cell2.innerHTML = currentPrice;
         cell3.innerHTML = ttm;
         cell4.innerHTML = rate;
         cell5.innerHTML = vol;
-        cell6.innerHTML = binsvgOptions
+        cell7.innerHTML = binsvgOptions;
+        cell6.innerHTML = callORput
     }
 
     function deleteRowOptions(r){
