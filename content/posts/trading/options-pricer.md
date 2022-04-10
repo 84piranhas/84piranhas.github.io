@@ -24,4 +24,3 @@ math: false
 # Pricer
 
 {{< pricer >}}
-

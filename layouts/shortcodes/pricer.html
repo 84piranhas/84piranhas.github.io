@@ -195,6 +195,10 @@ Current Price ($)
         //document.getElementById("resultOption").innerHTML=document.getElementById("resultOption").innerHTML + call
         var table = document.getElementById("optionsTable");
         var row = table.insertRow(1);
+        row.setAttribute("draggable", "true")
+        row.setAttribute("ondragstart", "start()")
+        row.setAttribute("ondragover", "dragover()")
+        
         var cell0 = row.insertCell(0);
         var cell1 = row.insertCell(-1);
         var cell2 = row.insertCell(-1);
@@ -219,4 +223,23 @@ Current Price ($)
         document.getElementById("optionsTable").deleteRow(i);
 
     }
+
+    var row;
+
+    function start(){  
+    row = event.target; 
+    }
+    function dragover(){
+    var e = event;
+    e.preventDefault(); 
+    
+    let children= Array.from(e.target.parentNode.parentNode.children);
+    
+    if(children.indexOf(e.target.parentNode)>children.indexOf(row))
+        e.target.parentNode.after(row);
+    else
+        e.target.parentNode.before(row);
+    }
+
 </script>
+
