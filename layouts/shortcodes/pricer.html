@@ -15,7 +15,13 @@
         width: 49%
         
     }
-
+    .button1 {
+        color:currentColor;
+        font-weight: thin;
+        border: 1px solid currentColor;
+        padding: 1px 15px;
+        
+    }
     .column {
         float: left;
         width: 33.33%;
@@ -31,6 +37,10 @@
     .move { cursor: move; }
     .pointer { cursor: pointer; }
 
+    .normalCell{
+        color: currentColor;
+        font-weight: normal;
+    }
 </style>
 
 <script>
@@ -148,6 +158,8 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
 
     </tr>
 </table>
+<button class="button1" onclick="changeFormat('optionsTable')">Format table</button>
+<button class="button1" onclick="resetFormat('optionsTable')">Reset table</button>
 
 <!--functions for pricing equity options-->
 <script>
@@ -322,5 +334,45 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
         
     }
 
+    function changeFormat(tableId){ //changeFormat("optionsTable")
+        //alert(table)
+        var table= document.getElementById(tableId)//optionsTable
+        rowIndex=0
+        columnIndex=0
+        for (var i = 1, row; row = table.rows[i]; i++) {
+            //iterate through rows
+            //rows would be accessed using the "row" variable assigned in the for loop
+            for (var j = 0, col; col = row.cells[j]; j++) {
+                //console.log(col)
+                try{
+                    if (table.rows[i].cells[j].innerHTML != table.rows[i+1].cells[j].innerHTML){
+                        table.rows[i].cells[j].style.fontWeight = "bold"
+                        if(table.rows[i].cells[j].innerHTML > table.rows[i+1].cells[j].innerHTML){
+                            table.rows[i].cells[j].style.color = "red"
+                        }
+                        else{
+                            table.rows[i].cells[j].style.color = "green"
+                        }
+                    }
+                    else{
+                        table.rows[i].cells[j].removeAttribute("style");
+                    }
+                } catch(error)
+                {
+                    table.rows[i].cells[j].removeAttribute("style");
+                }
+                //iterate through columns
+                //columns would be accessed using the "col" variable assigned in the for loop
+            }  
+        }
+    }
+    function resetFormat(tableId){
+        var table= document.getElementById(tableId)
+        for (var i = 1, row; row = table.rows[i]; i++) {
+            for (var j = 0, col; col = row.cells[j]; j++) {
+                table.rows[i].cells[j].removeAttribute("style");
+            }
+        }
+    }
 </script>
 
