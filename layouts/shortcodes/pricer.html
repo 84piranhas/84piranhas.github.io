@@ -26,6 +26,11 @@
         display: table;
         clear: both;
     }
+
+
+    .move { cursor: move; }
+    .pointer { cursor: pointer; }
+
 </style>
 
 <script>
@@ -136,8 +141,8 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
         <th>Current</th>
         <th>Expiry</th>
         <th>Volatility</th>
-        <th>Rate</th>
         <th>Dividend</th>
+        <th>Rate</th>
         <th></th>
         <th></th>
 
@@ -239,6 +244,7 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
         //document.getElementById("resultOption").innerHTML=document.getElementById("resultOption").innerHTML + call
         var table = document.getElementById("optionsTable");
         var row = table.insertRow(1);
+
         row.setAttribute("draggable", "true")
         row.setAttribute("ondragstart", "start()")
         row.setAttribute("ondragover", "dragover()")
@@ -254,12 +260,25 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
         var cell8 = row.insertCell(-1);
         
         cell0.innerHTML= option.toFixed(3)
+        cell0.setAttribute("class", "move")
         cell1.innerHTML = strike;
+        cell1.setAttribute("class", "pointer")
+        cell1.setAttribute("onclick","clicker('strike')")
         cell2.innerHTML = currentPrice;
+        cell2.setAttribute("class", "pointer")
+        cell2.setAttribute("onclick","clicker('current')")
         cell3.innerHTML = ttm;
+        cell3.setAttribute("class", "pointer")
+        cell3.setAttribute("onclick","clicker('time')")
         cell4.innerHTML = vol;
+        cell4.setAttribute("class", "pointer")
+        cell4.setAttribute("onclick","clicker('vol')")
         cell5.innerHTML = div;
+        cell5.setAttribute("class", "pointer")
+        cell5.setAttribute("onclick","clicker('div')")
         cell6.innerHTML = rate;
+        cell6.setAttribute("class", "pointer")
+        cell6.setAttribute("onclick","clicker('rate')")
         cell7.innerHTML = callORput
         cell8.innerHTML = binsvgOptions;
         
@@ -272,20 +291,35 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
     }
 
     var row;
+    var tar;
+    var tarValue;
+    var ev;
 
     function start(){  
-    row = event.target; 
+        row = event.target;
     }
     function dragover(){
-    var e = event;
-    e.preventDefault(); 
-    
-    let children= Array.from(e.target.parentNode.parentNode.children);
-    
-    if(children.indexOf(e.target.parentNode)>children.indexOf(row))
-        e.target.parentNode.after(row);
-    else
-        e.target.parentNode.before(row);
+        var e = event;
+        e.preventDefault(); 
+        
+        let children= Array.from(e.target.parentNode.parentNode.children);
+        
+        if(children.indexOf(e.target.parentNode)>children.indexOf(row))
+            e.target.parentNode.after(row);
+        else
+            e.target.parentNode.before(row);
+    }
+
+    function clicker(col){
+        tar=event.target;
+        tarValue=tar.textContent;
+
+            document.getElementById(col+"Text").value=tarValue
+            try {
+                document.getElementById(col+"Range").value=tarValue;
+            } catch(error){}
+
+        
     }
 
 </script>
