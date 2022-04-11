@@ -44,8 +44,8 @@
   "keywords": [
     "english", "trading", "options", "greeks"
   ],
-  "articleBody": "\r\r\r\r\r\r\r\r\r\r\rvar themeBackgroundColor\rif (localStorage.getItem(\"pref-theme\") === \"dark\") {\rthemeBackgroundColor='#1d1e20';\r} else if (localStorage.getItem(\"pref-theme\") === \"light\") {\rthemeBackgroundColor='white';\r} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {\rthemeBackgroundColor='#1d1e20';\r}\rHighcharts.setOptions({\rcolors: ['#1abc9c','#3498db','#9b59b6','#2ecc71','#E7E08B','#f1c40f','#e67e22','#e74c3c','#ecf0f1','#95a5a6'],\rtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: ''\r},\rsubtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: ''\r},\rlegend: {\renabled: true,\ritemStyle: { \"color\": \"#767B80\", \"cursor\": \"pointer\", \"fontSize\": \"12px\", \"fontWeight\": \"bold\", \"textOverflow\": \"ellipsis\" }\r},\rcredits: {\renabled: false\r},\rexporting: { enabled: false },\rchart: {\rbackgroundColor: themeBackgroundColor,\r},\ryAxis: {\rgridLineWidth: 1,\rgridLineColor: '#767B80',\rlabels: {\rstyle: {\rcolor: '#767B80' }\r},\rtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: null,\r},\r},\rxAxis: {\rgridLineWidth: 0,\rlabels: {\rstyle: {\rcolor: '#767B80'\r}\r},\r}\r});\r\rPricer \r.input2 {\rcolor: currentColor;\rfont-weight: bold;\r}\r.slider2 {\rwidth: 300px;\r}\r.button2 {\rcolor:currentColor;\rfont-weight: bold;\rborder: 2px solid currentColor;\rpadding: 1px 15px;\r}\r\r\rvar color = console.log(color)\r\rVolatility (%)\r\r\r\r\rTime to Maturity (days)\r\r\r\r\rInterest Rate (%)\r\r\r\r\rStrike ($)\r\r\r\r\rCurrent Price ($)\r\r\r\r\rPRICE CALL\rPRICE PUT\r\r\rResult\rStrike\rCurrent\rExpiry\rRate\rVolatility\r\r\r\r\r\rfunction normalcdf(X){ var T=1/(1+.2316419*Math.abs(X));\rvar D=.3989423*Math.exp(-X*X/2);\rvar Prob=D*T*(.3193815+T*(-.3565638+T*(1.781478+T*(-1.821256+T*1.330274))));\rif (X0) {\rProb=1-Prob\r}\rreturn Prob\r} function getNcdf(Z, M, SD) {\rif (SD\rvar binsvgOptions = ''\rfunction price(callORput){\rstrike = parseFloat(document.getElementById('strikeText').value)\rcurrentPrice = parseFloat(document.getElementById('currentText').value)\rttm = parseFloat(document.getElementById('timeText').value)\rrate = parseFloat(document.getElementById('rateText').value)\rvol = parseFloat(document.getElementById('volText').value)\rconsole.log(strike, currentPrice, ttm, rate, vol)\rif (callORput=='put'){\rvar option = putOption(currentPrice, strike, 1/365*ttm,rate/100,vol/100,0)\r}\relse{\rvar option = callOption(currentPrice, strike, 1/365*ttm,rate/100,vol/100,0)\r}\rvar table = document.getElementById(\"optionsTable\");\rvar row = table.insertRow(1);\rrow.setAttribute(\"draggable\", \"true\")\rrow.setAttribute(\"ondragstart\", \"start()\")\rrow.setAttribute(\"ondragover\", \"dragover()\")\rvar cell0 = row.insertCell(0);\rvar cell1 = row.insertCell(-1);\rvar cell2 = row.insertCell(-1);\rvar cell3 = row.insertCell(-1);\rvar cell4 = row.insertCell(-1);\rvar cell5 = row.insertCell(-1);\rvar cell6 = row.insertCell(-1);\rvar cell7 = row.insertCell(-1);\rcell0.innerHTML= option.toFixed(3)\rcell1.innerHTML = strike;\rcell2.innerHTML = currentPrice;\rcell3.innerHTML = ttm;\rcell4.innerHTML = rate;\rcell5.innerHTML = vol;\rcell7.innerHTML = binsvgOptions;\rcell6.innerHTML = callORput\r}\rfunction deleteRowOptions(r){\rvar i = r.parentNode.parentNode.rowIndex;\rdocument.getElementById(\"optionsTable\").deleteRow(i);\r}\rvar row;\rfunction start(){ row = event.target; }\rfunction dragover(){\rvar e = event;\re.preventDefault(); let children= Array.from(e.target.parentNode.parentNode.children);\rif(children.indexOf(e.target.parentNode)children.indexOf(row))\re.target.parentNode.after(row);\relse\re.target.parentNode.before(row);\r}\r\r",
-  "wordCount" : "340",
+  "articleBody": "\r\r\r\r\r\r\r\r\r\r\rvar themeBackgroundColor\rif (localStorage.getItem(\"pref-theme\") === \"dark\") {\rthemeBackgroundColor='#1d1e20';\r} else if (localStorage.getItem(\"pref-theme\") === \"light\") {\rthemeBackgroundColor='white';\r} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {\rthemeBackgroundColor='#1d1e20';\r}\rHighcharts.setOptions({\rcolors: ['#1abc9c','#3498db','#9b59b6','#2ecc71','#E7E08B','#f1c40f','#e67e22','#e74c3c','#ecf0f1','#95a5a6'],\rtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: ''\r},\rsubtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: ''\r},\rlegend: {\renabled: true,\ritemStyle: { \"color\": \"#767B80\", \"cursor\": \"pointer\", \"fontSize\": \"12px\", \"fontWeight\": \"bold\", \"textOverflow\": \"ellipsis\" }\r},\rcredits: {\renabled: false\r},\rexporting: { enabled: false },\rchart: {\rbackgroundColor: themeBackgroundColor,\r},\ryAxis: {\rgridLineWidth: 1,\rgridLineColor: '#767B80',\rlabels: {\rstyle: {\rcolor: '#767B80' }\r},\rtitle: {\rstyle: {\rcolor: '#767B80'\r},\rtext: null,\r},\r},\rxAxis: {\rgridLineWidth: 0,\rlabels: {\rstyle: {\rcolor: '#767B80'\r}\r},\r}\r});\r\rPricer \r.input2 {\rcolor: currentColor;\rfont-weight: bold;\r}\r.slider2 {\rwidth: 200px;\r}\r.button2 {\rcolor:currentColor;\rfont-weight: bold;\rborder: 2px solid currentColor;\rpadding: 1px 15px;\rwidth: 49%\r}\r.column {\rfloat: left;\rwidth: 33.33%;\r}\r.row:after {\rcontent: \"\";\rdisplay: table;\rclear: both;\r}\r\r\rvar color = console.log(color)\r\rStrike ($)\r\r\r\r\r\rCurrent Price ($)\r\r\r\r\r\rTime to Maturity (days)\r\r\r\r\r\r\rVolatility (%)\r\r\r\r\r\rDividend Yield (%)\r\r\r\r\r\rInterest Rate (%)\r\r\r\r\r\r\rPRICE CALL\rPRICE PUT\r\r\rResult\rStrike\rCurrent\rExpiry\rVolatility\rRate\rDividend\r\r\r\r\r\rfunction normalcdf(X){ var T=1/(1+.2316419*Math.abs(X));\rvar D=.3989423*Math.exp(-X*X/2);\rvar Prob=D*T*(.3193815+T*(-.3565638+T*(1.781478+T*(-1.821256+T*1.330274))));\rif (X0) {\rProb=1-Prob\r}\rreturn Prob\r} function getNcdf(Z, M, SD) {\rif (SD\rvar binsvgOptions = ''\rfunction price(callORput){\rstrike = parseFloat(document.getElementById('strikeText').value)\rcurrentPrice = parseFloat(document.getElementById('currentText').value)\rttm = parseFloat(document.getElementById('timeText').value)\rrate = parseFloat(document.getElementById('rateText').value)\rvol = parseFloat(document.getElementById('volText').value)\rdiv = parseFloat(document.getElementById('divText').value)\rconsole.log(strike, currentPrice, ttm, rate, vol, div)\rif (callORput=='put'){\rvar option = putOption(currentPrice, strike, 1/365*ttm,rate/100,vol/100,div/100)\r}\relse{\rvar option = callOption(currentPrice, strike, 1/365*ttm,rate/100,vol/100,div/100)\r}\rvar table = document.getElementById(\"optionsTable\");\rvar row = table.insertRow(1);\rrow.setAttribute(\"draggable\", \"true\")\rrow.setAttribute(\"ondragstart\", \"start()\")\rrow.setAttribute(\"ondragover\", \"dragover()\")\rvar cell0 = row.insertCell(0);\rvar cell1 = row.insertCell(-1);\rvar cell2 = row.insertCell(-1);\rvar cell3 = row.insertCell(-1);\rvar cell4 = row.insertCell(-1);\rvar cell5 = row.insertCell(-1);\rvar cell6 = row.insertCell(-1);\rvar cell7 = row.insertCell(-1);\rvar cell8 = row.insertCell(-1);\rcell0.innerHTML= option.toFixed(3)\rcell1.innerHTML = strike;\rcell2.innerHTML = currentPrice;\rcell3.innerHTML = ttm;\rcell4.innerHTML = vol;\rcell5.innerHTML = div;\rcell6.innerHTML = rate;\rcell7.innerHTML = callORput\rcell8.innerHTML = binsvgOptions;\r}\rfunction deleteRowOptions(r){\rvar i = r.parentNode.parentNode.rowIndex;\rdocument.getElementById(\"optionsTable\").deleteRow(i);\r}\rvar row;\rfunction start(){ row = event.target; }\rfunction dragover(){\rvar e = event;\re.preventDefault(); let children= Array.from(e.target.parentNode.parentNode.children);\rif(children.indexOf(e.target.parentNode)children.indexOf(row))\re.target.parentNode.after(row);\relse\re.target.parentNode.before(row);\r}\r\r",
+  "wordCount" : "373",
   "inLanguage": "en",
   "datePublished": "2022-04-08T00:00:00Z",
   "dateModified": "2022-04-08T00:00:00Z",
@@ -258,14 +258,26 @@
     }
 
     .slider2 {
-        width: 300px;
+        width: 200px;
     }
     .button2 {
         color:currentColor;
         font-weight: bold;
         border: 2px solid currentColor;
         padding: 1px 15px;
+        width: 49%
         
+    }
+
+    .column {
+        float: left;
+        width: 33.33%;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
     }
 </style>
 
@@ -280,42 +292,73 @@
 
 
 
-Volatility (%)
-<form>
-    <div>
-        <input id="volText" class = "input2" type="number" value="20" min="0" max="200" step="0.5" oninput="volRange.value=volText.value" />
-        <input id="volRange" class = "slider2" type="range" value="20" min="0" max="200" step="0.5" oninput="volText.value=volRange.value" />
-    </div>
-</form>
-Time to Maturity (days)
-<form>
-    <div>
-        <input id="timeText" class = "input2" type="number" value="60" min="0" max="200" step="1" oninput="timeRange.value=timeText.value" />
-        <input id="timeRange" class = "slider2" type="range" value="60" min="1" max="365" step="1" oninput="timeText.value=timeRange.value" />
-    </div>
-</form>
-Interest Rate (%)
-<form>
-    <div>
-        <input id="rateText" class = "input2" type="number" value="0" min="-10" max="20" step="0.1" oninput="rateRange.value=rateText.value" />
-        <input id="rateRange" class = "slider2" type="range" value="0" min="-10" max="20" step="0.1" oninput="rateText.value=rateRange.value" />
-    </div>
-</form>
-Strike ($)
-<form>
-    <div>
-        <input id="strikeText" class = "input2" type="number" value="100" min="0" step="0.1" />
-    </div>
-</form>
-Current Price ($)
-<form>
-    <div>
-        <input id="currentText" class = "input2" type="number" value="100" min="0" step="0.1" />
-    </div>
-</form>
 
+<div class="row">
+    <div class="column">
+        Strike ($)
+        <form>
+            <div>
+                <input id="strikeText" class = "input2" type="number" value="100" min="0" step="0.1" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Current Price ($)
+        <form>
+            <div>
+                <input id="currentText" class = "input2" type="number" value="100" min="0" step="0.1" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Time to Maturity (days)
+        <form>
+            <div>
+                <input id="timeText" class = "input2" type="number" value="60" min="0" max="200" step="1" oninput="timeRange.value=timeText.value" />
+                <input id="timeRange" class = "slider2" type="range" value="60" min="1" max="365" step="1" oninput="timeText.value=timeRange.value" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        Volatility (%)
+        <form>
+            <div>
+                <input id="volText" class = "input2" type="number" value="20" min="0" max="200" step="0.5" oninput="volRange.value=volText.value" />
+                <input id="volRange" class = "slider2" type="range" value="20" min="0" max="200" step="0.5" oninput="volText.value=volRange.value" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Dividend Yield (%)
+        <form>
+            <div>
+                <input id="divText" class = "input2" type="number" value="0" min="0" max="20" step="0.1" oninput="divRange.value=divText.value" />
+                <input id="divRange" class = "slider2" type="range" value="0" min="0" max="20" step="0.1" oninput="divText.value=divRange.value" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Interest Rate (%)
+        <form>
+            <div>
+                <input id="rateText" class = "input2" type="number" value="0" min="-10" max="20" step="0.1" oninput="rateRange.value=rateText.value" />
+                <input id="rateRange" class = "slider2" type="range" value="0" min="-10" max="20" step="0.1" oninput="rateText.value=rateRange.value" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+<br>
 <button class="button2" onclick="price('call')">PRICE CALL</button>
 <button class="button2" onclick="price('put')">PRICE PUT</button>
+
 <div id="resultOption"></div>
 <table id="optionsTable">
     <tr>
@@ -323,12 +366,12 @@ Current Price ($)
         <th>Strike</th>
         <th>Current</th>
         <th>Expiry</th>
-        <th>Rate</th>
         <th>Volatility</th>
+        <th>Rate</th>
+        <th>Dividend</th>
         <th></th>
         <th></th>
-        
-        
+
     </tr>
 </table>
 
@@ -413,13 +456,14 @@ Current Price ($)
         ttm = parseFloat(document.getElementById('timeText').value)
         rate = parseFloat(document.getElementById('rateText').value)
         vol = parseFloat(document.getElementById('volText').value)
-        console.log(strike, currentPrice, ttm, rate, vol)
+        div = parseFloat(document.getElementById('divText').value)
+        console.log(strike, currentPrice, ttm, rate, vol, div)
 
         if (callORput=='put'){
-            var option = putOption(currentPrice, strike, 1/365*ttm,rate/100,vol/100,0)
+            var option = putOption(currentPrice, strike, 1/365*ttm,rate/100,vol/100,div/100)
         }
         else{
-            var option = callOption(currentPrice, strike, 1/365*ttm,rate/100,vol/100,0)
+            var option = callOption(currentPrice, strike, 1/365*ttm,rate/100,vol/100,div/100)
         }
         
         
@@ -438,15 +482,18 @@ Current Price ($)
         var cell5 = row.insertCell(-1);
         var cell6 = row.insertCell(-1);
         var cell7 = row.insertCell(-1);
+        var cell8 = row.insertCell(-1);
         
         cell0.innerHTML= option.toFixed(3)
         cell1.innerHTML = strike;
         cell2.innerHTML = currentPrice;
         cell3.innerHTML = ttm;
-        cell4.innerHTML = rate;
-        cell5.innerHTML = vol;
-        cell7.innerHTML = binsvgOptions;
-        cell6.innerHTML = callORput
+        cell4.innerHTML = vol;
+        cell5.innerHTML = div;
+        cell6.innerHTML = rate;
+        cell7.innerHTML = callORput
+        cell8.innerHTML = binsvgOptions;
+        
     }
 
     function deleteRowOptions(r){

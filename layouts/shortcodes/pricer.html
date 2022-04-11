@@ -5,14 +5,26 @@
     }
 
     .slider2 {
-        width: 300px;
+        width: 200px;
     }
     .button2 {
         color:currentColor;
         font-weight: bold;
         border: 2px solid currentColor;
         padding: 1px 15px;
+        width: 49%
         
+    }
+
+    .column {
+        float: left;
+        width: 33.33%;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
     }
 </style>
 
@@ -49,42 +61,73 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
     }
 </script>
 -->
-Volatility (%)
-<form>
-    <div>
-        <input id="volText" class = "input2" type="number" value="20" min="0" max="200" step="0.5" oninput="volRange.value=volText.value" />
-        <input id="volRange" class = "slider2" type="range" value="20" min="0" max="200" step="0.5" oninput="volText.value=volRange.value" />
-    </div>
-</form>
-Time to Maturity (days)
-<form>
-    <div>
-        <input id="timeText" class = "input2" type="number" value="60" min="0" max="200" step="1" oninput="timeRange.value=timeText.value" />
-        <input id="timeRange" class = "slider2" type="range" value="60" min="1" max="365" step="1" oninput="timeText.value=timeRange.value" />
-    </div>
-</form>
-Interest Rate (%)
-<form>
-    <div>
-        <input id="rateText" class = "input2" type="number" value="0" min="-10" max="20" step="0.1" oninput="rateRange.value=rateText.value" />
-        <input id="rateRange" class = "slider2" type="range" value="0" min="-10" max="20" step="0.1" oninput="rateText.value=rateRange.value" />
-    </div>
-</form>
-Strike ($)
-<form>
-    <div>
-        <input id="strikeText" class = "input2" type="number" value="100" min="0" step="0.1" />
-    </div>
-</form>
-Current Price ($)
-<form>
-    <div>
-        <input id="currentText" class = "input2" type="number" value="100" min="0" step="0.1" />
-    </div>
-</form>
 
+<div class="row">
+    <div class="column">
+        Strike ($)
+        <form>
+            <div>
+                <input id="strikeText" class = "input2" type="number" value="100" min="0" step="0.1" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Current Price ($)
+        <form>
+            <div>
+                <input id="currentText" class = "input2" type="number" value="100" min="0" step="0.1" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Time to Maturity (days)
+        <form>
+            <div>
+                <input id="timeText" class = "input2" type="number" value="60" min="0" max="200" step="1" oninput="timeRange.value=timeText.value" />
+                <input id="timeRange" class = "slider2" type="range" value="60" min="1" max="365" step="1" oninput="timeText.value=timeRange.value" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        Volatility (%)
+        <form>
+            <div>
+                <input id="volText" class = "input2" type="number" value="20" min="0" max="200" step="0.5" oninput="volRange.value=volText.value" />
+                <input id="volRange" class = "slider2" type="range" value="20" min="0" max="200" step="0.5" oninput="volText.value=volRange.value" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Dividend Yield (%)
+        <form>
+            <div>
+                <input id="divText" class = "input2" type="number" value="0" min="0" max="20" step="0.1" oninput="divRange.value=divText.value" />
+                <input id="divRange" class = "slider2" type="range" value="0" min="0" max="20" step="0.1" oninput="divText.value=divRange.value" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Interest Rate (%)
+        <form>
+            <div>
+                <input id="rateText" class = "input2" type="number" value="0" min="-10" max="20" step="0.1" oninput="rateRange.value=rateText.value" />
+                <input id="rateRange" class = "slider2" type="range" value="0" min="-10" max="20" step="0.1" oninput="rateText.value=rateRange.value" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+<br>
 <button class="button2" onclick="price('call')">PRICE CALL</button>
 <button class="button2" onclick="price('put')">PRICE PUT</button>
+
 <div id="resultOption"></div>
 <table id="optionsTable">
     <tr>
@@ -92,12 +135,12 @@ Current Price ($)
         <th>Strike</th>
         <th>Current</th>
         <th>Expiry</th>
-        <th>Rate</th>
         <th>Volatility</th>
+        <th>Rate</th>
+        <th>Dividend</th>
         <th></th>
         <th></th>
-        
-        
+
     </tr>
 </table>
 
@@ -182,13 +225,14 @@ Current Price ($)
         ttm = parseFloat(document.getElementById('timeText').value)
         rate = parseFloat(document.getElementById('rateText').value)
         vol = parseFloat(document.getElementById('volText').value)
-        console.log(strike, currentPrice, ttm, rate, vol)
+        div = parseFloat(document.getElementById('divText').value)
+        console.log(strike, currentPrice, ttm, rate, vol, div)
 
         if (callORput=='put'){
-            var option = putOption(currentPrice, strike, 1/365*ttm,rate/100,vol/100,0)
+            var option = putOption(currentPrice, strike, 1/365*ttm,rate/100,vol/100,div/100)
         }
         else{
-            var option = callOption(currentPrice, strike, 1/365*ttm,rate/100,vol/100,0)
+            var option = callOption(currentPrice, strike, 1/365*ttm,rate/100,vol/100,div/100)
         }
         //console.log(call)
         
@@ -207,15 +251,18 @@ Current Price ($)
         var cell5 = row.insertCell(-1);
         var cell6 = row.insertCell(-1);
         var cell7 = row.insertCell(-1);
+        var cell8 = row.insertCell(-1);
         
         cell0.innerHTML= option.toFixed(3)
         cell1.innerHTML = strike;
         cell2.innerHTML = currentPrice;
         cell3.innerHTML = ttm;
-        cell4.innerHTML = rate;
-        cell5.innerHTML = vol;
-        cell7.innerHTML = binsvgOptions;
-        cell6.innerHTML = callORput
+        cell4.innerHTML = vol;
+        cell5.innerHTML = div;
+        cell6.innerHTML = rate;
+        cell7.innerHTML = callORput
+        cell8.innerHTML = binsvgOptions;
+        
     }
 
     function deleteRowOptions(r){
