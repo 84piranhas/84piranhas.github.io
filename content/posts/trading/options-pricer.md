@@ -21,6 +21,12 @@ math: false
 
 {{< highcharts-settings >}}
 
+{{< pricer-library >}}
+
 # Pricer
 
 {{< pricer >}}
+
+# Scenario
+
+{{< pricer-scenario >}}

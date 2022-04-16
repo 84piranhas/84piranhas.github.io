@@ -159,7 +159,8 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
     </tr>
 </table>
 <button class="button1" onclick="changeFormat('optionsTable')">Format table</button>
-<button class="button1" onclick="resetFormat('optionsTable')">Reset table</button>
+<button class="button1" onclick="resetFormat('optionsTable')">Reset format</button>
+<button class="button1" onclick="resetTable('optionsTable')">Clear table</button>
 
 <!--functions for pricing equity options-->
 <script>
@@ -372,6 +373,13 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
             for (var j = 0, col; col = row.cells[j]; j++) {
                 table.rows[i].cells[j].removeAttribute("style");
             }
+        }
+    }
+
+    function resetTable(tableId){
+        var table = document.getElementById(tableId);
+        for(var i = 1;i<table.rows.length;){
+            table.deleteRow(i);
         }
     }
 </script>

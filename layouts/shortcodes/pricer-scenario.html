@@ -1,0 +1,282 @@
+<style>
+    .input2 {
+        color: currentColor;
+        font-weight: bold;
+    }
+
+    .slider2 {
+        width: 200px;
+    }
+    .button2 {
+        color:currentColor;
+        font-weight: bold;
+        border: 2px solid currentColor;
+        padding: 1px 15px;
+        width: 49%
+        
+    }
+    .button1 {
+        color:currentColor;
+        font-weight: thin;
+        border: 1px solid currentColor;
+        padding: 1px 15px;
+        
+    }
+    .column {
+        float: left;
+        width: 33.33%;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+
+    .move { cursor: move; }
+    .pointer { cursor: pointer; }
+
+    .normalCell{
+        color: currentColor;
+        font-weight: normal;
+    }
+</style>
+
+<h4>Variables</h4>
+
+<div class="row">
+    <div class="column">
+        Current price ($)
+        <form>
+            <div>
+                <input id="current2Text" class = "input2" type="number" value="100" min="0" step="0.1" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Range (absolute $)
+        <form>
+            <div>
+                <input id="current2Range" class = "input2" type="number" value="1" min="0" step="1" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Step (absolute $)
+        <form>
+            <div>
+                <input id="current2Step" class = "input2" type="number" value="0.1" min="0" step="0.05" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        Time to Maturity, Min (days)
+        <form>
+            <div>
+                <input id="time2Min" class = "input2" type="number" value="1" min="0" step="1" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Max
+        <form>
+            <div>
+                <input id="time2Max" class = "input2" type="number" value="10" min="0" step="1" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Step
+        <form>
+            <div>
+                <input id="time2Step" class = "input2" type="number" value="1" min="0" step="0.1" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        Volatility (%)
+        <form>
+            <div>
+                <input id="vol2Text" class = "input2" type="number" value="25" min="0" max="200" step="0.5" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Range (absolute %)
+        <form>
+            <div>
+                <input id="vol2Range" class = "input2" type="number" value="0" min="0" step="1" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Step (absolute %)
+        <form>
+            <div>
+                <input id="vol2Step" class = "input2" type="number" value="1" min="0" step="0.5" />
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+
+<h4>Constant parameters</h4>
+
+<div class="row">
+    <div class="column">
+        Strike ($)
+        <form>
+            <div>
+                <input id="strike2Text" class = "input2" type="number" value="100" min="0" step="0.1" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Dividend Yield (%)
+        <form>
+            <div>
+                <input id="div2Text" class = "input2" type="number" value="0" min="0" max="20" step="0.1" oninput="div2Range.value=div2Text.value" />
+                <input id="div2Range" class = "slider2" type="range" value="0" min="0" max="20" step="0.1" oninput="div2Text.value=div2Range.value" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Interest Rate (%)
+        <form>
+            <div>
+                <input id="rate2Text" class = "input2" type="number" value="0" min="-10" max="20" step="0.1" oninput="rate2Range.value=rate2Text.value" />
+                <input id="rate2Range" class = "slider2" type="range" value="0" min="-10" max="20" step="0.1" oninput="rate2Text.value=rate2Range.value" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<br>
+<button class="button2" onclick="simulation()">Simulate scenarii</button>
+<div id="container" style="width:100%; height:400px;"></div>
+<script>
+    
+    function simulation(){
+        
+        const data=[];
+        const dataChart=[];
+        dataChart.push({name: 'Show/Hide all',visible: false});
+        
+        //constant parameters
+        strike = parseFloat(document.getElementById('strike2Text').value)
+        div = parseFloat(document.getElementById('divText').value)
+        rate = parseFloat(document.getElementById('rateText').value)
+
+        currentPrice = parseFloat(document.getElementById('current2Text').value)
+        range = parseFloat(document.getElementById('current2Range').value)
+        step = parseFloat(document.getElementById('current2Step').value)
+
+        //variables
+        currentPrices = []
+        for(i=currentPrice-range;i<=currentPrice+range;i=i+step){
+            currentPrices.push(Math.round(i*1000,3)/1000);
+        }
+        //console.log(currentPrices)
+
+        vols=[]
+        vol = parseFloat(document.getElementById('vol2Text').value)
+        volRange = parseFloat(document.getElementById('vol2Range').value)
+        volStep = parseFloat(document.getElementById('vol2Step').value)
+        for(i=vol-volRange;i<=vol+volRange+0.001;i=i+volStep){
+            vols.push(Math.round(i*1000,3)/1000);
+        }
+        //console.log(vols)
+
+        ttms=[]
+        ttmMin = parseFloat(document.getElementById('time2Min').value)
+        ttmMax = parseFloat(document.getElementById('time2Max').value)
+        ttmStep = parseFloat(document.getElementById('time2Step').value)
+        for(i=ttmMin;i<=ttmMax;i=i+ttmStep){
+            ttms.push(Math.round(i*1000,3)/1000);
+        }
+        //console.log(ttms)
+
+        for (const t of ttms) {
+            tmp = []
+            for (const p of currentPrices) {
+            
+                for (const v of vols) {
+                
+                    var option = callOption(p, strike, 1/365*t,rate/100,v/100,div/100)
+                    tmp.push([p, option, v])
+                    //data.push([option,p, strike, t, rate, v, div])
+                    //dataChart.push({x:p, y:option, z:t, category:v})
+                    //dataChart.push({name:strike, data:[[p, option, t],[p, option+0.5, t]]})
+                }
+            }
+            dataChart.push({name:t, data:tmp})
+        }
+        
+        //console.log(data)
+        //console.log(strike, currentPrice, ttm, rate, vol, div)
+        
+        //dataChart2=categoriesIntoSeries(dataChart)
+        //console.log(dataChart2)
+        createSimulationChart(dataChart);
+
+    }
+
+    function createSimulationChart(data2){
+        console.log(data2)
+        const chart = Highcharts.chart('container', {
+            chart: {
+                type: 'bubble',
+                zoomType: 'xy',
+            },
+            plotOptions: {
+                    bubble: {
+                        minSize: 5,
+                        maxSize: 20,
+                        marker:{
+                            fillOpacity: 0.5,
+                            lineWidth: 1,
+                        },
+                        events: {
+                            legendItemClick() {
+                            let chart = this.chart,
+                                series = chart.series;
+                            if (this.index === 0) {
+                                if (chart.showHideFlag) {
+                                series.forEach(series => {
+                                    series.hide()
+                                })
+                                } else {
+                                series.forEach(series => {
+                                    series.show()
+                                })
+                                }
+                                chart.showHideFlag = !chart.showHideFlag;
+                            }
+                            }
+                        }
+                    },
+            },
+            //series:[{data:data2}],
+            series:data2
+        });
+    }
+
+</script>
+<!--
+<button class="button2" onclick="hideAll('container')">show/add series</button>
+
+<script>
+    function hideAll(chartId){
+        alert(chartId)
+
+    }
+
+</script>
+-->
