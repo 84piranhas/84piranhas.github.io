@@ -392,7 +392,7 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
             for (var j = 0, col; col = row.cells[j]; j++) {
                 tmp.push(table.rows[i].cells[j].innerHTML)
             }
-            nama=tmp[1] + ',' + tmp[2] + ',' + tmp[3] + ',' + tmp[4] + ',' + tmp[5] + ',' + tmp[6] + '=' + Number(tmp[0]).toFixed(3) 
+            nama=tmp[7].charAt(0)+ tmp[1]+'_'+ tmp[3]  + ',' + tmp[2] + ',' + tmp[4] + ',' + tmp[5] + ',' + tmp[6] + '=' + Number(tmp[0]).toFixed(3)
             //console.log('tmp',tmp)
             tmp2.push([parseFloat(tmp[i0]),parseFloat(tmp[i1]),parseFloat(tmp[i2])])
             data.push({name:nama, data: tmp2})
