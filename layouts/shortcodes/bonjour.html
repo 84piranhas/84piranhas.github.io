@@ -1,0 +1,57 @@
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const priceUrl = urlParams.get('price')
+    const strikeUrl  = urlParams.get('strike')
+    const timeUrl  = urlParams.get('time')
+    const volUrl  = urlParams.get('vol')
+    const rateUrl  = urlParams.get('rate')
+    const divUrl  = urlParams.get('div')
+
+    if (priceUrl!=null){
+        ele = document.getElementById("currentText")
+        ele.value=priceUrl
+        ele = document.getElementById("current2Text")
+        ele.value=priceUrl
+    }
+    if (strikeUrl!=null){
+        ele = document.getElementById("strikeText")
+        ele.value=strikeUrl
+        ele = document.getElementById("strike2Text")
+        ele.value=strikeUrl
+    }
+    if (timeUrl!=null){
+        ele = document.getElementById("timeText")
+        ele.value=timeUrl
+        ele = document.getElementById("timeRange")
+        ele.value=timeUrl
+    }
+    if (volUrl!=null){
+        ele = document.getElementById("volText")
+        ele.value=volUrl
+        ele = document.getElementById("volRange")
+        ele.value=volUrl
+        ele = document.getElementById("vol2Text")
+        ele.value=volUrl
+    }
+    if (rateUrl!=null){
+        ele = document.getElementById("rateText")
+        ele.value=rateUrl
+        ele = document.getElementById("rateRange")
+        ele.value=rateUrl
+        ele = document.getElementById("rate2Text")
+        ele.value=rateUrl
+        ele = document.getElementById("rate2Range")
+        ele.value=rateUrl
+    }
+    if (divUrl!=null){
+        ele = document.getElementById("divText")
+        ele.value=divUrl
+        ele = document.getElementById("divRange")
+        ele.value=divUrl
+        ele = document.getElementById("div2Text")
+        ele.value=divUrl
+        ele = document.getElementById("div2Range")
+        ele.value=divUrl
+    }
+</script>

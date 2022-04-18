@@ -43,11 +43,6 @@
     }
 </style>
 
-<script>
-    var color = 
-    console.log(color)
-</script>
-
 <!--Volatility = <span id="volText" class="input2">20</span><span> %</span>-->
 <!--
 Volatility = <input  class="input2" id="volText" type="text" value="20"></input><span> %</span>
@@ -135,10 +130,6 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
     </div>
 </div>
 
-
-
-
-
 <br>
 <button class="button2" onclick="price('call')">PRICE CALL</button>
 <button class="button2" onclick="price('put')">PRICE PUT</button>
@@ -161,6 +152,8 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
 <button class="button1" onclick="changeFormat('optionsTable')">Format table</button>
 <button class="button1" onclick="resetFormat('optionsTable')">Reset format</button>
 <button class="button1" onclick="resetTable('optionsTable')">Clear table</button>
+<button class="button1" onclick="createChart('optionsTable', 'containerTableChart', [2,0,1])">Create chart</button>
+<div id="containerTableChart" style="width:100%; height:0px;"></div>
 
 <!--functions for pricing equity options-->
 <script>
@@ -234,7 +227,7 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
 </script>
 
 
-<script>
+<script type="text/javascript">
     var binsvgOptions = '<svg onclick="deleteRowOptions(this)" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#b5b5b5"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"/></svg>'
     
     function price(callORput){
@@ -311,6 +304,7 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
     function start(){  
         row = event.target;
     }
+    
     function dragover(){
         var e = event;
         e.preventDefault(); 
@@ -367,6 +361,7 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
             }  
         }
     }
+    
     function resetFormat(tableId){
         var table= document.getElementById(tableId)
         for (var i = 1, row; row = table.rows[i]; i++) {
@@ -381,6 +376,70 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
         for(var i = 1;i<table.rows.length;){
             table.deleteRow(i);
         }
+    }
+
+    function createChart(tableId, chartId, indexes=[0,1,2]){
+        //console.log(indexes)
+        i0=indexes[0]
+        i1=indexes[1]
+        i2=indexes[2]
+        
+        var table = document.getElementById(tableId)
+        var data=[]
+        for (var i = 1, row; row = table.rows[i]; i++) {
+            tmp=[]
+            tmp2=[]
+            for (var j = 0, col; col = row.cells[j]; j++) {
+                tmp.push(table.rows[i].cells[j].innerHTML)
+            }
+            nama=tmp[1] + ',' + tmp[2] + ',' + tmp[3] + ',' + tmp[4] + ',' + tmp[5] + ',' + tmp[6] + '=' + Number(tmp[0]).toFixed(3) 
+            //console.log('tmp',tmp)
+            tmp2.push([parseFloat(tmp[i0]),parseFloat(tmp[i1]),parseFloat(tmp[i2])])
+            data.push({name:nama, data: tmp2})
+            //console.log('tmp2', tmp2)
+        }
+        //console.log(data)
+        var chart = document.getElementById(chartId)
+        chart.setAttribute("style", "height:400px")
+        chart = Highcharts.chart('containerTableChart', {
+            chart: {
+                type: 'bubble',
+                zoomType: 'xy',
+            },
+            plotOptions: {
+                    series:{
+                        lineWidth:0
+                    },
+                    bubble: {
+                        minSize: 5,
+                        maxSize: 20,
+                        sizeBy: 'width',
+                        marker:{
+                            fillOpacity: 0.5,
+                            lineWidth: 1,
+                        },
+                        /*events: {
+                            legendItemClick() {
+                            let chart = this.chart,
+                                series = chart.series;
+                            if (this.index === 0) {
+                                if (chart.showHideFlag) {
+                                series.forEach(series => {
+                                    series.hide()
+                                })
+                                } else {
+                                series.forEach(series => {
+                                    series.show()
+                                })
+                                }
+                                chart.showHideFlag = !chart.showHideFlag;
+                            }
+                            }
+                        }*/
+                    },
+            },
+            series:data
+        });
     }
 </script>
 

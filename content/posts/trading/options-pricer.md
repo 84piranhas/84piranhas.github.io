@@ -30,3 +30,6 @@ math: false
 # Scenario
 
 {{< pricer-scenario >}}
+
+
+{{< bonjour >}}
