@@ -153,6 +153,7 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
 <button class="button1" onclick="resetFormat('optionsTable')">Reset format</button>
 <button class="button1" onclick="resetTable('optionsTable')">Clear table</button>
 <button class="button1" onclick="createChart('optionsTable', 'containerTableChart', [2,0,1])">Create chart</button>
+<button class="button1" onclick="generateURl()">Get URl</button>
 <div id="containerTableChart" style="width:100%; height:0px;"></div>
 
 <!--functions for pricing equity options-->
@@ -440,6 +441,23 @@ onchange="updateInput2(this.value, this.id);" oninput="updateInput2(this.value, 
             },
             series:data
         });
+    }
+
+    function generateURl(){
+        strike = parseFloat(document.getElementById('strikeText').value)
+        currentPrice = parseFloat(document.getElementById('currentText').value)
+        ttm = parseFloat(document.getElementById('timeText').value)
+        rate = parseFloat(document.getElementById('rateText').value)
+        vol = parseFloat(document.getElementById('volText').value)
+        div = parseFloat(document.getElementById('divText').value)
+        text="https://84piranhas.github.io/posts/trading/options-pricer/?"
+        text += 'price=' + currentPrice
+        text += '?strike=' + strike
+        text += 'time=' + ttm
+        text += 'vol=' + vol
+        text += 'div=' + div
+        text += 'rate=' + rate
+        window.prompt("The URl of the current configuration of the pricer is:", text)
     }
 </script>
 
