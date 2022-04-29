@@ -29,4 +29,10 @@ math: false
 
 # Scenario
 
+## Strike is contant
+
 {{< pricer-scenario >}}
+
+## Price is contant
+
+{{< pricer-scenario2 >}}

@@ -1,0 +1,270 @@
+<style>
+    .input2 {
+        color: currentColor;
+        font-weight: bold;
+    }
+
+    .slider2 {
+        width: 200px;
+    }
+    .button2 {
+        color:currentColor;
+        font-weight: bold;
+        border: 2px solid currentColor;
+        padding: 1px 15px;
+        width: 49%
+        
+    }
+    .button1 {
+        color:currentColor;
+        font-weight: thin;
+        border: 1px solid currentColor;
+        padding: 1px 15px;
+        
+    }
+    .column {
+        float: left;
+        width: 33.33%;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+
+    .move { cursor: move; }
+    .pointer { cursor: pointer; }
+
+    .normalCell{
+        color: currentColor;
+        font-weight: normal;
+    }
+</style>
+
+<h4>Constant parameters</h4>
+
+<div class="row">
+    <div class="column">
+        Current price ($)
+        <form>
+            <div>
+                <input id="current3Text" class = "input2" type="number" value="100" min="0" step="0.1" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Dividend Yield (%)
+        <form>
+            <div>
+                <input id="div3Text" class = "input2" type="number" value="0" min="0" max="20" step="0.1" oninput="div3Range.value=div3Text.value" />
+                <input id="div3Range" class = "slider2" type="range" value="0" min="0" max="20" step="0.1" oninput="div3Text.value=div3Range.value" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Interest Rate (%)
+        <form>
+            <div>
+                <input id="rate3Text" class = "input2" type="number" value="0" min="-10" max="20" step="0.1" oninput="rate3Range.value=rate3Text.value" />
+                <input id="rate3Range" class = "slider2" type="range" value="0" min="-10" max="20" step="0.1" oninput="rate3Text.value=rate3Range.value" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<br>
+
+<h4>Variables</h4>
+
+<div class="row">
+    <div class="column">
+        Strike ($)
+        <form>
+            <div>
+                <input id="strike3Text" class = "input2" type="number" value="100" min="0" step="0.1" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Range (absolute $)
+        <form>
+            <div>
+                <input id="current3Range" class = "input2" type="number" value="1" min="0" step="1" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Step (absolute $)
+        <form>
+            <div>
+                <input id="current3Step" class = "input2" type="number" value="0.1" min="0" step="0.05" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        Time to Maturity, Min (days)
+        <form>
+            <div>
+                <input id="time3Min" class = "input2" type="number" value="1" min="0" step="1" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Max
+        <form>
+            <div>
+                <input id="time3Max" class = "input2" type="number" value="10" min="0" step="1" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Step
+        <form>
+            <div>
+                <input id="time3Step" class = "input2" type="number" value="1" min="0" step="0.1" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        Volatility (%)
+        <form>
+            <div>
+                <input id="vol3Text" class = "input2" type="number" value="25" min="0" max="200" step="0.5" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Range (absolute %)
+        <form>
+            <div>
+                <input id="vol3Range" class = "input2" type="number" value="0" min="0" step="1" />
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        Step (absolute %)
+        <form>
+            <div>
+                <input id="vol3Step" class = "input2" type="number" value="1" min="0" step="0.5" />
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+
+<button class="button2" onclick="simulation2()">Simulate scenarii</button>
+<div id="containerSimulation2"></div>
+<script>
+    
+    function simulation2(){
+        
+        const data=[];
+        const dataChart=[];
+        dataChart.push({name: 'Show/Hide all',visible: false, color: 'rgb(204, 204, 204)'});
+        
+        //constant parameters
+        currentPrice = parseFloat(document.getElementById('current3Text').value)
+        div = parseFloat(document.getElementById('div3Text').value)
+        rate = parseFloat(document.getElementById('rate3Text').value)
+
+        strike = parseFloat(document.getElementById('strike3Text').value)
+        range = parseFloat(document.getElementById('current3Range').value)
+        step = parseFloat(document.getElementById('current3Step').value)
+
+        //variables
+        strikes = []
+        for(i=strike-range;i<=strike+range;i=i+step){
+            strikes.push(Math.round(i*1000,3)/1000);
+        }
+        //console.log(strikes)
+
+        vols=[]
+        vol = parseFloat(document.getElementById('vol3Text').value)
+        volRange = parseFloat(document.getElementById('vol3Range').value)
+        volStep = parseFloat(document.getElementById('vol3Step').value)
+        for(i=vol-volRange;i<=vol+volRange+0.001;i=i+volStep){
+            vols.push(Math.round(i*1000,3)/1000);
+        }
+        //console.log(vols)
+
+        ttms=[]
+        ttmMin = parseFloat(document.getElementById('time3Min').value)
+        ttmMax = parseFloat(document.getElementById('time3Max').value)
+        ttmStep = parseFloat(document.getElementById('time3Step').value)
+        for(i=ttmMin;i<=ttmMax;i=i+ttmStep){
+            ttms.push(Math.round(i*1000,3)/1000);
+        }
+        //console.log(ttms)
+
+        for (const t of ttms) {
+            tmp = []
+            for (const s of strikes) {
+            
+                for (const v of vols) {
+                
+                    var option = callOption(currentPrice, s, 1/365*t,rate/100,v/100,div/100)
+                    tmp.push([s, option, v])
+                }
+            }
+            dataChart.push({name:t, data:tmp})
+        }
+        
+        createSimulationChart2(dataChart);
+
+    }
+
+    function createSimulationChart2(data2){
+        var divToStyle = document.getElementById('containerSimulation2')
+        divToStyle.setAttribute("style", "width:100%; height:400px;")
+        //console.log(data2)
+        const chart = Highcharts.chart('containerSimulation2', {
+            chart: {
+                type: 'bubble',
+                zoomType: 'xy',
+            },
+            plotOptions: {
+                    series:{
+                        lineWidth:0
+                    },
+                    bubble: {
+                        minSize: 5,
+                        maxSize: 20,
+                        sizeBy: 'width',
+                        marker:{
+                            fillOpacity: 0.5,
+                            lineWidth: 1,
+                        },
+                        events: {
+                            legendItemClick() {
+                            let chart = this.chart,
+                                series = chart.series;
+                            if (this.index === 0) {
+                                if (chart.showHideFlag) {
+                                series.forEach(series => {
+                                    series.hide()
+                                })
+                                } else {
+                                series.forEach(series => {
+                                    series.show()
+                                })
+                                }
+                                chart.showHideFlag = !chart.showHideFlag;
+                            }
+                            }
+                        }
+                    },
+            },
+            //series:[{data:data2}],
+            series:data2
+        });
+    }
+
+</script>
