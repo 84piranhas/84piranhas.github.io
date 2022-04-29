@@ -161,7 +161,7 @@
 <br>
 
 <button class="button2" onclick="simulation()">Simulate scenarii</button>
-<div id="container" style="width:100%; height:400px;"></div>
+<div id="containerSimulation"></div>
 <script>
     
     function simulation(){
@@ -230,8 +230,10 @@
     }
 
     function createSimulationChart(data2){
-        console.log(data2)
-        const chart = Highcharts.chart('container', {
+        var divToStyle = document.getElementById('containerSimulation')
+        divToStyle.setAttribute("style", "width:100%; height:400px;")
+        //console.log(data2)
+        const chart = Highcharts.chart('containerSimulation', {
             chart: {
                 type: 'bubble',
                 zoomType: 'xy',
