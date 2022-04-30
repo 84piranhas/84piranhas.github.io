@@ -23,6 +23,8 @@ math: false
 
 {{< pricer-library >}}
 
+{{< pricer-style >}}
+
 # Pricer
 
 {{< pricer >}}
