@@ -38,3 +38,7 @@ math: false
 ## Price is contant
 
 {{< pricer-scenario2 >}}
+
+## Expiry is constant
+
+{{< pricer-scenario3 >}}

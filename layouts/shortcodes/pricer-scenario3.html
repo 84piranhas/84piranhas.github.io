@@ -1,5 +1,5 @@
 <label class="toggle">
-    <input id ="tog2" type="checkbox">
+    <input id ="tog3" type="checkbox">
     <span class="slider"></span>
     <span class="labels" data-on="PUT" data-off="CALL"></span>
 </label>
@@ -8,10 +8,11 @@
 
 <div class="row">
     <div class="column">
-        Current price ($)
+        Time to Maturity (days)
         <form>
             <div>
-                <input id="current3Text" class = "input2" type="number" value="100" min="0" step="0.1" />
+                <input id="time4Text" class = "input2" type="number" value="60" min="0" max="200" step="1" oninput="time4Range.value=time4Text.value" />
+                <input id="time4Range" class = "slider2" type="range" value="60" min="1" max="365" step="1" oninput="time4Text.value=time4Range.value" />
             </div>
         </form>
     </div>
@@ -19,8 +20,8 @@
         Dividend Yield (%)
         <form>
             <div>
-                <input id="div3Text" class = "input2" type="number" value="0" min="0" max="20" step="0.1" oninput="div3Range.value=div3Text.value" />
-                <input id="div3Range" class = "slider2" type="range" value="0" min="0" max="20" step="0.1" oninput="div3Text.value=div3Range.value" />
+                <input id="div4Text" class = "input2" type="number" value="0" min="0" max="20" step="0.1" oninput="div4Range.value=div4Text.value" />
+                <input id="div4Range" class = "slider2" type="range" value="0" min="0" max="20" step="0.1" oninput="div4Text.value=div4Range.value" />
             </div>
         </form>
     </div>
@@ -28,8 +29,8 @@
         Interest Rate (%)
         <form>
             <div>
-                <input id="rate3Text" class = "input2" type="number" value="0" min="-10" max="20" step="0.1" oninput="rate3Range.value=rate3Text.value" />
-                <input id="rate3Range" class = "slider2" type="range" value="0" min="-10" max="20" step="0.1" oninput="rate3Text.value=rate3Range.value" />
+                <input id="rate4Text" class = "input2" type="number" value="0" min="-10" max="20" step="0.1" oninput="rate4Range.value=rate4Text.value" />
+                <input id="rate4Range" class = "slider2" type="range" value="0" min="-10" max="20" step="0.1" oninput="rate4Text.value=rate4Range.value" />
             </div>
         </form>
     </div>
@@ -41,10 +42,10 @@
 
 <div class="row">
     <div class="column">
-        Strike ($)
+        Current price ($)
         <form>
             <div>
-                <input id="strike3Text" class = "input2" type="number" value="100" min="0" step="0.1" />
+                <input id="current4Text" class = "input2" type="number" value="100" min="0" step="0.1" />
             </div>
         </form>
     </div>
@@ -52,7 +53,7 @@
         Range (absolute $)
         <form>
             <div>
-                <input id="strike3Range" class = "input2" type="number" value="1" min="0" step="1" />
+                <input id="current4Range" class = "input2" type="number" value="1" min="0" step="1" />
             </div>
         </form>
     </div>
@@ -60,7 +61,7 @@
         Step (absolute $)
         <form>
             <div>
-                <input id="strike3Step" class = "input2" type="number" value="0.1" min="0" step="0.05" />
+                <input id="current4Step" class = "input2" type="number" value="0.1" min="0" step="0.05" />
             </div>
         </form>
     </div>
@@ -68,26 +69,26 @@
 
 <div class="row">
     <div class="column">
-        Time to Maturity, Min (days)
+        Strike ($)
         <form>
             <div>
-                <input id="time3Min" class = "input2" type="number" value="1" min="0" step="1" />
+                <input id="strike4Text" class = "input2" type="number" value="100" min="0" step="0.1" />
             </div>
         </form>
     </div>
     <div class="column">
-        Max
+        Range (absolute $)
         <form>
             <div>
-                <input id="time3Max" class = "input2" type="number" value="10" min="0" step="1" />
+                <input id="strike4Range" class = "input2" type="number" value="1" min="0" step="1" />
             </div>
         </form>
     </div>
     <div class="column">
-        Step
+        Step (absolute $)
         <form>
             <div>
-                <input id="time3Step" class = "input2" type="number" value="1" min="0" step="0.1" />
+                <input id="strike4Step" class = "input2" type="number" value="0.1" min="0" step="0.05" />
             </div>
         </form>
     </div>
@@ -98,7 +99,7 @@
         Volatility (%)
         <form>
             <div>
-                <input id="vol3Text" class = "input2" type="number" value="25" min="0" max="200" step="0.5" />
+                <input id="vol4Text" class = "input2" type="number" value="25" min="0" max="200" step="0.5" />
             </div>
         </form>
     </div>
@@ -106,7 +107,7 @@
         Range (absolute %)
         <form>
             <div>
-                <input id="vol3Range" class = "input2" type="number" value="0" min="0" step="1" />
+                <input id="vol4Range" class = "input2" type="number" value="0" min="0" step="1" />
             </div>
         </form>
     </div>
@@ -114,94 +115,94 @@
         Step (absolute %)
         <form>
             <div>
-                <input id="vol3Step" class = "input2" type="number" value="1" min="0" step="0.5" />
+                <input id="vol4Step" class = "input2" type="number" value="1" min="0" step="0.5" />
             </div>
         </form>
     </div>
 </div>
 <br>
 
-<button class="button2" onclick="simulation2()">Simulate scenarii</button>
-<div id="containerSimulation2"></div>
+<button class="button2" onclick="simulation3()">Simulate scenarii</button>
+<div id="containerSimulation3"></div>
 <script>
     
-    function simulation2(){
+    function simulation3(){
         
         const data=[];
         const dataChart=[];
         dataChart.push({name: 'Show/Hide all',visible: false, color: 'rgb(204, 204, 204)'});
         
         //constant parameters
-        currentPrice = parseFloat(document.getElementById('current3Text').value)
-        div = parseFloat(document.getElementById('div3Text').value)
-        rate = parseFloat(document.getElementById('rate3Text').value)
+        time = parseFloat(document.getElementById('time4Text').value)
+        div = parseFloat(document.getElementById('div4Text').value)
+        rate = parseFloat(document.getElementById('rate4Text').value)
 
 
         //variables
+        currentPrices = []
+        currentPrice = parseFloat(document.getElementById('current4Text').value)
+        range = parseFloat(document.getElementById('current4Range').value)
+        step = parseFloat(document.getElementById('current4Step').value)
+        for(i=currentPrice-range;i<=currentPrice+range;i=i+step){
+            currentPrices.push(Math.round(i*1000,3)/1000);
+        }
+        //console.log(currentPrices)
+
         strikes = []
-        strike = parseFloat(document.getElementById('strike3Text').value)
-        range = parseFloat(document.getElementById('strike3Range').value)
-        step = parseFloat(document.getElementById('strike3Step').value)
+        strike = parseFloat(document.getElementById('strike4Text').value)
+        range = parseFloat(document.getElementById('strike4Range').value)
+        step = parseFloat(document.getElementById('strike4Step').value)
         for(i=strike-range;i<=strike+range;i=i+step){
             strikes.push(Math.round(i*1000,3)/1000);
         }
         //console.log(strikes)
 
         vols=[]
-        vol = parseFloat(document.getElementById('vol3Text').value)
-        volRange = parseFloat(document.getElementById('vol3Range').value)
-        volStep = parseFloat(document.getElementById('vol3Step').value)
+        vol = parseFloat(document.getElementById('vol4Text').value)
+        volRange = parseFloat(document.getElementById('vol4Range').value)
+        volStep = parseFloat(document.getElementById('vol4Step').value)
         for(i=vol-volRange;i<=vol+volRange+0.001;i=i+volStep){
             vols.push(Math.round(i*1000,3)/1000);
         }
         //console.log(vols)
 
-        ttms=[]
-        ttmMin = parseFloat(document.getElementById('time3Min').value)
-        ttmMax = parseFloat(document.getElementById('time3Max').value)
-        ttmStep = parseFloat(document.getElementById('time3Step').value)
-        for(i=ttmMin;i<=ttmMax;i=i+ttmStep){
-            ttms.push(Math.round(i*1000,3)/1000);
-        }
-        //console.log(ttms)
-
-        if (document.getElementById('tog2').checked==false){
-            for (const t of ttms) {
+        if (document.getElementById('tog3').checked==false){
+            for (const p of currentPrices) {
                 tmp = []
                 for (const s of strikes) {
                 
                     for (const v of vols) {
                     
-                        var option = callOption(currentPrice, s, 1/365*t,rate/100,v/100,div/100)
+                        var option = callOption(p, s, 1/365*time,rate/100,v/100,div/100)
                         tmp.push([s, option, v])
                     }
                 }
-                dataChart.push({name:t, data:tmp})
+                dataChart.push({name:p, data:tmp})
             }
         }
         else{
-            for (const t of ttms) {
+            for (const p of currentPrices) {
                 tmp = []
                 for (const s of strikes) {
                 
                     for (const v of vols) {
                     
-                        var option = putOption(currentPrice, s, 1/365*t,rate/100,v/100,div/100)
+                        var option = putOption(p, s, 1/365*time,rate/100,v/100,div/100)
                         tmp.push([s, option, v])
                     }
                 }
-                dataChart.push({name:t, data:tmp})
+                dataChart.push({name:p, data:tmp})
             }
         }
-        createSimulationChart2(dataChart);
+        createSimulationChart3(dataChart);
 
     }
 
-    function createSimulationChart2(data2){
-        var divToStyle = document.getElementById('containerSimulation2')
+    function createSimulationChart3(data2){
+        var divToStyle = document.getElementById('containerSimulation3')
         divToStyle.setAttribute("style", "width:100%; height:400px;")
         //console.log(data2)
-        const chart = Highcharts.chart('containerSimulation2', {
+        const chart = Highcharts.chart('containerSimulation3', {
             chart: {
                 type: 'bubble',
                 zoomType: 'xy',

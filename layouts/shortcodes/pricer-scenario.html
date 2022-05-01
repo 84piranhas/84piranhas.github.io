@@ -137,12 +137,12 @@
         div = parseFloat(document.getElementById('divText').value)
         rate = parseFloat(document.getElementById('rateText').value)
 
-        currentPrice = parseFloat(document.getElementById('current2Text').value)
-        range = parseFloat(document.getElementById('current2Range').value)
-        step = parseFloat(document.getElementById('current2Step').value)
 
         //variables
         currentPrices = []
+        currentPrice = parseFloat(document.getElementById('current2Text').value)
+        range = parseFloat(document.getElementById('current2Range').value)
+        step = parseFloat(document.getElementById('current2Step').value)
         for(i=currentPrice-range;i<=currentPrice+range;i=i+step){
             currentPrices.push(Math.round(i*1000,3)/1000);
         }
