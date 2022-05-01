@@ -1,3 +1,9 @@
+<label class="toggle">
+    <input id ="tog1" type="checkbox">
+    <span class="slider"></span>
+    <span class="labels" data-on="PUT" data-off="CALL"></span>
+</label>
+
 <h4>Constant parameters</h4>
 
 
@@ -160,22 +166,40 @@
         }
         //console.log(ttms)
 
-        for (const t of ttms) {
-            tmp = []
-            for (const p of currentPrices) {
-            
-                for (const v of vols) {
+        if (document.getElementById('tog1').checked==false){
+            for (const t of ttms) {
+                tmp = []
+                for (const p of currentPrices) {
                 
-                    var option = callOption(p, strike, 1/365*t,rate/100,v/100,div/100)
-                    tmp.push([p, option, v])
-                    //data.push([option,p, strike, t, rate, v, div])
-                    //dataChart.push({x:p, y:option, z:t, category:v})
-                    //dataChart.push({name:strike, data:[[p, option, t],[p, option+0.5, t]]})
+                    for (const v of vols) {
+                    
+                        var option = callOption(p, strike, 1/365*t,rate/100,v/100,div/100)
+                        tmp.push([p, option, v])
+                        //data.push([option,p, strike, t, rate, v, div])
+                        //dataChart.push({x:p, y:option, z:t, category:v})
+                        //dataChart.push({name:strike, data:[[p, option, t],[p, option+0.5, t]]})
+                    }
                 }
+                dataChart.push({name:t, data:tmp})
             }
-            dataChart.push({name:t, data:tmp})
         }
-        
+        else{
+            for (const t of ttms) {
+                tmp = []
+                for (const p of currentPrices) {
+                
+                    for (const v of vols) {
+                    
+                        var option = putOption(p, strike, 1/365*t,rate/100,v/100,div/100)
+                        tmp.push([p, option, v])
+                        //data.push([option,p, strike, t, rate, v, div])
+                        //dataChart.push({x:p, y:option, z:t, category:v})
+                        //dataChart.push({name:strike, data:[[p, option, t],[p, option+0.5, t]]})
+                    }
+                }
+                dataChart.push({name:t, data:tmp})
+            }
+        }
         //console.log(data)
         //console.log(strike, currentPrice, ttm, rate, vol, div)
         

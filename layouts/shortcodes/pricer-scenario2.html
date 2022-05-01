@@ -1,3 +1,9 @@
+<label class="toggle">
+    <input id ="tog2" type="checkbox">
+    <span class="slider"></span>
+    <span class="labels" data-on="PUT" data-off="CALL"></span>
+</label>
+
 <h4>Constant parameters</h4>
 
 <div class="row">
@@ -159,19 +165,34 @@
         }
         //console.log(ttms)
 
-        for (const t of ttms) {
-            tmp = []
-            for (const s of strikes) {
-            
-                for (const v of vols) {
+        if (document.getElementById('tog2').checked==false){
+            for (const t of ttms) {
+                tmp = []
+                for (const s of strikes) {
                 
-                    var option = callOption(currentPrice, s, 1/365*t,rate/100,v/100,div/100)
-                    tmp.push([s, option, v])
+                    for (const v of vols) {
+                    
+                        var option = callOption(currentPrice, s, 1/365*t,rate/100,v/100,div/100)
+                        tmp.push([s, option, v])
+                    }
                 }
+                dataChart.push({name:t, data:tmp})
             }
-            dataChart.push({name:t, data:tmp})
         }
-        
+        else{
+            for (const t of ttms) {
+                tmp = []
+                for (const s of strikes) {
+                
+                    for (const v of vols) {
+                    
+                        var option = putOption(currentPrice, s, 1/365*t,rate/100,v/100,div/100)
+                        tmp.push([s, option, v])
+                    }
+                }
+                dataChart.push({name:t, data:tmp})
+            }
+        }
         createSimulationChart2(dataChart);
 
     }
