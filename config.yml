@@ -1,10 +1,12 @@
 baseURL: "https://84piranhas.github.io/"
 title: 84piranhas
 publishDir: "docs"
-paginate: 5.0
+pagination:
+    pagerSize: 5
 theme: hugo-PaperMod
 enableInlineShortcodes: true
 enableRobotsTXT: true
+capitalizeListTitles: false
 buildDrafts: false
 buildFuture: false
 buildExpired: false

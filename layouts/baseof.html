@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
+<html lang="{{ .Site.Language }}" dir="{{ .Language.Direction | default "auto" }}">
 
 <head>
     {{- partial "head.html" . }}
@@ -19,7 +19,9 @@
         {{- end }}
     </main>
     {{- partialCached "footer.html" . .Type .Layout .Params }}
+    {{- if or .IsHome (eq .Kind "404") }}
     <div>Bonjour!!!</div>
+    {{- end }}
 </body>
 
 </html>

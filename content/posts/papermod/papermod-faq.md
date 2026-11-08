@@ -4,11 +4,10 @@ summary: FAQs
 date: 2020-09-18T11:30:03+05:30
 showtoc: true
 tocOpen: true
-aliases: ["/papermod-how-to-guide"]
+aliases: ["/papermod-how-to-guide", "/posts/papermod/papermod-how-to"]
 tags: ["PaperMod"]
 author: "Aditya Telange"
 draft: true
-aliases: [/posts/papermod/papermod-how-to]
 ---
 
 ## Intro
