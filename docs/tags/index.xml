@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Tags on 84piranhas</title>
-		<link>http://localhost:1313/tags/</link>
+		<link>https://84piranhas.github.io/tags/</link>
 		<description>Recent content in Tags on 84piranhas</description>
 		<generator>Hugo</generator>
 		<language>en</language>
@@ -12,110 +12,110 @@
 		
 			<lastBuildDate>Fri, 08 Apr 2022 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://84piranhas.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>english</title>
-				<link>http://localhost:1313/tags/english/</link>
+				<link>https://84piranhas.github.io/tags/english/</link>
 				<pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/english/</guid>
+				<guid>https://84piranhas.github.io/tags/english/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>greeks</title>
-				<link>http://localhost:1313/tags/greeks/</link>
+				<link>https://84piranhas.github.io/tags/greeks/</link>
 				<pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/greeks/</guid>
+				<guid>https://84piranhas.github.io/tags/greeks/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>options</title>
-				<link>http://localhost:1313/tags/options/</link>
+				<link>https://84piranhas.github.io/tags/options/</link>
 				<pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/options/</guid>
+				<guid>https://84piranhas.github.io/tags/options/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>trading</title>
-				<link>http://localhost:1313/tags/trading/</link>
+				<link>https://84piranhas.github.io/tags/trading/</link>
 				<pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/trading/</guid>
+				<guid>https://84piranhas.github.io/tags/trading/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>crypto</title>
-				<link>http://localhost:1313/tags/crypto/</link>
+				<link>https://84piranhas.github.io/tags/crypto/</link>
 				<pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/crypto/</guid>
+				<guid>https://84piranhas.github.io/tags/crypto/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>dca</title>
-				<link>http://localhost:1313/tags/dca/</link>
+				<link>https://84piranhas.github.io/tags/dca/</link>
 				<pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/dca/</guid>
+				<guid>https://84piranhas.github.io/tags/dca/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>dva</title>
-				<link>http://localhost:1313/tags/dva/</link>
+				<link>https://84piranhas.github.io/tags/dva/</link>
 				<pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/dva/</guid>
+				<guid>https://84piranhas.github.io/tags/dva/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>lump-sum</title>
-				<link>http://localhost:1313/tags/lump-sum/</link>
+				<link>https://84piranhas.github.io/tags/lump-sum/</link>
 				<pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/lump-sum/</guid>
+				<guid>https://84piranhas.github.io/tags/lump-sum/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>monero</title>
-				<link>http://localhost:1313/tags/monero/</link>
+				<link>https://84piranhas.github.io/tags/monero/</link>
 				<pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/monero/</guid>
+				<guid>https://84piranhas.github.io/tags/monero/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>bitcoin</title>
-				<link>http://localhost:1313/tags/bitcoin/</link>
+				<link>https://84piranhas.github.io/tags/bitcoin/</link>
 				<pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/bitcoin/</guid>
+				<guid>https://84piranhas.github.io/tags/bitcoin/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>français</title>
-				<link>http://localhost:1313/tags/fran%C3%A7ais/</link>
+				<link>https://84piranhas.github.io/tags/fran%C3%A7ais/</link>
 				<pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/fran%C3%A7ais/</guid>
+				<guid>https://84piranhas.github.io/tags/fran%C3%A7ais/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>moto</title>
-				<link>http://localhost:1313/tags/moto/</link>
+				<link>https://84piranhas.github.io/tags/moto/</link>
 				<pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/moto/</guid>
+				<guid>https://84piranhas.github.io/tags/moto/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>code</title>
-				<link>http://localhost:1313/tags/code/</link>
+				<link>https://84piranhas.github.io/tags/code/</link>
 				<pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/code/</guid>
+				<guid>https://84piranhas.github.io/tags/code/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>html</title>
-				<link>http://localhost:1313/tags/html/</link>
+				<link>https://84piranhas.github.io/tags/html/</link>
 				<pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/html/</guid>
+				<guid>https://84piranhas.github.io/tags/html/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>markdown</title>
-				<link>http://localhost:1313/tags/markdown/</link>
+				<link>https://84piranhas.github.io/tags/markdown/</link>
 				<pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/tags/markdown/</guid>
+				<guid>https://84piranhas.github.io/tags/markdown/</guid>
 				<description></description>
 			</item>
 	</channel>

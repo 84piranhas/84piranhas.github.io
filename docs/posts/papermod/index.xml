@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Sub-Section PaperMod on 84piranhas</title>
-		<link>http://localhost:1313/posts/papermod/</link>
+		<link>https://84piranhas.github.io/posts/papermod/</link>
 		<description>Recent content in Sub-Section PaperMod on 84piranhas</description>
 		<generator>Hugo</generator>
 		<language>en</language>
@@ -10,6 +10,6 @@
 		
 		
 		
-			<atom:link href="http://localhost:1313/posts/papermod/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://84piranhas.github.io/posts/papermod/index.xml" rel="self" type="application/rss+xml" />
 	</channel>
 </rss>
