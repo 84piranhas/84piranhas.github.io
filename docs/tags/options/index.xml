@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>options on 84piranhas</title>
-    <link>https://84piranhas.github.io/tags/options/</link>
-    <description>Recent content in options on 84piranhas</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Apr 2022 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://84piranhas.github.io/tags/options/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Options - pricer</title>
-      <link>https://84piranhas.github.io/posts/trading/options-pricer/</link>
-      <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://84piranhas.github.io/posts/trading/options-pricer/</guid>
-      <description>Basic pricer of equity options</description>
-    </item>
-    
-    <item>
-      <title>Options - the movements of the greeks</title>
-      <link>https://84piranhas.github.io/posts/trading/options-greeks-moves/</link>
-      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://84piranhas.github.io/posts/trading/options-greeks-moves/</guid>
-      <description>Movements between the options greeks</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>options on 84piranhas</title>
+		<link>http://localhost:1313/tags/options/</link>
+		<description>Recent content in options on 84piranhas</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 08 Apr 2022 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/options/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Options - pricer</title>
+				<link>http://localhost:1313/posts/trading/options-pricer/</link>
+				<pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/trading/options-pricer/</guid>
+				<description>Basic pricer of equity options</description>
+			</item>
+			<item>
+				<title>Options - the movements of the greeks</title>
+				<link>http://localhost:1313/posts/trading/options-greeks-moves/</link>
+				<pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/trading/options-greeks-moves/</guid>
+				<description>Movements between the options greeks</description>
+			</item>
+	</channel>
 </rss>
