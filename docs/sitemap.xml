@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://84piranhas.github.io/posts/projects/</loc>
+    <lastmod>2026-11-08T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://84piranhas.github.io/posts/trading/options-pricer/</loc>
     <lastmod>2022-04-08T00:00:00+00:00</lastmod>
   </url><url>
@@ -30,24 +33,27 @@
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://84piranhas.github.io/</loc>
-    <lastmod>2022-04-08T00:00:00+00:00</lastmod>
+    <lastmod>2026-11-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://84piranhas.github.io/categories/</loc>
-    <lastmod>2022-04-08T00:00:00+00:00</lastmod>
+    <loc>https://84piranhas.github.io/tags/claude/</loc>
+    <lastmod>2026-11-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://84piranhas.github.io/tags/english/</loc>
+    <lastmod>2026-11-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://84piranhas.github.io/posts/</loc>
+    <lastmod>2026-11-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://84piranhas.github.io/tags/</loc>
+    <lastmod>2026-11-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://84piranhas.github.io/categories/</loc>
     <lastmod>2022-04-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://84piranhas.github.io/tags/greeks/</loc>
     <lastmod>2022-04-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://84piranhas.github.io/tags/options/</loc>
-    <lastmod>2022-04-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://84piranhas.github.io/posts/</loc>
-    <lastmod>2022-04-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://84piranhas.github.io/tags/</loc>
     <lastmod>2022-04-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://84piranhas.github.io/categories/trading/</loc>

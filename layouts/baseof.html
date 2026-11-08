@@ -19,9 +19,6 @@
         {{- end }}
     </main>
     {{- partialCached "footer.html" . .Type .Layout .Params }}
-    {{- if or .IsHome (eq .Kind "404") }}
-    <div><a href='../projects'>Projects</a></div>
-    {{- end }}
 </body>
 
 </html>

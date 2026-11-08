@@ -10,13 +10,20 @@
 		
 		
 		
-			<lastBuildDate>Fri, 08 Apr 2022 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Sun, 08 Nov 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://84piranhas.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
 			<item>
+				<title>claude</title>
+				<link>https://84piranhas.github.io/tags/claude/</link>
+				<pubDate>Sun, 08 Nov 2026 00:00:00 +0000</pubDate>
+				<guid>https://84piranhas.github.io/tags/claude/</guid>
+				<description></description>
+			</item>
+			<item>
 				<title>english</title>
 				<link>https://84piranhas.github.io/tags/english/</link>
-				<pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
+				<pubDate>Sun, 08 Nov 2026 00:00:00 +0000</pubDate>
 				<guid>https://84piranhas.github.io/tags/english/</guid>
 				<description></description>
 			</item>

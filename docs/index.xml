@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Fri, 08 Apr 2022 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Sun, 08 Nov 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://84piranhas.github.io/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Projects</title>
+				<link>https://84piranhas.github.io/posts/projects/</link>
+				<pubDate>Sun, 08 Nov 2026 00:00:00 +0000</pubDate>
+				<guid>https://84piranhas.github.io/posts/projects/</guid>
+				<description>Projects built with Claude</description>
+			</item>
 			<item>
 				<title>Options - pricer</title>
 				<link>https://84piranhas.github.io/posts/trading/options-pricer/</link>
